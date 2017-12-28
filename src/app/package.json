@@ -1,0 +1,24 @@
+{
+    "name": "app.iolivares.com",
+    "repository": {
+        "url": "git@github.com:ivolivares/iolivares.com.git"
+    },
+    "private": true,
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "next": "^4.0.0-beta.6",
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": {
+        "name": "Iván Olivares R.",
+        "email": "hola@ivolivares.cl"
+    },
+    "license": "MIT"
+}
