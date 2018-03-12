@@ -2,6 +2,7 @@
   "name": "io-dot-com",
   "version": "1.0.0",
   "description": "Website firebase+next.js based.",
+  "author": "Iván Olivares <hi@iolivares.com>",
   "scripts": {
     "install-app": "cd \"src/app/\" && npm i",
     "install-functions": "cd \"src/functions/\" && npm i",

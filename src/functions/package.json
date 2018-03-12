@@ -5,6 +5,7 @@
     "firebase-admin": "5.8.1",
     "firebase-functions": "^0.8.1",
     "next": "^5.0.1-canary.13",
+    "raven": "^2.4.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   }

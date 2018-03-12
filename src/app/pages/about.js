@@ -1,6 +1,6 @@
-import App from '../components/App'
+import Layout from '../components/Layout'
 
 export default () =>
-  <App>
+  <Layout title="About Iván Olivares Rojas">
     <p>About Page</p>
-  </App>
+  </Layout>
