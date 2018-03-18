@@ -1,9 +1,11 @@
 import { withRouter } from 'next/router'
 
-const ActiveLink = ({ children, router, href }) => {
+const ActiveLink = ({ children, router, href, activeClass, target }) => {
   const handleClick = (e) => {
-    e.preventDefault()
-    router.push(href)
+    if (!target) {
+      e.preventDefault()
+      router.push(href)
+    }
   }
 
   const handMouseEnter = (e) => {
@@ -11,7 +13,13 @@ const ActiveLink = ({ children, router, href }) => {
   }
 
   return (
-    <a href={href} onMouseEnter={handMouseEnter} onClick={handleClick} className={router.pathname === href ? 'active' : null}>
+    <a
+      href={href}
+      onMouseEnter={handMouseEnter}
+      onClick={handleClick}
+      target={target ? target : '_self'}
+      className={router.pathname === href ? `${activeClass}` : null}
+    >
       {children}
     </a>
   )

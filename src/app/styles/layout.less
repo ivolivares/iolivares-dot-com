@@ -1,59 +1,68 @@
 @import "variables.less";
 @import "mixins.less";
+@import "helpers.less";
+@import "../node_modules/flexboxgrid/css/flexboxgrid.min.css";
 
 @font-face {
-  font-family: "Apercu";
-  .fontFormats("Apercu-Light");
+  font-family: "Maison Neue";
+  .fontFormats("maison-neue-light");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Maison Neue";
+  .fontFormats("maison-neue-light-italic");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Maison Neue";
+  .fontFormats("maison-neue-book");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Apercu";
-  .fontFormats("Apercu-LightItalic");
+  font-family: "Maison Neue";
+  .fontFormats("maison-neue-book-italic");
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
-  font-family: "Apercu";
-  .fontFormats("Apercu-Regular");
+  font-family: "Maison Neue";
+  .fontFormats("maison-neue-medium");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Apercu";
-  .fontFormats("Apercu-Italic");
+  font-family: "Maison Neue";
+  .fontFormats("maison-neue-medium-italic");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
-  font-family: "Apercu";
-  .fontFormats("Apercu-Medium");
+  font-family: "Maison Neue";
+  .fontFormats("Maison Neue-Medium");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Apercu";
-  .fontFormats("Apercu-MediumItalic");
+  font-family: "Maison Neue";
+  .fontFormats("maison-neue-bold");
   font-weight: 500;
   font-style: italic;
 }
 
 @font-face {
-  font-family: "Apercu";
-  .fontFormats("Apercu-Bold");
-  font-weight: 700;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Apercu";
-  .fontFormats("Apercu-BoldItalic");
-  font-weight: 700;
+  font-family: "Maison Neue";
+  .fontFormats("maison-neue-bold-italic");
+  font-weight: 500;
   font-style: italic;
 }
 
@@ -68,36 +77,92 @@
   color: @textPrimaryColor;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body,
 html {
   margin: 0;
   padding: 0;
   background-color: @white;
   color: @primaryTextColor;
-  font-family: Apercu, Helvetica, Arial, sans-serif;
-  line-height: 1.5
-}
-
-body a,
-html a {
-  transition: all .2s ease-in-out;
-  text-decoration: none;
-  font-weight: 700;
-  color: @primaryTextColor;
-}
-
-body ul,
-html ul {
-  list-style: none;
-  padding: 0;
+  font-family: "Maison Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 300;
 }
 
 body strong,
 html strong {
-  font-weight: 700;
-  color: @darkPrimaryColor;
+  font-weight: 500;
 }
 
-a.active {
-  color: @primaryColor;
+.io {
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    @media (min-width: 1200px) {
+      width: 1200px;
+    }
+  }
 }
+
+.header {
+  transition: all .1s linear;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  padding: 30px 0;
+
+  &__logo {
+    &-title {
+      margin: 0;
+      font-size: 18px;
+      line-height: 18px;
+      word-spacing: -2px;
+    }
+
+    &-subtitle {
+      font-size: 17px;
+      line-height: 17px;
+      margin-top: 4px;
+    }
+  }
+
+  &__nav {
+    display: block;
+
+    &-list {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      
+      &-item {
+        margin: 0 0 0 32px;
+        padding: 0;
+        list-style: none;
+
+        a {
+          color: @primaryTextColor;
+          font-size: 14px;
+          line-height: 14px;
+        }
+
+        &--active {
+          color: @primaryColor !important;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@import "about.less";

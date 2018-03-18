@@ -1,10 +1,8 @@
 .fontFormats (@fontName) {
-  @bucketURL: 'https://firebasestorage.googleapis.com/v0/b/iodotcomnext.appspot.com/o/fonts%2F@{fontName}';
-  @bucketToken: '?alt=media&token=9883c6a1-a121-4aa0-99a2-7992bea3c2be';
+  @bucketURL: "https://firebasestorage.googleapis.com/v0/b/iodotcomnext.appspot.com/o/fonts%2Fmaison%2F@{fontName}";
+  @bucketToken: '?alt=media&token=d0944fd2-6302-4652-8afc-0fc91dfafa5d';
   src:url('@{bucketURL}.eot@{bucketToken}');
     src:url('@{bucketURL}.eot@{bucketToken}#iefix') format("embedded-opentype"),
-    url('@{bucketURL}.woff2@{bucketToken}') format("woff2"),
     url('@{bucketURL}.woff@{bucketToken}') format("woff"),
-    url('@{bucketURL}.ttf@{bucketToken}') format("truetype"),
-    url('@{bucketURL}.svg@{bucketToken}#@{fontName}') format("svg");
+    url('@{bucketURL}.ttf@{bucketToken}') format("truetype");
 };

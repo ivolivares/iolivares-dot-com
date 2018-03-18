@@ -1,0 +1,29 @@
+@import "variables.less";
+@import "helpers.less";
+
+.about-container {
+  padding: 0 !important;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
+  @media (min-width: 1000px) {
+    padding-top: 95px;
+  }
+
+  &__content {
+    &-title {
+      margin: 0 0 30px;
+      font-size: 40px;
+    }
+
+    &-text {
+      font-size: 20px;
+    }
+  }
+}
