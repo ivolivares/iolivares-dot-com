@@ -1,8 +1,0 @@
-.fontFormats (@fontName) {
-  @bucketURL: "https://firebasestorage.googleapis.com/v0/b/iodotcomnext.appspot.com/o/fonts%2Fmaison%2F@{fontName}";
-  @bucketToken: '?alt=media&token=d0944fd2-6302-4652-8afc-0fc91dfafa5d';
-  src:url('@{bucketURL}.eot@{bucketToken}');
-    src:url('@{bucketURL}.eot@{bucketToken}#iefix') format("embedded-opentype"),
-    url('@{bucketURL}.woff@{bucketToken}') format("woff"),
-    url('@{bucketURL}.ttf@{bucketToken}') format("truetype");
-};

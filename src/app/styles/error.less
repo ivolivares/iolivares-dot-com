@@ -1,0 +1,104 @@
+@import "variables.less";
+
+.errorPage {
+  position: absolute !important;
+  padding: 0 !important;
+  background: @lightBackground;
+  width: 100vw !important;
+  height: 100vh;
+
+  .box {
+    display: block;
+    width: 400px;
+    height: auto;
+    padding: 40px 20px;
+    margin: 25vh auto;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 2px;
+    background: @white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+    h1 {
+      font-size: 80px;
+      font-weight: 300;
+      height: 80px;
+      display: block;
+      margin: 0 0 20px 0;
+      padding-top: 20px;
+    }
+
+    h2 {
+      font-size: 40px;
+      font-weight: 700;
+      height: 40px;
+      margin: 0;
+      padding-top: 10px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+  }
+}
+
+.button {
+	min-width: 150px;
+	max-width: 250px;
+	display: inline-block;
+  margin: 30px 0 0 0;
+  padding: 15px 60px;
+	background: none;
+	color: inherit;
+	vertical-align: middle;
+	position: relative;
+  z-index: 1;
+	border-radius: 5px;
+	border: 3px solid;
+	color: @white;
+	transition: color 0.3s;
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    color: @white;
+    text-decoration: none;
+  }
+  
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+    background: @primaryColor;
+    z-index: -1;
+  }
+
+  &::before {
+    top: -4px;
+    bottom: -4px;
+    left: -4px;
+    right: -4px;
+    opacity: 0.2;
+    transform: scale3d(0.7, 1, 1);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  &::after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale3d(1.1, 1, 1);
+    transition: transform 0.3s, background-color 0.3s;
+  	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
+
+  &:hover::after,
+  &:hover::before {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}

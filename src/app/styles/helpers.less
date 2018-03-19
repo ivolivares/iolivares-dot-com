@@ -3,17 +3,17 @@
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  transition: all .2s ease-in-out;
+  text-decoration: none;
 }
 
 .link, a {
-  transition: all .2s linear;
-  text-decoration: none;
   color: @secondaryTextColor;
   cursor: pointer;
 
   &:hover {
     color: @primaryColor;
-    text-decoration: underline;    
+    text-decoration: underline;
   }
 }
 
@@ -38,7 +38,7 @@ a {
   color: @primaryColor;
 
   &:hover {
-    color: @primaryColor;
+    color: @darkPrimaryColor;
   }
 }
 
@@ -46,7 +46,7 @@ a {
   text-decoration: underline;
 
   &:hover {
-    text-decoration: none;
+    text-decoration: underline;
   }
 }
 
@@ -60,30 +60,32 @@ a {
   color: @lightGray;
 }
 
+.email-protection {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  font-family: Maison Neue, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: @fontFamily;
   color: @primaryTextColor;
   font-weight: 300;
   margin-top: 0;
 }
 
-.middle {
-  font-size: 16px;
-  line-height: 18px;
-  margin-bottom: 0;
-  color: @secondaryTextColor;
+.extra-large {
+  font-size: 28px;
+  line-height: 42px;
 }
 
 .large {
   font-size: 24px;
   line-height: 36px;
-  margin-bottom: 38px;
 }
 
-.extra-large {
-  font-size: 28px;
-  line-height: 42px;
-  margin-bottom: 44px;
+.middle {
+  font-size: 16px;
+  line-height: 18px;
+  color: @secondaryTextColor;
 }
 
 small {

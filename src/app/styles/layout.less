@@ -1,70 +1,6 @@
-@import "variables.less";
-@import "mixins.less";
-@import "helpers.less";
 @import "../node_modules/flexboxgrid/css/flexboxgrid.min.css";
-
-@font-face {
-  font-family: "Maison Neue";
-  .fontFormats("maison-neue-light");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Maison Neue";
-  .fontFormats("maison-neue-light-italic");
-  font-weight: 200;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Maison Neue";
-  .fontFormats("maison-neue-book");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Maison Neue";
-  .fontFormats("maison-neue-book-italic");
-  font-weight: 300;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Maison Neue";
-  .fontFormats("maison-neue-medium");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Maison Neue";
-  .fontFormats("maison-neue-medium-italic");
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Maison Neue";
-  .fontFormats("Maison Neue-Medium");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Maison Neue";
-  .fontFormats("maison-neue-bold");
-  font-weight: 500;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Maison Neue";
-  .fontFormats("maison-neue-bold-italic");
-  font-weight: 500;
-  font-style: italic;
-}
+@import "helpers.less";
+@import "variables.less";
 
 *,
 :after,
@@ -77,25 +13,19 @@
   color: @textPrimaryColor;
 }
 
-html {
-  font-size: 62.5%;
-}
-
 body,
 html {
   margin: 0;
   padding: 0;
   background-color: @white;
   color: @primaryTextColor;
-  font-family: "Maison Neue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  line-height: 30px;
+  font-family: @fontFamily;
   font-weight: 300;
+  line-height: 30px;
 }
 
-body strong,
-html strong {
-  font-weight: 500;
+strong, b {
+  font-weight: 700;
 }
 
 .io {
@@ -114,6 +44,8 @@ html strong {
   }
 }
 
+// Header component
+
 .header {
   transition: all .1s linear;
   display: flex;
@@ -124,22 +56,42 @@ html strong {
 
   &__logo {
     &-title {
+      position: relative;
+      background: url('@{logoSprite}') 0 0 no-repeat;
+      width: 200px;
+      background-size: 100%;
+      text-indent: -99em;
+      display: inline-block;
+      height: 25px;
       margin: 0;
-      font-size: 18px;
-      line-height: 18px;
-      word-spacing: -2px;
-    }
+      overflow: hidden;
+      
+      &::after {
+        content: "";
+        background: url('@{logoSprite}') 0 -31px no-repeat;
+        background-size: 100%;
+        opacity: 0;
+        transition: opacity 0.25s;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
 
-    &-subtitle {
-      font-size: 17px;
-      line-height: 17px;
-      margin-top: 4px;
+      &:hover {
+       &::after {
+        opacity: 1;
+        transition: opacity 0.25s;
+       } 
+      }
     }
   }
-
+  
   &__nav {
     display: block;
-
+    
+    // Navigation component
     &-list {
       display: flex;
       margin: 0;
@@ -152,8 +104,8 @@ html strong {
 
         a {
           color: @primaryTextColor;
-          font-size: 14px;
-          line-height: 14px;
+          font-size: 20px;
+          line-height: 20px;
         }
 
         &--active {
@@ -165,4 +117,49 @@ html strong {
   }
 }
 
-@import "about.less";
+// About page
+.about-container {
+  padding: 0 !important;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+
+  @media (min-width: 1000px) {
+    padding-top: 95px;
+  }
+
+  &__content {
+    &-title {
+      margin: 0 0 30px;
+      font-size: 40px;
+    }
+
+    &-text {
+      font-size: 30px;
+    }
+
+    &-action {
+      font-size: 25px;
+    }
+  }
+}
+
+a.globant {
+  transition: all .2s ease-in-out;
+  font-weight: 400;
+  padding: 2px 3px;
+  text-decoration: none;
+  box-shadow: inset 0 -3px 0 @darkPrimaryColor;
+
+  &:hover {
+    box-shadow: inset 0 -33px 0 0 @darkPrimaryColor;
+    color: @white;
+  }
+}
+
+// Talks Page
