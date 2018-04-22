@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Error 403 &mdash; Forbidden</title>
+    <meta name="prerender-status-code" content="403">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" rel="stylesheet" type="text/css" />
+    <style>
+      :root {
+        --primaryColor: #1BD107;
+        --textPrimaryColor: #FFFFFF;
+        --primaryTextColor: #3b3a3a;
+        /* Colors */
+        --white: #FFF;
+        --lightBackground: #eeeeef;
+        /* Fonts */
+        --fontFamily: 'Lato', sans-serif;
+      }
+      
+      figure {
+        margin: 0;
+      }
+      *,
+      :after,
+      :before {
+        box-sizing: border-box;
+      }
+      ::selection {
+        background: var(--primaryColor);
+        color: var(--textPrimaryColor);
+      }
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        background-color: var(--lightBackground);
+        color: var(--primaryTextColor);
+        font-family: var(--fontFamily);
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 30px;
+        height: 100vh;
+      }
+      @media (min-width: 1200px) {
+        .io {
+          overflow: hidden;
+        }
+      }
+      strong,
+      b {
+        font-weight: 700;
+      }
+      .io .container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 20px;
+        padding-left: 20px;
+        justify-content: center;
+        align-items: center;
+      }
+      @media (min-width: 1200px) {
+        .io .container {
+          width: 1200px;
+        }
+      }
+      .errorPage .box {
+        display: block;
+        width: 90vw;
+        height: auto;
+        padding: 40px 20px;
+        margin: 25vh auto;
+        text-align: center;
+        line-height: 20px;
+        border-radius: 2px;
+        background: var(--white);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      }
+      @media (min-width: 700px) {
+        .errorPage .box {
+          width: 600px;
+        }
+      }
+      .errorPage .box h1 {
+        font-size: 80px;
+        font-weight: 300;
+        height: 80px;
+        display: block;
+        margin: 0 0 20px 0;
+        padding-top: 20px;
+      }
+      @media (max-width: 620px) {
+        .errorPage .box h1 {
+          font-size: 55px;
+          height: 50px;
+        }
+      }
+      .errorPage .box h2 {
+        font-size: 40px;
+        font-weight: 700;
+        height: 40px;
+        margin: 0;
+        padding-top: 10px;
+      }
+      @media (max-width: 620px) {
+        .errorPage .box h2 {
+          font-size: 20px;
+        }
+      }
+      .errorPage .box p {
+        margin: 10px 0;
+      }
+      .button {
+        min-width: 150px;
+        max-width: 250px;
+        display: inline-block;
+        margin: 30px 0 0 0;
+        padding: 15px 60px;
+        background: none;
+        color: inherit;
+        vertical-align: middle;
+        position: relative;
+        z-index: 1;
+        border-radius: 5px;
+        border: 3px solid;
+        color: var(--white);
+        transition: color 0.3s;
+        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+      }
+      .button:focus {
+        outline: none;
+      }
+      .button:hover {
+        color: var(--white);
+        text-decoration: none;
+      }
+      .button::before,
+      .button::after {
+        content: '';
+        position: absolute;
+        border-radius: inherit;
+        background: var(--primaryColor);
+        z-index: -1;
+      }
+      .button::before {
+        top: -4px;
+        bottom: -4px;
+        left: -4px;
+        right: -4px;
+        opacity: 0.2;
+        transform: scale3d(0.7, 1, 1);
+        transition: transform 0.3s, opacity 0.3s;
+      }
+      .button::after {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: scale3d(1.1, 1, 1);
+        transition: transform 0.3s, background-color 0.3s;
+        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+      }
+      .button:hover::after,
+      .button:hover::before {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+      }
+
+      canvas {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 25px;
+      }
+    </style>
+  </head>
+
+  <body class="io">
+    <div class="errorPage container">
+      <canvas id="canvas"></canvas>
+      <div class="row middle-lg">
+        <div class="col-lg-12">
+          <div class="box">
+            <h1>¯\_(ツ)_/¯</h1>
+            <h2>Oops, you should not be here.</h2>
+            <p>Be careful, our cameras will keep you under surveillance until you leave this website...</p>
+            <a class="button" href="/">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./403.js"></script>
+  </body>
+</html>
