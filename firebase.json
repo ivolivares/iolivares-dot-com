@@ -3,14 +3,6 @@
     "public": "public",
     "rewrites": [
       {
-        "source": "/static/sw.js",
-        "destination": "/static/sw.js"
-      },
-      {
-        "source": "/static/manifest.json",
-        "destination": "/static/manifest.json"
-      },
-      {
         "source": "**/**",
         "function": "app"
       }
@@ -55,6 +47,7 @@
     ],
     "ignore": [
       "firebase.json",
+      "**/.*",
       "**/node_modules/**"
     ]
   },

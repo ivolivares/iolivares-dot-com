@@ -1,6 +1,19 @@
 const fs = require('fs')
 const replace = require("replace")
 const util = require('util')
+const { Spinner } = require('cli-spinner')
+
+let spinner = null
+
+const log = (text) => {
+  if (spinner) {
+    spinner.stop()
+    process.stdout.write('\n')
+  }
+  spinner = new Spinner(`${text}`)
+  spinner.setSpinnerString(8)
+  spinner.start()
+}
 
 const setTimeoutPromise = util.promisify(setTimeout)
 
@@ -13,25 +26,25 @@ let intents = 5
 let timeout = null
 
 const createSW = () => {
-  console.log('>> Waiting BUILDING')
+  log('>> Waiting BUILDING');
   timeout = setTimeoutPromise(3000).then(() => {
     --intents
     if (intents > 0) {
-      console.log('>> Trying to create new service worker...')
+      log('>> Trying to create new service worker...')
 
       // By using COPYFILE_EXCL, the operation will fail if destination.txt exists.
       fs.copyFile(swFileBase, swFileNew, COPYFILE_EXCL, (err) => {
         if (err) throw err
 
-        console.log('>> Searching BUILD_ID hash')
+        log('>> Searching BUILD_ID hash')
         fs.readFile('./next/BUILD_ID', 'utf8', (err, build_id) => {
           if (err) {
-            console.log(`>> Build isn't ready, retrying...(${intents} trys left)`)
+            log(`>> Build isn't ready, retrying...(${intents} trys left)`)
             clearTimeout(timeout)
             return initBuild()
           }
 
-          console.log(`>> Adding BUILD_ID info (${build_id})`)
+          log(`>> Adding BUILD_ID info (${build_id})`)
           replace({
             regex: '{{BUILD_ID}}',
             replacement: build_id,
@@ -39,12 +52,13 @@ const createSW = () => {
             recursive: true,
             silent: true
           })
-          console.log('>> Done!')
+          log('>> Done!')
+          spinner.stop()
         })
       })
     } else {
       clearTimeout(timeout)
-      console.log('>> Timeout (tried 3 times) when creating new service worker.')
+      log('>> Timeout (tried 3 times) when creating new service worker.')
     }
   })
 }
@@ -54,7 +68,7 @@ const initBuild = () => {
     if (!err) {
       return fs.unlink(swFileNew, (err) => {
         if (err) throw err
-        console.log('>> Successfully deleted existent service worker.')
+        log('>> Successfully deleted existent service worker.')
         createSW()
       })
     }
