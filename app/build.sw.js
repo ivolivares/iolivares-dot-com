@@ -1,6 +1,7 @@
 const fs = require('fs')
 const replace = require("replace")
 const util = require('util')
+const { exec } = require('child_process')
 const { Spinner } = require('cli-spinner')
 
 let spinner = null
@@ -17,7 +18,7 @@ const log = (text) => {
 
 const setTimeoutPromise = util.promisify(setTimeout)
 
-const { COPYFILE_EXCL, R_OK, W_OK } = fs.constants;
+const { COPYFILE_EXCL, R_OK, W_OK } = fs.constants
 
 const swFileBase = './service-worker.js'
 const swFileNew = '../public/sw.js'
@@ -26,7 +27,7 @@ let intents = 5
 let timeout = null
 
 const createSW = () => {
-  log('>> Waiting BUILDING');
+  log('>> Waiting BUILDING')
   timeout = setTimeoutPromise(5000).then(() => {
     --intents
     if (intents > 0) {
@@ -52,14 +53,32 @@ const createSW = () => {
             recursive: true,
             silent: true
           })
-          log('>> Done!')
-          spinner.stop()
+          log('>> Service Worker Ready!')
+          finishBuild()
         })
       })
     } else {
       clearTimeout(timeout)
       log('>> Timeout (tried 3 times) when creating new service worker.')
     }
+  })
+}
+
+const finishBuild = () => {
+  log('>> Publishing on GIT the new service-worker...')
+  exec('npm run update-sw', (error, stdout, stderr) => {
+    process.stdout.write('\n')
+    if (error) {
+      console.error(`exec error: ${error}`)
+      process.stdout.write('\n')
+      spinner.stop()
+      return
+    }
+    console.log(`stdout: ${stdout}`)
+    console.log(`stderr: ${stderr}`)
+    process.stdout.write('\n')
+    log('>> Done!')
+    spinner.stop()
   })
 }
 

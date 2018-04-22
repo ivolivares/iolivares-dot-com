@@ -14,7 +14,8 @@
     "next-start": "npm run build && next start",
     "precommit": "lint-staged -V -d",
     "prestart": "npm run build",
-    "start": "NODE_ENV=production node server/server.js"
+    "start": "NODE_ENV=production node server/server.js",
+    "update-sw": "sh ./bin/update-sw.sh"
   },
   "engines": {
     "node": "8.x"
