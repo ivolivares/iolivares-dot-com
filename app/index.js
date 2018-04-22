@@ -17,8 +17,8 @@ module.exports = {
     if (nextPrepared === false) {
       console.log('>> preparing next')
       nxt.prepare().then(() => {
-        nextPrepared = true
         app.get('*', (req, res) => handle(req, res))
+        nextPrepared = true
       }).catch((e) => console.log(e))
     }
 
