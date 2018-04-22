@@ -3,25 +3,21 @@
     "public": "public",
     "rewrites": [
       {
-        "source": "/service-worker.js",
-        "destination": "/static/service-worker.js"
+        "source": "/static/sw.js",
+        "destination": "/static/sw.js"
       },
       {
-        "source": "/manifest.json",
+        "source": "/static/manifest.json",
         "destination": "/static/manifest.json"
       },
       {
-        "source": "/",
-        "function": "app"
-      },
-      {
-        "source": "/@(_next)/**/*",
+        "source": "**/**",
         "function": "app"
       }
     ],
     "headers": [
       {
-        "source": "/service-worker.js",
+        "source": "/static/sw.js",
         "headers": [
           {
             "key": "Cache-Control",
@@ -30,7 +26,7 @@
         ]
       },
       {
-        "source": "/manifest.json",
+        "source": "/static/manifest.json",
         "headers": [
           {
             "key": "Cache-Control",
@@ -59,7 +55,6 @@
     ],
     "ignore": [
       "firebase.json",
-      "**/.*",
       "**/node_modules/**"
     ]
   },

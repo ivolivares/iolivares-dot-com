@@ -1,16 +1,7 @@
 export async function registerSW() {
   if ('serviceWorker' in navigator) {
     try {
-      // const registration = await navigator.serviceWorker.getRegistration('/')
-      // console.log(registration)
-      // if (!registration) {
-      //   await navigator.serviceWorker.register('/sw.js', {
-      //     scope: '/'
-      //   })
-
-      //   console.log(`Registration successful`)
-      // }
-      const reg = await navigator.serviceWorker.register('/sw.js')
+      const reg = await navigator.serviceWorker.register('/static/sw.js')
       // updatefound is fired if service-worker.js changes.
       reg.onupdatefound = () => {
         // The updatefound event implies that reg.installing is set see
@@ -45,22 +36,3 @@ export async function registerSW() {
     }
   }
 }
-
-
-// module.exports = () => {
-//   if ('serviceWorker' in navigator) {
-//       navigator.serviceWorker.getRegistration('/').then(function (registration) {
-//         if (!registration) {
-//           navigator.serviceWorker.register('/service-worker.js', {
-//             scope: '/'
-//           }).then(function (registration) {
-//             console.log('Service worker registration succeeded:', registration)
-//           }).catch(function (error) {
-//             console.log('Service worker registration failed:', error)
-//           })
-//         }
-//       }).catch(e => console.warn(`Registration failed: ${e}`))
-//   } else {
-//     console.log('Service workers are not supported.')
-//   }
-// }

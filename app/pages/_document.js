@@ -18,7 +18,7 @@ export default class extends Document {
           <meta content="IE=edge, chrome=1" httpEquiv="X-UA-Compatible" />
           { /* <title>{title}</title> */ }
           <meta content="Front-end software developer focused on building beautiful interfaces and experiences." name="description" />
-          <link href="/manifest.json" rel="manifest" />
+          <link href="/static/manifest.json" rel="manifest" />
           <meta content="yes" name="mobile-web-app-capable" />
           <meta content="yes" name="apple-mobile-web-app-capable" />
           <meta content="Iván Olivares" name="application-name" />
