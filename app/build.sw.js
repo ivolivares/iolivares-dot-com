@@ -20,7 +20,7 @@ const setTimeoutPromise = util.promisify(setTimeout)
 const { COPYFILE_EXCL, R_OK, W_OK } = fs.constants;
 
 const swFileBase = './service-worker.js'
-const swFileNew = './static/sw.js'
+const swFileNew = '../public/sw.js'
 
 let intents = 5
 let timeout = null

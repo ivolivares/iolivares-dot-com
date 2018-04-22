@@ -1,14 +1,16 @@
 export async function registerSW() {
   if ('serviceWorker' in navigator) {
     try {
-      const reg = await navigator.serviceWorker.register('/static/sw.js')
+      const reg = await navigator.serviceWorker.register('/sw.js', {
+        scope: '/'
+      })
       // updatefound is fired if service-worker.js changes.
       reg.onupdatefound = () => {
         // The updatefound event implies that reg.installing is set see
         // https://w3c.github.io/ServiceWorker/#service-worker-registration-updatefound-event
         const installingWorker = reg.installing
 
-        installingWorker.onstatechange = function () {
+        installingWorker.onstatechange = () => {
           switch (installingWorker.state) {
           case 'installed':
             if (navigator.serviceWorker.controller) {
