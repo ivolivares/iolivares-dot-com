@@ -112,11 +112,6 @@ var BigBrother = (function () {
     document.onmousemove = function (e) {
       mouse.x = e.pageX;
       mouse.y = e.pageY;
-      if (isStart) {
-        // fade out the info message
-        var infoElm = document.querySelector('.info');
-        infoElm.style.opacity = 0;
-      }
       isStart = false;
     };
   }
