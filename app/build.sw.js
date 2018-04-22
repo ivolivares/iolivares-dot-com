@@ -27,7 +27,7 @@ let timeout = null
 
 const createSW = () => {
   log('>> Waiting BUILDING');
-  timeout = setTimeoutPromise(3000).then(() => {
+  timeout = setTimeoutPromise(5000).then(() => {
     --intents
     if (intents > 0) {
       log('>> Trying to create new service worker...')

@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "analyze": "cross-env ANALYZE=1 next build",
-    "build": "next build",
+    "build": "npm run clean && next build",
+    "clean": "sh ./bin/clean.sh",
     "dev": "npm run build && node server/server.js",
     "deploy": "yarn build && firebase deploy",
     "lint": "eslint .",
