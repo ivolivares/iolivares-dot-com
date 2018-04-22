@@ -1,3 +1,4 @@
+import React from 'react'
 import ActiveLink from './ActiveLink'
 import Navigation from './Navigation'
 
@@ -11,9 +12,9 @@ export default () => (
               www.iolivares.com
             </ActiveLink>
           </div>
-          {/* <nav className="header__nav">
+          <nav className="header__nav">
             <Navigation />
-          </nav> */}
+          </nav>
         </header>
       </div>
     </div>

@@ -1,14 +1,69 @@
 {
   "hosting": {
-    "public": "src/public",
+    "public": "public",
     "rewrites": [
       {
-        "source": "**/**",
-        "function": "ssrdotcom"
+        "source": "/service-worker.js",
+        "destination": "/static/service-worker.js"
+      },
+      {
+        "source": "/manifest.json",
+        "destination": "/static/manifest.json"
+      },
+      {
+        "source": "/",
+        "function": "app"
+      },
+      {
+        "source": "/@(_next)/**/*",
+        "function": "app"
       }
+    ],
+    "headers": [
+      {
+        "source": "/service-worker.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      },
+      {
+        "source": "/manifest.json",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      },
+      {
+        "source": "/",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=60"
+          }
+        ]
+      },
+      {
+        "source": "/static/*/*.png",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      }
+    ],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
     ]
   },
   "functions": {
-    "source": "src/functions"
+    "source": "app"
   }
 }
