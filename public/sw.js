@@ -3,12 +3,20 @@ const cacheName = 'iodotcom'
 // Assesto catche
 const assetsToCache = [
   '/static/styles/main.css',
-  '/_next/6f679de5-1b65-4974-8a69-c92e617fb0d9/page/_error.js',
-  '/_next/6f679de5-1b65-4974-8a69-c92e617fb0d9/page/index.js',
-  '/_next/6f679de5-1b65-4974-8a69-c92e617fb0d9/page/talks.js',
+  '/_next/fc930bf1-8277-41ec-ad5f-48b9bd864fc4/page/_error.js',
+  '/_next/fc930bf1-8277-41ec-ad5f-48b9bd864fc4/page/index.js',
+  '/_next/fc930bf1-8277-41ec-ad5f-48b9bd864fc4/page/talks.js',
   '/static/images/me.jpg',
   '/static/images/logo-sprite.png',
-  '/static/images/emojis/technologist.png'
+  '/static/images/emojis/technologist.png',
+  'https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css',
+  'https://fonts.googleapis.com/css?family=Lato:300,400,700',
+  'https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh7USSwaPGQ3q5d0N7w.woff2',
+  'https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh7USSwiPGQ3q5d0.woff2',
+  'https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2',
+  'https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wXiWtFCc.woff2',
+  'https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2',
+  'https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2'
 ]
 
 self.addEventListener('install', (event) => {
