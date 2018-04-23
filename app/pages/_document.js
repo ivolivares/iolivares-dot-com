@@ -26,6 +26,7 @@ export default class extends Document {
           <meta content="#00C569" name="msapplication-navbutton-color" />
           <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" />
           <meta content="/" name="msapplication-starturl" />
+          <link href={ icon } rel="shortcut icon" />
           <link href={ icon } rel="icon" sizes="120x120" />
           <link href={ icon } rel="apple-touch-icon" sizes="120x120" />
           <link href={ icon } rel="icon" type="image/png" />
