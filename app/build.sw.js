@@ -1,10 +1,13 @@
-const fs = require('fs')
+const { ensureFile, copy } = require('fs-extra')
+const { readFile, unlink } = require('fs')
 const replace = require("replace")
-const util = require('util')
+const promisify = require('util-promisify')
 const { exec } = require('child_process')
+const minimist = require('minimist')
 const { Spinner } = require('cli-spinner')
 
 let spinner = null
+const argv = minimist(process.argv.splice(2, 10))
 
 const log = (text) => {
   if (spinner) {
@@ -16,9 +19,7 @@ const log = (text) => {
   spinner.start()
 }
 
-const setTimeoutPromise = util.promisify(setTimeout)
-
-const { COPYFILE_EXCL, R_OK, W_OK } = fs.constants
+const setTimeoutPromise = promisify(setTimeout)
 
 const swFileBase = './service-worker.js'
 const swFileNew = '../public/sw.js'
@@ -33,12 +34,11 @@ const createSW = () => {
     if (intents > 0) {
       log('>> Trying to create new service worker...')
 
-      // By using COPYFILE_EXCL, the operation will fail if destination.txt exists.
-      fs.copyFile(swFileBase, swFileNew, COPYFILE_EXCL, (err) => {
+      copy(swFileBase, swFileNew, (err) => {
         if (err) throw err
 
         log('>> Searching BUILD_ID hash')
-        fs.readFile('./next/BUILD_ID', 'utf8', (err, build_id) => {
+        readFile('./next/BUILD_ID', 'utf8', (err, build_id) => {
           if (err) {
             log(`>> Build isn't ready, retrying...(${intents} trys left)`)
             clearTimeout(timeout)
@@ -59,33 +59,40 @@ const createSW = () => {
       })
     } else {
       clearTimeout(timeout)
-      log('>> Timeout (tried 3 times) when creating new service worker.')
+      log('>> Timeout (tried 5 times) when creating new service worker.')
+      spinner.stop()
+      process.exit(-1)
     }
   })
 }
 
 const finishBuild = () => {
-  log('>> Publishing on GIT the new service-worker...')
-  exec('npm run update-sw', (error, stdout, stderr) => {
-    process.stdout.write('\n')
-    if (error) {
-      console.error(`exec error: ${error}`)
+  if (argv.env === 'production') {
+    log('>> Publishing on GIT the new service-worker...')
+    exec('npm run update-sw', (error, stdout, stderr) => {
       process.stdout.write('\n')
+      if (error) {
+        console.error(`exec error: ${error}`)
+        process.stdout.write('\n')
+        spinner.stop()
+        return process.exit(-1)
+      }
+      console.log(`stdout: ${stdout}`)
+      console.log(`stderr: ${stderr}`)
+      process.stdout.write('\n')
+      log('>> Done!')
       spinner.stop()
-      return
-    }
-    console.log(`stdout: ${stdout}`)
-    console.log(`stderr: ${stderr}`)
-    process.stdout.write('\n')
+    })
+  } else {
     log('>> Done!')
     spinner.stop()
-  })
+  }
 }
 
 const initBuild = () => {
-  fs.access(swFileNew, R_OK | W_OK, (err) => {
+  ensureFile(swFileNew, (err) => {
     if (!err) {
-      return fs.unlink(swFileNew, (err) => {
+      return unlink(swFileNew, (err) => {
         if (err) throw err
         log('>> Successfully deleted existent service worker.')
         createSW()
