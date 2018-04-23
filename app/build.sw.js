@@ -3,11 +3,9 @@ const { readFile, unlink } = require('fs')
 const replace = require("replace")
 const promisify = require('util-promisify')
 const { exec } = require('child_process')
-const minimist = require('minimist')
 const { Spinner } = require('cli-spinner')
 
 let spinner = null
-const argv = minimist(process.argv.splice(2, 10))
 
 const log = (text) => {
   if (spinner) {
@@ -67,7 +65,7 @@ const createSW = () => {
 }
 
 const finishBuild = () => {
-  if (argv.env === 'production') {
+  if (process.env.NODE_ENV === 'production') {
     log('>> Publishing on GIT the new service-worker...')
     exec('npm run update-sw', (error, stdout, stderr) => {
       process.stdout.write('\n')
