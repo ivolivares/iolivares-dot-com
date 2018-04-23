@@ -307,9 +307,9 @@ b {
   }
 }
 .hero__content-title {
-  margin: 0 0 30px;
+  margin: 0 0 20px;
   font-size: 40px;
-  line-height: 40px;
+  line-height: 50px;
 }
 .hero__content-text {
   font-size: 30px;
