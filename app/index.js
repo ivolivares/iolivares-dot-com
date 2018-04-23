@@ -1,9 +1,11 @@
-const { https } = require('firebase-functions')
+const { https, config } = require('firebase-functions')
 const next = require('next')
 const express = require('express')
+const Raven = require('raven')
 
 const distDir = 'next'
-const dev = process.env.NODE_ENV !== 'production'
+const environment = process.env.NODE_ENV
+const dev = environment !== 'production'
 
 const nxt = next({ dev, conf: { distDir } })
 if (nxt) { }
@@ -11,6 +13,8 @@ const handle = nxt.getRequestHandler()
 const app = express()
 
 let nextPrepared = false
+
+Raven.config(`https://${config().sentry.key}:${config().sentry.secret}@sentry.io/301902`, { environment }).install()
 
 module.exports = {
   app: https.onRequest((req, res) => {
