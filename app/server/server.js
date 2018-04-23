@@ -18,8 +18,8 @@ app.prepare().then(() => {
   server.use(compression())
 
   server.get('/sw.js', (req, res) => {
-    res.setHeader('Cache-Control', 'no-cache');
-    res.sendFile(swPath);
+    res.setHeader('Cache-Control', 'no-cache')
+    res.sendFile(swPath)
   });
 
   server.get('*', (req, res) => handle(req, res))

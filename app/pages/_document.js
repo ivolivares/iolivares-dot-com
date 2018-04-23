@@ -32,7 +32,7 @@ export default class extends Document {
           <meta content="initial-scale=1.0, width=device-width" name="viewport" />
           <link href="//fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" />
           <link href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" rel="stylesheet" type="text/css" />
-          <link href="/_next/static/style.css" rel="stylesheet" />
+          <link href="/static/styles/main.css" rel="stylesheet" />
           <script dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start": new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src= "https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);

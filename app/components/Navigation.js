@@ -27,7 +27,9 @@ export default () => (
     {
       navigationItems.map((item, index) => (
         <li key={ index } className="header__nav-list-item">
-          <ActiveLink activeClass="header__nav-list-item--active" href={ item.href } target={ item.target }>{ item.name }</ActiveLink>
+          <ActiveLink activeClass="header__nav-list-item--active" href={ item.href } target={ item.target }>
+            <span>{ item.name }</span>
+          </ActiveLink>
         </li>
       ))
     }

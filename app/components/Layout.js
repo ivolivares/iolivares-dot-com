@@ -5,8 +5,6 @@ import Head from 'next/head'
 import Header from './Header'
 import ServiceWorker from './ServiceWorker'
 
-import '../styles/main.css'
-
 class Layout extends React.Component {
   constructor() {
     super()
@@ -27,7 +25,7 @@ class Layout extends React.Component {
   }
 
   render() {
-    const { children, title = 'Iván Olivares Rojas | Front-end software developer' } = this.props
+    const { children, title } = this.props
 
     return (
       <div>
@@ -35,7 +33,7 @@ class Layout extends React.Component {
           <title>{ title }</title>
         </Head>
         <Header />
-        <div className="io" style={{ display: this.state.loaded ? 'block' : 'none' }}>
+        <div className="io" style={ !this.state.loaded ? 'none' : null }>
           <main>{ children }</main>
         </div>
         <ServiceWorker />
@@ -44,9 +42,13 @@ class Layout extends React.Component {
   }
 }
 
+Layout.defaultProps = {
+  title: 'Iván Olivares Rojas | Front-end software developer'
+}
+
 Layout.propTypes = {
   children: PropTypes.element.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string
 }
 
 export default Layout

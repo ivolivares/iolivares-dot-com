@@ -1,7 +1,7 @@
 {
   "name": "Iván Olivares Rojas",
   "short_name": "Iván Olivares",
-  "description": "Front-end software engineer focused on building beautiful interfaces and experiences.",
+  "description": "Front-end software developer focused on building beautiful interfaces and experiences for customers.",
   "lang": "en-US",
   "start_url": "/",
   "display": "browser",
@@ -9,7 +9,7 @@
   "theme_color": "#00C569",
   "icons": [
     {
-      "src": "https://firebasestorage.googleapis.com/v0/b/iodotcomnext.appspot.com/o/images%2Femojis%2Ftechnologist.png?alt=media&token=ebc86581-d3b8-4252-8357-81d1e96aa273",
+      "src": "https://iolivares.com/static/images/emojis/technologist.png",
       "sizes": "120x120",
       "type": "image/png"
     }

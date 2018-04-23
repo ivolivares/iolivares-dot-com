@@ -1,10 +1,9 @@
-const withCSS = require('@zeit/next-css')
 const WebpackShellPlugin = require('webpack-shell-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
-const { ANALYZE } = process.env
+const { ANALYZE, NODE_ENV } = process.env
 
-module.exports = withCSS({
+module.exports = {
   distDir: 'next',
   webpack: (config) => {
     if (ANALYZE) {
@@ -14,11 +13,10 @@ module.exports = withCSS({
         openAnalyzer: true
       }));
     }
-
     config.plugins.push(new WebpackShellPlugin({
-      onBuildEnd: ['node build.sw.js']
+      onBuildEnd: [`node build.sw.js --env ${NODE_ENV ? 'dev' : 'production'}`]
     }))
 
     return config
   }
-})
+}

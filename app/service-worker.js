@@ -2,7 +2,7 @@ const cacheName = 'iodotcom'
 
 // Assesto catche
 const assetsToCache = [
-  '/_next/static/style.css',
+  '/static/styles/main.css',
   '/_next/{{BUILD_ID}}/page/_error.js',
   '/_next/{{BUILD_ID}}/page/index.js',
   '/_next/{{BUILD_ID}}/page/talks.js',

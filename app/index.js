@@ -16,11 +16,13 @@ module.exports = {
   app: https.onRequest((req, res) => {
     if (nextPrepared === false) {
       console.log('>> preparing next')
-      nxt.prepare().then(() => {
-        app.get('*', (req, res) => handle(req, res))
+      return nxt.prepare().then(() => {
         nextPrepared = true
+        return app.get('*', (req, res) => handle(req, res))
       }).catch((e) => console.log(e))
     }
+
+    console.log('>> pre-prepared request')
 
     return app(req, res)
   })

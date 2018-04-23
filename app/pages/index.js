@@ -6,7 +6,7 @@ const sendEmail = (button) => {
   const link = button.target
   const name = link.getAttribute('data-name').split('').reverse().join('')
   const domain = link.getAttribute('data-domain').split('').reverse().join('')
-  return window.location.href = `mailto:${name}@${domain}?subject=Contact+from+iolivares.com`
+  window.location.href = `mailto:${name}@${domain}?subject=Contact+from+iolivares.com`
 }
 
 const [domain, name] = email.split('@')
@@ -22,7 +22,7 @@ export default () =>
               <div className="hero__content-text">
                 <p className="extra-large">I'm focused on building beautiful interfaces and experiences for customers.</p>
                 <p className="large secondary-text">Currently work as Front-end software developer at <a className="globant" href="http://www.globant.com" target="_blank">Globant</a>.</p>
-                <p className="large secondary-text">Also I'm an amateur photographer and an enthusiast half-time traveler.</p>
+                <p className="large secondary-text">Also I'm an amateur photographer, a enthusiast community builder and volunteer for non-profit organizations.</p>
               </div>
               <div className="hero__content-action">
                 <p className="secondary-text">

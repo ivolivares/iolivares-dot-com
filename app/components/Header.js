@@ -9,7 +9,7 @@ export default () => (
         <header className="header">
           <div className="header__logo">
             <ActiveLink className="header__logo-title link--dark link--no-underline" href="/">
-              www.iolivares.com
+              <span>www.iolivares.com</span>
             </ActiveLink>
           </div>
           <nav className="header__nav">

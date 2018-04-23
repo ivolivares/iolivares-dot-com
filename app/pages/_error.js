@@ -2,8 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
 
-import '../styles/main.css'
-
 class Error extends React.Component {
   static getInitialProps({ res, err }) {
     const statusCode = res ? res.statusCode : err ? err.statusCode : null;
