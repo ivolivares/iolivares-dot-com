@@ -8,7 +8,15 @@ const assetsToCache = [
   '/_next/{{BUILD_ID}}/page/talks.js',
   '/static/images/me.jpg',
   '/static/images/logo-sprite.png',
-  '/static/images/emojis/technologist.png'
+  '/static/images/emojis/technologist.png',
+  'https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css',
+  'https://fonts.googleapis.com/css?family=Lato:300,400,700',
+  'https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh7USSwaPGQ3q5d0N7w.woff2',
+  'https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh7USSwiPGQ3q5d0.woff2',
+  'https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2',
+  'https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wXiWtFCc.woff2',
+  'https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2',
+  'https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2'
 ]
 
 self.addEventListener('install', (event) => {
