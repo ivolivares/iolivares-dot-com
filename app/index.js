@@ -23,7 +23,7 @@ module.exports = {
       return nxt.prepare().then(() => {
         nextPrepared = true
         return app.get('*', (req, res) => handle(req, res))
-      }).catch((e) => console.log(e))
+      }).catch((e) => console.log('Error on preparing next', e))
     }
 
     console.log('>> pre-prepared request')
