@@ -4,7 +4,8 @@
   "description": "Front-end software developer focused on building beautiful interfaces and experiences for customers.",
   "lang": "en-US",
   "start_url": "/",
-  "display": "browser",
+  "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#ffffff",
   "theme_color": "#00C569",
   "icons": [
