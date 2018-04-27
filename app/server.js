@@ -1,7 +1,6 @@
 const path = require('path')
 const express = require('express')
 const next = require('next')
-const compression = require('compression')
 
 const distDir = 'next'
 
@@ -15,7 +14,6 @@ const PORT = parseInt(process.env.PORT, 10) || 3000
 
 app.prepare().then(() => {
   const server = express()
-  server.use(compression())
 
   server.get('/sw.js', (req, res) => {
     res.setHeader('Cache-Control', 'no-cache')

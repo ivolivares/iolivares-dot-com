@@ -11,7 +11,7 @@ module.exports = {
       '/talks': { page: '/talks' }
     }
   },
-  webpack: (config) => {
+  webpack: (config, { dev }) => {
     if (ANALYZE) {
       config.plugins.push(new BundleAnalyzerPlugin({
         analyzerMode: 'server',
@@ -19,9 +19,12 @@ module.exports = {
         openAnalyzer: true
       }));
     }
-    // config.plugins.push(new WebpackShellPlugin({
-    //   onBuildEnd: [`node build.sw.js`]
-    // }))
+
+    if (dev) {
+      config.plugins.push(new WebpackShellPlugin({
+        onBuildEnd: [`node ./bin/build.sw.js`]
+      }))
+    }
 
     return config
   }
