@@ -4,14 +4,14 @@
   "description": "Front-end software developer focused on building beautiful interfaces and experiences for customers.",
   "lang": "en-US",
   "start_url": "/",
-  "display": "standalone",
-  "orientation": "portrait",
+  "display": "minimal-ui",
+  "orientation": "portrait-primary",
   "background_color": "#ffffff",
   "theme_color": "#00C569",
   "icons": [
     {
       "src": "https://iolivares.com/static/images/emojis/technologist.png",
-      "sizes": "120x120",
+      "sizes": "72x72 96x96 128x128 256x256",
       "type": "image/png"
     }
   ]
