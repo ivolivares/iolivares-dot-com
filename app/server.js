@@ -8,7 +8,7 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev, conf: { distDir } })
 const handle = app.getRequestHandler()
 
-const swPath = path.join(__dirname, '../../', 'public', 'sw.js');
+const swPath = path.join(__dirname, '../', 'public', 'sw.js');
 
 const PORT = parseInt(process.env.PORT, 10) || 3000
 
