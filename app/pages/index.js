@@ -6,7 +6,7 @@ const sendEmail = (button) => {
   const link = button.target
   const name = link.getAttribute('data-name').split('').reverse().join('')
   const domain = link.getAttribute('data-domain').split('').reverse().join('')
-  window.location.href = `mailto:${name}@${domain}?subject=Contact+from+iolivares.com`
+  window.location.href = `mailto:${name}@${domain}?subject=Contact from iolivares.com`
 }
 
 const [domain, name] = email.split('@')

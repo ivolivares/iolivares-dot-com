@@ -1,12 +1,6 @@
 {
   "hosting": {
-    "public": "public",
-    "rewrites": [
-      {
-        "source": "**/**",
-        "function": "app"
-      }
-    ],
+    "public": "app/hosting",
     "headers": [
       {
         "source": "/static/sw.js",
@@ -50,8 +44,5 @@
       "**/.*",
       "**/node_modules/**"
     ]
-  },
-  "functions": {
-    "source": "app"
   }
 }

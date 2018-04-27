@@ -11,7 +11,7 @@ const handle = app.getRequestHandler()
 
 const swPath = path.join(__dirname, '../../', 'public', 'sw.js');
 
-const PORT = process.env.PORT || 3000
+const PORT = parseInt(process.env.PORT, 10) || 3000
 
 app.prepare().then(() => {
   const server = express()
@@ -20,7 +20,7 @@ app.prepare().then(() => {
   server.get('/sw.js', (req, res) => {
     res.setHeader('Cache-Control', 'no-cache')
     res.sendFile(swPath)
-  });
+  })
 
   server.get('*', (req, res) => handle(req, res))
 

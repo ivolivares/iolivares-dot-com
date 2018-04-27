@@ -105,6 +105,8 @@ typings/
 
 # vscode settings
 .vscode
+
+#build directories
 .next
 next
-app/static/sw.js
+hosting

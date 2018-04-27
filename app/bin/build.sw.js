@@ -1,10 +1,10 @@
-const { ensureFile, copy } = require('fs-extra')
-const { readFile, unlink } = require('fs')
-const replace = require("replace")
-const promisify = require('util-promisify')
+const replace = require('replace')
+const { access, readFile, copyFile, unlink, constants } = require('fs')
+const { promisify } = require('util')
 const { exec } = require('child_process')
 const { Spinner } = require('cli-spinner')
 
+const { F_OK, R_OK } = constants
 let spinner = null
 
 const log = (text) => {
@@ -32,7 +32,7 @@ const createSW = () => {
     if (intents > 0) {
       log('>> Trying to create new service worker...')
 
-      copy(swFileBase, swFileNew, (err) => {
+      copyFile(swFileBase, swFileNew, (err) => {
         if (err) throw err
 
         log('>> Searching BUILD_ID hash')
@@ -65,30 +65,25 @@ const createSW = () => {
 }
 
 const finishBuild = () => {
-  if (process.env.NODE_ENV === 'production') {
-    log('>> Publishing on GIT the new service-worker...')
-    exec('npm run update-sw', (error, stdout, stderr) => {
+  log('>> Publishing on GIT the new service-worker...')
+  exec('npm run update-sw', (error, stdout, stderr) => {
+    process.stdout.write('\n')
+    if (error) {
+      console.error(`exec error: ${error}`)
       process.stdout.write('\n')
-      if (error) {
-        console.error(`exec error: ${error}`)
-        process.stdout.write('\n')
-        spinner.stop()
-        return process.exit(-1)
-      }
-      console.log(`stdout: ${stdout}`)
-      console.log(`stderr: ${stderr}`)
-      process.stdout.write('\n')
-      log('>> Done!')
       spinner.stop()
-    })
-  } else {
+      return process.exit(-1)
+    }
+    console.log(`stdout: ${stdout}`)
+    console.log(`stderr: ${stderr}`)
+    process.stdout.write('\n')
     log('>> Done!')
     spinner.stop()
-  }
+  })
 }
 
 const initBuild = () => {
-  ensureFile(swFileNew, (err) => {
+  access(swFileNew, R_OK | F_OK, (err) => {
     if (!err) {
       return unlink(swFileNew, (err) => {
         if (err) throw err
@@ -101,3 +96,10 @@ const initBuild = () => {
 }
 
 initBuild()
+
+process.on('SIGINT', () => {
+  process.stdout.write('\n')
+  console.log('>> Ok, I stop! Bye :)')
+  clearTimeout(timeout)
+  process.exit(-1)
+})
