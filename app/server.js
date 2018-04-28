@@ -9,6 +9,7 @@ const app = next({ dev, conf: { distDir } })
 const handle = app.getRequestHandler()
 
 const swPath = path.join(__dirname, '../', 'public', 'sw.js');
+const resumePath = path.join(__dirname, '../', 'public', 'resume.pdf');
 
 const PORT = parseInt(process.env.PORT, 10) || 3000
 
@@ -18,6 +19,11 @@ app.prepare().then(() => {
   server.get('/sw.js', (req, res) => {
     res.setHeader('Cache-Control', 'no-cache')
     res.sendFile(swPath)
+  })
+
+  server.get('/resume.pdf', (req, res) => {
+    res.setHeader('Cache-Control', 'no-cache')
+    res.sendFile(resumePath)
   })
 
   server.get('*', (req, res) => handle(req, res))

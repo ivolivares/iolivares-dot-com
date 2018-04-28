@@ -25,6 +25,7 @@
   },
   "author": "Iván Olivares <hi@iolivares.com>",
   "dependencies": {
+    "aos": "^2.2.0",
     "autoprefixer": "^8.3.0",
     "babel-runtime": "^6.26.0",
     "css-loader": "^0.28.11",

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Router from 'next/router'
 import Head from 'next/head'
 import Header from './Header'
+import Footer from './Footer'
 import ServiceWorker from './ServiceWorker'
 
 class Layout extends React.Component {
@@ -36,6 +37,7 @@ class Layout extends React.Component {
         <div className="io" style={ !this.state.loaded ? 'none' : null }>
           <main>{ children }</main>
         </div>
+        <Footer />
         <ServiceWorker />
       </div>
     )
@@ -47,7 +49,10 @@ Layout.defaultProps = {
 }
 
 Layout.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired,
   title: PropTypes.string
 }
 

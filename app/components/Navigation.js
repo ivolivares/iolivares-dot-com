@@ -2,10 +2,10 @@ import React from 'react'
 import ActiveLink from './ActiveLink'
 
 const navigationItems = [
-  {
-    name: 'About',
-    href: '/'
-  }// ,
+  // {
+  //   name: 'About',
+  //   href: '/'
+  // },
   // {
   //   name: 'Blog',
   //   href: 'https://iolivares.blog',
