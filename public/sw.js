@@ -3,9 +3,9 @@ const cacheName = 'iodotcom'
 // Assesto catche
 const assetsToCache = [
   '/static/styles/main.css',
-  '/_next/c30d513a-63ec-4048-b697-c724e09f476e/page/_error.js',
-  '/_next/c30d513a-63ec-4048-b697-c724e09f476e/page/index.js',
-  '/_next/c30d513a-63ec-4048-b697-c724e09f476e/page/talks.js',
+  '/_next/7cc01206-d439-4ba9-9b56-566c0c5f0e58/page/_error.js',
+  '/_next/7cc01206-d439-4ba9-9b56-566c0c5f0e58/page/index.js',
+  '/_next/7cc01206-d439-4ba9-9b56-566c0c5f0e58/page/talks.js',
   '/static/images/me.jpg',
   '/static/images/logo-sprite.png',
   '/static/images/emojis/technologist.png',
@@ -86,7 +86,14 @@ self.addEventListener('fetch', (event) => {
     }
   }
 
-  event.respondWith(fetch(event.request).catch(() => caches.match(event.request)))
+  event.respondWith(async () => {
+    // Try to get the response from a cache.
+    const cachedResponse = await caches.match(event.request)
+    // Return it if we found one.
+    if (cachedResponse) return cachedResponse
+    // If we didn't find a match in the cache, use the network.
+    return fetch(event.request)
+  })
 
   // event.respondWith(
   //   caches.match(event.request).then((response) => response || fetch(event.request))
