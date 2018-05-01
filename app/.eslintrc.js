@@ -23,7 +23,7 @@ module.exports = {
     'no-tabs': 1,
     'no-trailing-spaces': [2, { skipBlankLines: true }],
     'space-before-function-paren': 0,
-    'max-nested-callbacks': [2, 3],
+    'max-nested-callbacks': [2, 4],
     'no-eval': 2,
     'no-implied-eval': 2,
     'no-new-func': 2,

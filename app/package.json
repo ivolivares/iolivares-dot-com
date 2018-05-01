@@ -11,6 +11,7 @@
     "build-sitemap": "node ./bin/build.sitemap.js",
     "clean": "sh ./bin/clean.sh",
     "deploy": "npm run export && firebase deploy --only hosting",
+    "predev": "npm run build && npm run build-sw",
     "dev": "node server.js",
     "export": "next export -o hosting",
     "lint": "eslint .",
