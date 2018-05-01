@@ -2,8 +2,9 @@ export const email = '\u006d\u006f\u0063\u002e\u0073\u0065\u0072\u0061\u0076\u00
 
 export const [domain, name] = email.split('@')
 
-export const sendEmail = (button) => {
-  const link = button.target
+export const sendEmail = (e) => {
+  e.preventDefault()
+  const link = e.currentTarget
   const name = link.getAttribute('data-name').split('').reverse().join('')
   const domain = link.getAttribute('data-domain').split('').reverse().join('')
   window.location.href = `mailto:${name}@${domain}?subject=Contact from iolivares.com`
