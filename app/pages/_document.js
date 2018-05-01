@@ -1,5 +1,6 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
+import JSONLD from '../helpers/jsonld'
 
 const icon = "/static/images/emojis/technologist.png"
 
@@ -43,6 +44,7 @@ export default class extends Document {
           __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN2PTKD" height="0" width="0" style="display:none;visibility:hidden;"></iframe>`}} />
         <Main />
         <NextScript />
+        <JSONLD />
       </html>
     )
   }
