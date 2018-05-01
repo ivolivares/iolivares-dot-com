@@ -3,7 +3,7 @@
   "short_name": "Iván",
   "description": "Front-end software developer focused on building beautiful interfaces and experiences for customers.",
   "lang": "en-US",
-  "start_url": "/",
+  "start_url": "./?utm_source=web_app_manifest",
   "display": "minimal-ui",
   "orientation": "portrait-primary",
   "background_color": "#ffffff",
@@ -11,7 +11,17 @@
   "icons": [
     {
       "src": "https://iolivares.com/static/images/emojis/technologist.png",
-      "sizes": "72x72 96x96 128x128 256x256",
+      "sizes": "72x72 96x96 128x128 192x192 256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "https://iolivares.com/static/images/media/splash-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "https://iolivares.com/static/images/media/splash-512x512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
