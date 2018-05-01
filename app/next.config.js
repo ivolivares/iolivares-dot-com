@@ -8,7 +8,7 @@ module.exports = {
   exportPathMap: () => {
     return {
       '/': { page: '/' },
-      '/talks': { page: '/talks' }
+      '/about': { page: '/about' }
     }
   },
   webpack: (config, { dev }) => {
