@@ -3,7 +3,7 @@
   "short_name": "Iván",
   "description": "Front-end software developer focused on building beautiful interfaces and experiences for customers.",
   "lang": "en-US",
-  "start_url": "./?utm_source=web_app_manifest",
+  "start_url": "/?utm_source=web_app_manifest",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#ffffff",
