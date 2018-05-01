@@ -3,9 +3,9 @@ const cacheName = 'iodotcom'
 // Assesto catche
 const assetsToCache = [
   '/static/styles/main.css',
-  '/_next/3f29e030-6dce-4ff4-9bff-dc9b35d6cc7b/page/_error.js',
-  '/_next/3f29e030-6dce-4ff4-9bff-dc9b35d6cc7b/page/index.js',
-  '/_next/3f29e030-6dce-4ff4-9bff-dc9b35d6cc7b/page/talks.js',
+  '/_next/7434d3e7-13b3-43a1-9409-b9adca5b86c7/page/_error.js',
+  '/_next/7434d3e7-13b3-43a1-9409-b9adca5b86c7/page/index.js',
+  '/_next/7434d3e7-13b3-43a1-9409-b9adca5b86c7/page/talks.js',
   '/static/images/me.jpg',
   '/static/images/logo-sprite.png',
   '/static/images/emojis/technologist.png',
