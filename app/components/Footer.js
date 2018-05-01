@@ -47,23 +47,23 @@ const socialLinks = [
 export default () =>
   <footer className="footer">
     <div className="footer__copyright">
-        <div className="top"> <span>Designed &amp; Developed by</span> </div>
-        <div className="bottom"> <span>Iván Olivares Rojas</span> <span>2018</span> </div>
+      <div className="top"> <span>Designed &amp; Developed by</span> </div>
+      <div className="bottom"> <span>Iván Olivares Rojas</span> <span>2018</span> </div>
     </div>
     <div className="footer__links">
-        <a
-          data-domain={ domain }
-          data-name={ name }
-          href="#"
-          onClick={ sendEmail }>
-          <span className="text">email</span>
-          <img src="/static/images/icons/mailbox.png" alt="email" height="22" />
+      <a
+        data-domain={ domain }
+        data-name={ name }
+        href="#"
+        onClick={ sendEmail }>
+        <span className="text">email</span>
+        <img alt="email" height="22" src="/static/images/icons/mailbox.png" />
+      </a>
+      { socialLinks.map((link, index) => (
+        <a key={ index } href={ link.url } target="_blank">
+          <span className="text">{ link.name }</span>
+          <img alt={ link.name } height="22" src={ `/static/images/icons/${link.name}.png` } />
         </a>
-        { socialLinks.map((link, index) => (
-          <a href={ link.url } target="_blank" key={ index }>
-            <span className="text">{ link.name }</span>
-            <img src={ `/static/images/icons/${link.name}.png` } alt={ link.name } height="22" />
-          </a>
-        )) }
+      )) }
     </div>
-</footer>
+  </footer>
