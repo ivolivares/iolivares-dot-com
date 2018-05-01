@@ -192,7 +192,7 @@ html {
   font-weight: 300;
   line-height: 30px;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 strong,
 b {
