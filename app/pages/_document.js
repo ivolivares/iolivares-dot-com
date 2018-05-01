@@ -2,7 +2,20 @@ import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import JSONLD from '../helpers/jsonld'
 
-const icon = "/static/images/emojis/technologist.png"
+const constants = {
+  APP: {
+    NAME: 'Iván Olivares',
+    COLOR: '#00C569'
+  },
+  NAME: 'Iván Olivares Rojas | Front-end software developer',
+  DESCRIPTION: 'Front-end software developer focused on building beautiful interfaces and experiences for customers.',
+  IMAGE: '/static/images/emojis/technologist.png',
+  URL: 'https://www.iolivares.com',
+  TWITTER: {
+    AT: '@ivolivares',
+    IMAGE: '/static/images/media/social-twitter.png'
+  }
+}
 
 export default class extends Document {
   static getInitialProps({ renderPage }) {
@@ -17,20 +30,41 @@ export default class extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta content="IE=edge, chrome=1" httpEquiv="X-UA-Compatible" />
-          <meta content="Front-end software developer focused on building beautiful interfaces and experiences." name="description" />
+          <meta content={ constants.DESCRIPTION } name="description" />
+          <link href={ constants.IMAGE } rel="shortcut icon" />
+          <link href={ constants.IMAGE } rel="icon" sizes="120x120" />
+          <link href={ constants.IMAGE } rel="apple-touch-icon" sizes="120x120" />
+          <link href={ constants.IMAGE } rel="icon" type="image/png" />
+          <meta content={ constants.IMAGE } name="image" />
           <link href="/static/manifest.json" rel="manifest" />
           <meta content="yes" name="mobile-web-app-capable" />
           <meta content="yes" name="apple-mobile-web-app-capable" />
-          <meta content="Iván Olivares" name="application-name" />
-          <meta content="Iván Olivares" name="apple-mobile-web-app-title" />
-          <meta content="#00C569" name="theme-color" />
-          <meta content="#00C569" name="msapplication-navbutton-color" />
+          <meta content={ constants.APP.NAME } name="application-name" />
+          <meta content={ constants.APP.NAME } name="apple-mobile-web-app-title" />
+          <meta content={ constants.APP.COLOR } name="theme-color" />
+          <meta content={ constants.APP.COLOR } name="msapplication-navbutton-color" />
           <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" />
           <meta content="/" name="msapplication-starturl" />
-          <link href={ icon } rel="shortcut icon" />
-          <link href={ icon } rel="icon" sizes="120x120" />
-          <link href={ icon } rel="apple-touch-icon" sizes="120x120" />
-          <link href={ icon } rel="icon" type="image/png" />
+          { /* Schema.org for Google */ }
+          <meta content={ constants.NAME } itemProp="name" />
+          <meta content={ constants.DESCRIPTION } itemProp="description" />
+          <meta content={ constants.DESCRIPTION } itemProp="image" />
+          { /* Twitter */ }
+          <meta content="summary" name="twitter:card" />
+          <meta content={ constants.NAME } name="twitter:title" />
+          <meta content={ constants.DESCRIPTION } name="twitter:description" />
+          <meta content={ constants.TWITTER.AT } name="twitter:site" />
+          <meta content={ constants.TWITTER.AT } name="twitter:creator" />
+          <meta content={ constants.TWITTER.IMAGE } name="twitter:image:src" />
+          { /* Open Graph general (Facebook, Pinterest & Google+) */ }
+          <meta content={ constants.NAME } name="og:title" />
+          <meta content={ constants.DESCRIPTION } name="og:description" />
+          <meta content={ constants.IMAGE } name="og:image" />
+          <meta content={ constants.URL } name="og:url" />
+          <meta content={ constants.NAME } name="og:site_name" />
+          <meta content="en_US" name="og:locale" />
+          <meta content="1107428094" name="fb:admins" />
+          <meta content="website" name="og:type" />
           <meta content="initial-scale=1.0, width=device-width" name="viewport" />
           <link href="//fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" />
           <link href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" rel="stylesheet" type="text/css" />
