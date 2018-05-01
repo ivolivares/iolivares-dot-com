@@ -7,13 +7,16 @@ const constants = {
     NAME: 'Iván Olivares',
     COLOR: '#00C569'
   },
-  NAME: 'Iván Olivares Rojas | Front-end software developer',
+  NAME: 'Iván Olivares Rojas',
   DESCRIPTION: 'Front-end software developer focused on building beautiful interfaces and experiences for customers.',
-  IMAGE: '/static/images/emojis/technologist.png',
+  IMAGE: 'https://iolivares.com/static/images/emojis/technologist.png',
   URL: 'https://www.iolivares.com',
+  SOCIAL: {
+    IMAGE: 'https://iolivares.com/static/images/media/social.png'
+  },
   TWITTER: {
     AT: '@ivolivares',
-    IMAGE: '/static/images/media/social-twitter.png'
+    IMAGE: 'https://iolivares.com/static/images/media/social-twitter.png'
   }
 }
 
@@ -56,10 +59,11 @@ export default class extends Document {
           <meta content={ constants.TWITTER.AT } name="twitter:site" />
           <meta content={ constants.TWITTER.AT } name="twitter:creator" />
           <meta content={ constants.TWITTER.IMAGE } name="twitter:image:src" />
-          { /* Open Graph general (Facebook, Pinterest & Google+) */ }
+          { /* Open Graph general (Facebook, Pinterest & Google+) */}
           <meta content={ constants.NAME } name="og:title" />
           <meta content={ constants.DESCRIPTION } name="og:description" />
-          <meta content={ constants.IMAGE } name="og:image" />
+          <meta content={ constants.SOCIAL.IMAGE } name="og:image" />
+          <meta content="image/png" name="og:image:type" />
           <meta content={ constants.URL } name="og:url" />
           <meta content={ constants.NAME } name="og:site_name" />
           <meta content="en_US" name="og:locale" />
