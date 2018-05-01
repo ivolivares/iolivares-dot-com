@@ -18,6 +18,7 @@ const ActiveLink = ({ children, router, href, activeClass, target, className }) 
       href={ href }
       onClick={ handleClick }
       onMouseEnter={ handMouseEnter }
+      rel="noopener"
       target={ target }
     >
       { children }

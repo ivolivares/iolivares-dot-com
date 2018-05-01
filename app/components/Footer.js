@@ -60,7 +60,7 @@ export default () =>
         <img alt="email" height="22" src="/static/images/icons/mailbox.png" />
       </a>
       { socialLinks.map((link, index) => (
-        <a key={ index } href={ link.url } target="_blank">
+        <a key={ index } href={ link.url } rel="noopener" target="_blank">
           <span className="text">{ link.name }</span>
           <img alt={ link.name } height="22" src={ `/static/images/icons/${link.name}.png` } />
         </a>
