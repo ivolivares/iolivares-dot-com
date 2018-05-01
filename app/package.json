@@ -7,17 +7,21 @@
   "scripts": {
     "analyze": "cross-env ANALYZE=1 next build",
     "build": "next build",
+    "build-sw": "node ./bin/build.sw.js ",
+    "build-sitemap": "node ./bin/build.sitemap.js",
     "clean": "sh ./bin/clean.sh",
     "deploy": "npm run export && firebase deploy --only hosting",
     "dev": "node server.js",
     "export": "next export -o hosting",
     "lint": "eslint .",
-    "postexport": "node ./bin/build.sw.js && node ./bin/prepare.hosting.js",
+    "postexport": "npm run build-sw && npm run build-sitemap && npm run prepare-hosting",
     "prebuild": "npm run clean",
     "precommit": "lint-staged -V -d",
     "preexport": "npm run build",
     "prestart": "npm run export",
+    "prepare-hosting": "node ./bin/prepare.hosting.js",
     "start": "firebase serve --only hosting -p 3000",
+    "update-sitemap": "sh ./bin/update-sitemap.sh",
     "update-sw": "sh ./bin/update-sw.sh"
   },
   "engines": {
