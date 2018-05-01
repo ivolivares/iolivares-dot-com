@@ -230,7 +230,7 @@ b {
 }
 .header__logo-title {
   position: relative;
-  background: url('/static/images/logo-sprite.png') 0 0 no-repeat;
+  background: url('/static/images/logo-sprite.jpg') 0 0 no-repeat;
   width: 200px;
   background-size: 100%;
   text-indent: -99em;
