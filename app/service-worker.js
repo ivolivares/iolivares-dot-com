@@ -7,7 +7,7 @@ const assetsToCache = [
   '/_next/{{BUILD_ID}}/page/index.js',
   '/_next/{{BUILD_ID}}/page/about.js',
   '/static/images/me.jpg',
-  '/static/images/logo-sprite.png',
+  '/static/images/logo-sprite.jpg',
   '/static/images/emojis/technologist.png',
   '/static/images/icons/arrow.png',
   '/static/images/icons/facebook.png',
