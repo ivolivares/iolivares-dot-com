@@ -241,7 +241,7 @@ b {
 }
 .header__logo-title::after {
   content: "";
-  background: url('/static/images/logo-sprite.png') 0 -31px no-repeat;
+  background: url('/static/images/logo-sprite.jpg') 0 -31px no-repeat;
   background-size: 100%;
   opacity: 0;
   transition: opacity 0.25s;
