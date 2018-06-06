@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Router from 'next/router'
 import Head from 'next/head'
 import Header from './Header'
+import MobileHeader from './MobileHeader'
 import Footer from './Footer'
 import ServiceWorker from './ServiceWorker'
 
@@ -34,6 +35,7 @@ class Layout extends React.Component {
           <title>{ title }</title>
         </Head>
         <Header />
+        <MobileHeader />
         <div className="io" style={ !this.state.loaded ? 'none' : null }>
           <main>{ children }</main>
         </div>

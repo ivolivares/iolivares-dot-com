@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import ActiveLink from './ActiveLink'
 
 const navigationItems = [
@@ -21,8 +22,8 @@ const navigationItems = [
   }
 ]
 
-export default () => (
-  <ul className="header__nav-list">
+const Navigation = ({ className }) => (
+  <ul className={ className }>
     {
       navigationItems.map((item, index) => (
         <li key={ index } className="header__nav-list-item">
@@ -34,3 +35,13 @@ export default () => (
     }
   </ul>
 )
+
+Navigation.defaultProps = {
+  className: 'header__nav-list'
+}
+
+Navigation.propTypes = {
+  className: PropTypes.string
+}
+
+export default Navigation
