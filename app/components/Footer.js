@@ -16,7 +16,7 @@ const socialLinks = [
   },
   {
     name: 'facebook',
-    url: 'https://www.facebook.com/iolivares.cl'
+    url: 'https://www.facebook.com/iolivares.blog'
   },
   {
     name: 'instagram',
