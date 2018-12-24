@@ -110,3 +110,7 @@ typings/
 .next
 next
 hosting
+
+#deploy and cache firebase
+.cache
+.firebase
