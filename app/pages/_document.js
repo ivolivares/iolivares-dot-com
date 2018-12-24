@@ -8,7 +8,7 @@ const constants = {
     COLOR: '#00C569'
   },
   NAME: 'Iván Olivares Rojas',
-  DESCRIPTION: 'Front-end software developer focused on building beautiful interfaces and experiences for customers.',
+  DESCRIPTION: 'Technical lead and front-end software developer centered on producing beautiful interfaces and experiences for consumers.',
   IMAGE: 'https://iolivares.com/static/images/emojis/technologist.png',
   URL: 'https://www.iolivares.com',
   SOCIAL: {
