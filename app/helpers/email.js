@@ -7,6 +7,6 @@ export const sendEmail = (e) => {
   const link = e.currentTarget
   const name = link.getAttribute('data-name').split('').reverse().join('')
   const domain = link.getAttribute('data-domain').split('').reverse().join('')
-  window.location.href = `mailto:${name}@${domain}?subject=Contact from iolivares.com`
+  window.location.href = `mailto:${name}@${domain}?subject=Contact from the web: iolivares.com`
 }
 
