@@ -51,7 +51,7 @@ export default class extends Document {
           { /* Schema.org for Google */ }
           <meta content={ constants.NAME } itemProp="name" />
           <meta content={ constants.DESCRIPTION } itemProp="description" />
-          <meta content={ constants.DESCRIPTION } itemProp="image" />
+          <meta content={ constants.IMAGE } itemProp="image" />
           { /* Twitter */ }
           <meta content="summary" name="twitter:card" />
           <meta content={ constants.NAME } name="twitter:title" />
