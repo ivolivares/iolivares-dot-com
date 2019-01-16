@@ -12,7 +12,7 @@ const socialLinks = [
   },
   {
     name: 'linkedin',
-    url: 'https://www.linkedin.com/in/ivolivares'
+    url: 'https://www.linkedin.com/in/ivanolivaresrojas'
   },
   {
     name: 'facebook',
