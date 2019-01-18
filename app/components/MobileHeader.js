@@ -23,7 +23,7 @@ class MobileHeader extends React.Component {
     return (
       <nav className="header__nav-mobile">
         <Navigation className={ `header__nav-mobile-list ${this.state.activeLinks}` } />
-        <button onClick={ this.toggleMenu } >
+        <button aria-label="Toggle menu" onClick={ this.toggleMenu } >
           <ul className={ `header__nav-mobile-hamburger ${this.state.activeMenu}` }>
             <li />
             <li />
