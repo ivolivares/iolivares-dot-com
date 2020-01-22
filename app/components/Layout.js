@@ -47,7 +47,7 @@ class Layout extends React.Component {
 }
 
 Layout.defaultProps = {
-  title: 'Iván Olivares Rojas | Front-end software developer'
+  title: 'Iván Olivares Rojas | Software Architect'
 }
 
 Layout.propTypes = {
