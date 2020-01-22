@@ -35,10 +35,6 @@ const socialLinks = [
     url: 'https://open.spotify.com/user/ivolivares'
   },
   {
-    name: 'whatsapp',
-    url: 'tel:+56963034970'
-  },
-  {
     name: 'paypal',
     url: 'https://www.paypal.me/ivanolivaresrojas/1'
   }
@@ -48,7 +44,7 @@ export default () =>
   <footer className="footer">
     <div className="footer__copyright">
       <div className="top"> <span>Designed &amp; Developed by</span> </div>
-      <div className="bottom"> <span>Iván Olivares Rojas</span> <span>2018</span> </div>
+      <div className="bottom"> <span>Iván Olivares Rojas</span> <span>{ (new Date()).getFullYear() }</span> </div>
     </div>
     <div className="footer__links">
       <a

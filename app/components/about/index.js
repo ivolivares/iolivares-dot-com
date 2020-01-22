@@ -10,7 +10,7 @@ export default () =>
             <h1 className="hero__content-title">Hey! I'm <strong>Iván Olivares Rojas</strong></h1>
             <div className="hero__content-text">
               <p className="extra-large">I'm centered on producing beautiful interfaces and experiences for consumers.</p>
-              <p className="large secondary-text">Currently working as Technical Lead and front-end software developer at <a className="globant" href="http://www.globant.com" rel="noopener" target="_blank">Globant</a> in Santiago, Chile.</p>
+              <p className="large secondary-text">Currently working as Technical Leader and Software Architect at <a className="globant" href="http://www.globant.com" rel="noopener" target="_blank">Globant</a> in Santiago, Chile.</p>
               <p className="large secondary-text">I'm also an amateur photographer, a community builder enthusiast and volunteer for non-profit organizations.</p>
             </div>
             <div className="hero__content-action">
