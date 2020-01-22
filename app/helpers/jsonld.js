@@ -11,7 +11,7 @@ export default () =>
         "gender": "male",
         "birthDate": "1991-01-14",
         "image": "https://iolivares.com/static/images/me.jpg",
-        "jobTitle": "Technical Lead and Front-end software developer",
+        "jobTitle": "Technical Leader and Software Architect",
         "sameAs": [
           "https://twitter.com/ivolivares/",
           "https://github.com/ivolivares/",
