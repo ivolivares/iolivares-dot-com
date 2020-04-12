@@ -1,0 +1,66 @@
+/* This is the dark-mode styles sheets */
+@media (prefers-color-scheme: dark) {
+  .link,
+  a {
+    color: #BDBDBD;
+  }
+  .link:hover,
+  a:hover {
+    color: #8BC34A;
+  }
+  ::selection {
+    background: #8BC34A;
+    color: #fff;
+  }
+  :focus {
+    outline-color: #8BC34A;
+  }
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #8BC34A;
+  }
+  body,
+  html {
+    background-color: #1d1d1d;
+    color: #fff;
+  }
+  .link--primary {
+    color: #8BC34A;
+  }
+  .link--primary:hover {
+    color: #DCEDC8;
+  }
+  .footer__links img,
+  .header__logo-title {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+  }
+  .header__nav-list-item--active {
+    color: #DCEDC8 !important;
+  }
+  .header__nav-list-item a {
+    color: #8BC34A;
+  }
+  .section__title {
+    color: #757575;
+  }
+  @media screen and (max-width: 450px) {
+    .header__nav-mobile ul.header__nav-mobile-list {
+      background-color: rgba(8, 8, 8, 0.9803921568627451);
+      color: #fff;
+    }
+    .header__nav-mobile ul.header__nav-mobile-list li a {
+      color: #BDBDBD;
+    }
+  }
+}
