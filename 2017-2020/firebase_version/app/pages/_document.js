@@ -1,6 +1,19 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import JSONLD from '../helpers/jsonld'
+import * as Sentry from "@sentry/browser";
+import { Integrations } from "@sentry/tracing";
+
+Sentry.init({
+  dsn: 'https://2656457e20134504ada34a934f6f10ad@o467903.ingest.sentry.io/5495048',
+  integrations: [
+    new Integrations.BrowserTracing(),
+  ],
+
+  // We recommend adjusting this value in production, or using tracesSampler
+  // for finer control
+  tracesSampleRate: 1.0,
+});
 
 const constants = {
   APP: {

@@ -1,0 +1,15 @@
+User-agent:*
+Disallow: 
+Disallow: /api
+
+User-agent: Enerbot
+Disallow: /noenerbot/
+Allow: /
+
+# The Laws:
+Disallow: /harming/humans
+Disallow: /ignoring/human/orders
+Disallow: /harm/to/self
+
+Allow: /
+# Sitemap: Coming soon
