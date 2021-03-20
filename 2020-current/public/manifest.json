@@ -1,0 +1,28 @@
+{
+  "name": "Iván Olivares Rojas",
+  "short_name": "Iván",
+  "description": "Technical leader and software architect centered on producing beautiful interfaces and experiences for consumers.",
+  "lang": "en-US",
+  "start_url": "/?utm_source=web_app_manifest",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#00C569",
+  "icons": [
+    {
+      "src": "https://iolivares.com/static/images/emojis/technologist.png",
+      "sizes": "72x72 96x96 128x128 192x192 256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "https://iolivares.com/static/images/media/splash-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "https://iolivares.com/static/images/media/splash-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
