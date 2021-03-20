@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import constants from './constants'
 
-export default function HeadWithMetas(title = 'Iván Olivares Rojas | Software Architect') {
+export default function HeadWithMetas({title = 'Iván Olivares Rojas | Software Architect'}) {
   return (
     <Head>
       <meta charSet="utf-8" />

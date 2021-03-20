@@ -1,4 +1,4 @@
-export default constants = {
+export default {
   socialNetworks: [
     {
       name: 'github',

@@ -2,8 +2,8 @@ import React from 'react'
 import ActiveLink from './ActiveLink'
 import Navigation from './Navigation'
 
-export default () => (
-  <div className="container">
+export default function Header() {
+  return <div className="container">
     <div className="row">
       <div className="col-xs-12">
         <header className="header">
@@ -19,4 +19,4 @@ export default () => (
       </div>
     </div>
   </div>
-)
+}

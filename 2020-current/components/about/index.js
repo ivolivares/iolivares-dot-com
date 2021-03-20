@@ -1,5 +1,5 @@
 import React from 'react'
-import { email, domain, name, sendEmail } from '../../helpers/email'
+import { email, domain, name, sendEmail } from '../../common/email'
 
 export default () =>
   <header className="container about-container">

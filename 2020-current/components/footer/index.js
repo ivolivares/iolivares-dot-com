@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import {socialNetworks} from './constants'
+import constants from './constants'
 import {domain, name, sendEmail} from '../../common/email'
 
 export default function ioFooter() {
@@ -27,7 +27,7 @@ export default function ioFooter() {
             height={22}
           />
         </a>
-        {socialNetworks.map((link, index) => (
+        {constants.socialNetworks.map((link, index) => (
           <a key={index} href={link.url} rel="noopener" target="_blank">
             <span className="text">{link.name}</span>
             <Image

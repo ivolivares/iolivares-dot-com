@@ -4,8 +4,7 @@ import Router from 'next/router'
 import Head from 'next/head'
 import Header from './Header'
 import MobileHeader from './MobileHeader'
-import Footer from './Footer'
-import ServiceWorker from './ServiceWorker'
+import Footer from '../components/footer'
 
 class Layout extends React.Component {
   constructor() {
@@ -40,7 +39,6 @@ class Layout extends React.Component {
           <main>{ children }</main>
         </div>
         <Footer />
-        <ServiceWorker />
       </div>
     )
   }
