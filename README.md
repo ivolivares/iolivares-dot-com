@@ -1,12 +1,32 @@
 # iolivares.com
 
-This is my personal website, and this the archive of every project I've created.
+This is my personal website, I'm using [Next.js](https://nextjs.org/) and [Vercel](https://vercel.com) to serve it.
 
-| Initial Year of Publication  | End Year of Publication  | Deployed platoform |
-|---|---|---|
-| 2017 | 2020 | [Firebase](https://firebase.google.com/) |
-| 2020 | current | [Vercel](https://vercel.com/) |
+## Getting Started
 
-## Design
+First, run the development server:
 
-Here also I have my "website logo" [design](./design).
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
