@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import constants from './constants'
-import {domain, name, sendEmail} from '../../common/email'
+import { domain, name, sendEmail } from '@io/lib/email'
 
 export default function ioFooter() {
   return (

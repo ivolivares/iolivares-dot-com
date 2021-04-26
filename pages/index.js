@@ -1,9 +1,9 @@
-import HeadWithMetas from '../components/head/head'
-import JSONLD from '../common/jsonld'
-import styles from '../styles/Home.module.css'
-import Layout from '../components/Layout'
-import About from '../components/about'
-import Background from '../components/about/Background'
+import HeadWithMetas from '@io/components/head/head'
+import JSONLD from '@io/lib/jsonld'
+import styles from '@io/styles/Home.module.css'
+import Layout from '@io/components/Layout'
+import About from '@io/components/about'
+import Background from '@io/components/about/Background'
 
 export default function Home() {
   return (
