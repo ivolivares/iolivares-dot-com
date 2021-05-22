@@ -1824,9 +1824,9 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"iolivares.com@workspace:.":
+"iolivares-dot-com@workspace:.":
   version: 0.0.0-use.local
-  resolution: "iolivares.com@workspace:."
+  resolution: "iolivares-dot-com@workspace:."
   dependencies:
     "@panelbear/panelbear-js": ^1.2.0
     "@tailwindcss/typography": ^0.4.0

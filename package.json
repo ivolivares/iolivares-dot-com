@@ -1,7 +1,7 @@
 {
-  "name": "iolivares.com",
+  "name": "iolivares-dot-com",
   "version": "2.0.0",
-  "description": "Next.js app for my personal website: iolivares.com",
+  "description": "Personal website: iolivares.com version 2021",
   "author": {
     "name": "Iván Olivares Rojas",
     "email": "hi@iolivares.com",
@@ -29,13 +29,13 @@
     "react-dom": "^17.0.1",
     "tailwindcss": "^2.1.2"
   },
+  "devDependencies": {
+    "prettier": "^2.3.0"
+  },
   "prettier": {
     "arrowParens": "always",
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "none"
-  },
-  "devDependencies": {
-    "prettier": "^2.3.0"
   }
 }

@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'next-themes'
 import { appWithTranslation } from 'next-i18next'
-import { usePanelBear } from '@io/hooks/panelbear'
+import usePanelBear from '@io/hooks/panelbear'
 
 import '@io/styles/globals.css'
 
@@ -10,7 +10,8 @@ const ioApp = ({ Component, pageProps }) => {
   // Load Panelbear only once durint the app lifecycle
   usePanelBear('H9NHZMjdHOV', {
     honorDNT: true, // Ethical config
-    debug: true, // TODO: Config this just on localhost
+    // Uncomment next to debug on localhost
+    // debug: true,
   })
 
   return (

@@ -5,7 +5,7 @@ import * as Panelbear from "@panelbear/panelbear-js"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
 
-export const usePanelbear = (site, config = {}) => {
+const usePanelbear = (site, config = {}) => {
   const router = useRouter()
 
   useEffect(() => {
@@ -23,3 +23,5 @@ export const usePanelbear = (site, config = {}) => {
     }
   }, [])
 }
+
+export default usePanelbear
