@@ -1,22 +1,36 @@
-import React from 'react'
-import ActiveLink from './ActiveLink'
-import Navigation from './Navigation'
+import Link from 'next/link';
+import { useTranslation } from 'next-i18next'
+
+import ExternalIOLink from '@io/components/ExternalIOLink'
 
 export default function Header() {
-  return <div className="container">
-    <div className="row">
-      <div className="col-xs-12">
-        <header className="header">
-          <div className="header__logo">
-            <ActiveLink className="header__logo-title link--dark link--no-underline" href="/">
-              <span>www.iolivares.com</span>
-            </ActiveLink>
-          </div>
-          <nav className="header__nav">
-            <Navigation />
-          </nav>
-        </header>
-      </div>
-    </div>
-  </div>
+  const { t } = useTranslation('common')
+
+  return (
+    <header>
+      <nav className="flex justify-between items-center max-w-4xl w-full p-8 my-0 md:my-8 mx-auto bg-white dark:bg-black bg-opacity-60">
+        <a href="#main-content" className="sr-only focus:not-sr-only">
+          {t('skip-content')}
+        </a>
+        <div>
+          <Link href="/">
+            <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">
+              {t('nav-home')}
+            </a>
+          </Link>
+          <Link href="/about">
+            <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">
+              {t('nav-about')}
+            </a>
+          </Link>
+          <ExternalIOLink href="https://iolivares.blog">
+            {t('nav-blog')}
+          </ExternalIOLink>
+          <ExternalIOLink href="https://iolivares.photos">
+            {t('nav-photos')}
+          </ExternalIOLink>
+        </div>
+      </nav>
+    </header>
+  );
 }
