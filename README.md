@@ -30,6 +30,6 @@ To use the APIs, we need some keys, please create a `.env.local` file similar to
 
 - [Vercel](https://vercel.com)
 - [Next.js](https://nextjs.org)
--- [Next i18next](https://github.com/isaachinman/next-i18next)
--- [Tailwind CSS](https://tailwindcss.com)
+- [Next i18next](https://github.com/isaachinman/next-i18next)
+- [Tailwind CSS](https://tailwindcss.com)
 - [Notion](https://www.notion.so)
