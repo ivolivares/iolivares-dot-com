@@ -3,17 +3,17 @@
 # dependencies
 /node_modules
 /.pnp
+.yarn
 .pnp.js
 
 # testing
 /coverage
 
 # next.js
-/.next/
-/out/
+.next
 
-# production
-/build
+# vercel
+.vercel
 
 # misc
 .DS_Store
@@ -30,5 +30,5 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-# vercel
-.vercel
+# Yarn
+.yarnrc.yml

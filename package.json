@@ -1,7 +1,7 @@
 {
-  "name": "iolivares.com",
+  "name": "iolivares-dot-com",
   "version": "2.0.0",
-  "description": "Next.js app for my personal website: iolivares.com",
+  "description": "Personal website: iolivares.com version 2021",
   "author": {
     "name": "Iván Olivares Rojas",
     "email": "hi@iolivares.com",
@@ -18,8 +18,30 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "latest",
+    "@panelbear/panelbear-js": "^1.2.0",
+    "@tailwindcss/typography": "^0.4.0",
+    "gray-matter": "^4.0.3",
+    "next": "^10.2.2",
+    "next-i18next": "^8.3.0",
+    "next-mdx-remote": "^3.0.2",
+    "next-themes": "^0.0.14",
+    "postcss": "^8.3.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "remark-autolink-headings": "^6.0.1",
+    "remark-code-titles": "^0.1.2",
+    "remark-slug": "^6.0.0",
+    "tailwindcss": "^2.1.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss-focus-visible": "^3.0.0",
+    "prettier": "^2.3.0"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none"
   }
 }
