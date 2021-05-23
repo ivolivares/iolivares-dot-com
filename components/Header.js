@@ -8,7 +8,7 @@ export default function Header() {
 
   return (
     <header>
-      <nav className="flex justify-between items-center max-w-4xl w-full p-8 my-0 md:my-8 mx-auto bg-white dark:bg-black bg-opacity-60">
+      <nav className="flex justify-between items-center max-w-4xl w-full p-8 my-0 md:my-8 mx-auto">
         <a href="#main-content" className="sr-only focus:not-sr-only">
           {t('skip-content')}
         </a>

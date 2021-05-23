@@ -1,10 +1,12 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+
+import Metadata from '@io/data/metadata'
 import JSONLD from '@io/data/json-ld'
 
 class ioDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html>
         <Head>
           <link
             rel="preconnect"
@@ -34,26 +36,26 @@ class ioDocument extends Document {
             type="image/png"
           />
           <link
-            color="#818181"
+            color={Metadata.APP.SAFARI_PINNED_COLOR}
             href="/static/favicons/safari-pinned-tab.svg"
             rel="mask-icon"
           />
-          <meta content="#ffffff" name="theme-color" />
-          <meta content="#ffffff" name="msapplication-TileColor" />
+          <meta content={Metadata.APP.COLOR} name="theme-color" />
+          <meta content={Metadata.APP.COLOR} name="msapplication-TileColor" />
           <meta
             content="/browserconfig.xml"
             name="msapplication-config"
           />
           <meta
             name="apple-mobile-web-app-title"
-            content="Iv&aacute;n Olivares"
+            content={Metadata.APP.NAME}
           />
           <meta
             name="application-name"
-            content="Iv&aacute;n Olivares"
+            content={Metadata.APP.NAME}
           />
         </Head>
-        <body className="bg-white dark:bg-black text-white dark:text-black">
+        <body>
           <Main />
           <NextScript />
           <JSONLD />

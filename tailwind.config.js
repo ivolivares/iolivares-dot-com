@@ -3,19 +3,16 @@ const { spacing, fontFamily } = require('tailwindcss/defaultTheme');
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.js', './components/**/*.js', './layouts/**/*.js'],
-  darkMode: 'class',
+  darkMode: 'media',
   theme: {
     extend: {
-      colors: {
-        'blue-opaque': 'rgb(13 42 148 / 18%)'
-      },
       fontFamily: {
         sans: ['Noto Sans', ...fontFamily.sans]
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.700'),
+            color: theme('colors.gray.800'),
             a: {
               color: theme('colors.blue.500'),
               '&:hover': {
@@ -75,7 +72,11 @@ module.exports = {
     }
   },
   variants: {
-    typography: ['dark']
+    typography: ['dark'],
+    extend: {
+      textDecoration: ['focus-visible'],
+      textColor: ['visited'],
+    },
   },
   plugins: [require('@tailwindcss/typography')]
 };
