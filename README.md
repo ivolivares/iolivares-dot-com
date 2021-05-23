@@ -24,12 +24,15 @@ $ yarn
 $ yarn dev
 ```
 
-To use the APIs, we need some keys, please create a `.env.local` file similar to [`.env.example`](https://github.com/ivolivares/iolivares-dot-com/blob/master/.env.example) file in the repo.
+To use the APIs, we need some keys, please create a `.env.local` file similar to [`.env.example`](https://github.com/ivolivares/iolivares-dot-com/blob/main/.env.example) file in the repo.
 
 ## Built Using
 
 - [Vercel](https://vercel.com)
 - [Next.js](https://nextjs.org)
 - [Next i18next](https://github.com/isaachinman/next-i18next)
+- [Next MDX Remote](https://github.com/hashicorp/next-mdx-remote)
 - [Tailwind CSS](https://tailwindcss.com)
+- [Gray Matter](https://github.com/jonschlinkert/gray-matter)
 - [Notion](https://www.notion.so)
+- [Panel Bear Analytics](https://panelbear.com)
