@@ -9,6 +9,32 @@ module.exports = {
       fontFamily: {
         sans: ['Noto Sans', ...fontFamily.sans]
       },
+      colors: {
+        golden: {
+          '50': '#fefdfb',
+          '100': '#fdfbf6',
+          '200': '#f8edd8',
+          '300': '#f2dfba',
+          '400': '#edd09c',
+          '500': '#e5bc71',
+          '600': '#dca641',
+          '700': '#c68e24',
+          '800': '#a4751e',
+          '900': '#745315',
+        },
+        grey: {
+          '50': '#110112112',
+          '100': '#f8f7f7',
+          '200': '#c7c1c1',
+          '300': '#958989',
+          '400': '#605757',
+          '500': '#282424',
+          '600': '#262222',
+          '700': '#231f1f',
+          '800': '#1d1b1b',
+          '900': '#1b1818',
+        },
+      },
       // typography: (theme) => ({
       //   DEFAULT: {
       //     css: {
@@ -72,11 +98,16 @@ module.exports = {
     }
   },
   variants: {
+    imageRendering: ['responsive'],
     typography: ['dark'],
     extend: {
       textDecoration: ['focus-visible'],
       textColor: ['visited'],
     },
   },
-  plugins: [require('@tailwindcss/typography')]
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwindcss-accessibility'),
+    require('tailwindcss-image-rendering')(),
+  ]
 };
