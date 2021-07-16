@@ -12,8 +12,8 @@ const Home = () => {
 
   return (
     <Container>
-      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+      <div className="">
+        <h1 className="">
           {t('hey-greetings')}
         </h1>
       </div>
@@ -22,7 +22,7 @@ const Home = () => {
         href="/"
         locale={router.locale === 'es' ? 'en' : 'es'}
       >
-        <button>{t('change-locale')}</button>
+        <a className="max-w-prose p-1 my-4 sm:p-4 w-64 font-semibold mx-auto bg-gradient-to-r from-green-400 to-blue-500 text-center rounded-lg text-white hover:opacity-50 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-4 focus-visible:ring-indigo-400 focus-visible:opacity-90 select-none shadow">{t('change-locale')}</a>
       </Link>
     </Container>
   )
