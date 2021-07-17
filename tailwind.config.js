@@ -1,4 +1,4 @@
-const { spacing, fontFamily } = require('tailwindcss/defaultTheme');
+const { spacing, fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   mode: 'jit',
@@ -10,7 +10,7 @@ module.exports = {
         sans: ['Noto Sans', ...fontFamily.sans]
       },
       colors: {
-        golden: {
+        primary: {
           '50': '#fefdfb',
           '100': '#fdfbf6',
           '200': '#f8edd8',
@@ -22,79 +22,19 @@ module.exports = {
           '800': '#a4751e',
           '900': '#745315',
         },
-        grey: {
-          '50': '#110112112',
-          '100': '#f8f7f7',
-          '200': '#c7c1c1',
-          '300': '#958989',
-          '400': '#605757',
-          '500': '#282424',
-          '600': '#262222',
-          '700': '#231f1f',
-          '800': '#1d1b1b',
-          '900': '#1b1818',
+        gray: {
+          '50': '#f9faf9',
+          '100': '#f1f1f1',
+          '200': '#dfdedf',
+          '300': '#bcbbbc',
+          '400': '#909291',
+          '500': '#72706b',
+          '600': '#5a554f',
+          '700': '#453f3b',
+          '800': '#292525',
+          '900': '#1c191a',
         },
       },
-      // typography: (theme) => ({
-      //   DEFAULT: {
-      //     css: {
-      //       color: theme('colors.gray.800'),
-      //       a: {
-      //         color: theme('colors.blue.500'),
-      //         '&:hover': {
-      //           color: theme('colors.blue.700')
-      //         },
-      //         code: { color: theme('colors.blue.400') }
-      //       },
-      //       'h2,h3,h4': {
-      //         'scroll-margin-top': spacing[32]
-      //       },
-      //       code: { color: theme('colors.pink.500') },
-      //       'blockquote p:first-of-type::before': false,
-      //       'blockquote p:last-of-type::after': false
-      //     }
-      //   },
-      //   dark: {
-      //     css: {
-      //       color: theme('colors.gray.300'),
-      //       a: {
-      //         color: theme('colors.blue.400'),
-      //         '&:hover': {
-      //           color: theme('colors.blue.600')
-      //         },
-      //         code: { color: theme('colors.blue.400') }
-      //       },
-      //       blockquote: {
-      //         borderLeftColor: theme('colors.gray.700'),
-      //         color: theme('colors.gray.300')
-      //       },
-      //       'h2,h3,h4': {
-      //         color: theme('colors.gray.100'),
-      //         'scroll-margin-top': spacing[32]
-      //       },
-      //       hr: { borderColor: theme('colors.gray.700') },
-      //       ol: {
-      //         li: {
-      //           '&:before': { color: theme('colors.gray.500') }
-      //         }
-      //       },
-      //       ul: {
-      //         li: {
-      //           '&:before': { backgroundColor: theme('colors.gray.500') }
-      //         }
-      //       },
-      //       strong: { color: theme('colors.gray.300') },
-      //       thead: {
-      //         color: theme('colors.gray.100')
-      //       },
-      //       tbody: {
-      //         tr: {
-      //           borderBottomColor: theme('colors.gray.700')
-      //         }
-      //       }
-      //     }
-      //   }
-      // })
     }
   },
   variants: {

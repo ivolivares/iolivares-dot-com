@@ -6,7 +6,7 @@ import '@io/styles/globals.css'
 
 const nextI18NextConfig = require('../next-i18next.config')
 
-const ioApp = ({ Component, pageProps }) => {
+const IoApp = ({ Component, pageProps }) => {
   // Load analytics only once durint the app lifecycle
   useAnalytics()
 
@@ -17,4 +17,4 @@ const ioApp = ({ Component, pageProps }) => {
   )
 }
 
-export default appWithTranslation(ioApp, nextI18NextConfig)
+export default appWithTranslation(IoApp, nextI18NextConfig)

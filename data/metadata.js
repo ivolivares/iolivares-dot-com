@@ -1,4 +1,4 @@
-export default {
+const Metadata = {
   APP: {
     NAME: 'Iv&aacute;n Olivares',
     COLOR: '#ffffff',
@@ -48,3 +48,5 @@ export default {
     },
   ],
 }
+
+export default Metadata

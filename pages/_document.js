@@ -55,7 +55,7 @@ class ioDocument extends Document {
             content={Metadata.APP.NAME}
           />
         </Head>
-        <body>
+        <body className="bg-primary-50 dark:bg-gray-800">
           <Main />
           <NextScript />
           <JSONLD />

@@ -5,6 +5,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import Container from '@io/components/Container'
 
+import errorImage404 from '../public/static/images/404_marcos.gif'
+
 const Error = () => {
   const { t } = useTranslation('error')
 
@@ -19,9 +21,9 @@ const Error = () => {
         </p>
         <Image
           alt={`Error 404 - Marcos Heredia`}
-          src={`/static/images/404_marcos.gif`}
-          width={568}
-          height={320}
+          src={errorImage404}
+          blurDataURL="LAF=px00.mV;O]IAIuIqH^bvi{-p"
+          placeholder="blur"
           className="rendering-crisp-edges"
           priority={true}
         />

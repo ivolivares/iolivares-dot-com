@@ -1,4 +1,4 @@
-import Container from '@io/components/Container';
+import Container from '@io/components/Container'
 
 const UsesLayout = ({ frontMatter, children }) => {
 
@@ -7,11 +7,11 @@ const UsesLayout = ({ frontMatter, children }) => {
       title={frontMatter.title}
       description={frontMatter.summary}
     >
-      <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
-        <div className="prose dark:prose-dark w-full">{children}</div>
+      <article className="flex flex-col">
+        <div className="prose dark:prose-dark text-gray-900 dark:text-gray-50">{children}</div>
       </article>
     </Container>
-  );
+  )
 }
 
 export default UsesLayout

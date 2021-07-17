@@ -22,37 +22,36 @@ export default function Container(props) {
 
   return (
     <>
-      <a className="sr-only sr-only-focusable" href="#main-content" tabIndex="1">
-        {t('skip-content')}
-      </a>
-      <div className="bg-indigo-50 dark:bg-gray-800">
-        <Head>
-          <title>{meta.title}</title>
-          <meta name="robots" content="follow, index" />
-          <meta name="description" content={meta.description} />
-          <link rel="canonical" href={meta.canonical} />
-          <meta property="og:url" content={meta.canonical} />
-          <meta property="og:type" content={meta.type} />
-          <meta property="og:site_name" content={Metadata.NAME} />
-          <meta property="og:description" content={meta.description} />
-          <meta property="og:title" content={meta.title} />
-          <meta property="og:image" content={meta.image} />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content={Metadata.OPENGRAPH.TWITTER_USER} />
-          <meta name="twitter:title" content={meta.title} />
-          <meta name="twitter:description" content={meta.description} />
-          <meta name="twitter:image" content={meta.image} />
-        </Head>
-        <div
-          className="container mx-auto flex flex-col justify-center bg-indigo-50 dark:bg-gray-800 px-8"
-        >
-          <Header />
-          <main id="main-content">
-            {children}
-          </main>
-          <Footer />
-        </div>
+      <Head>
+        <title>{meta.title}</title>
+        <meta name="robots" content="follow, index" />
+        <meta name="description" content={meta.description} />
+        <link rel="canonical" href={meta.canonical} />
+        <meta property="og:url" content={meta.canonical} />
+        <meta property="og:type" content={meta.type} />
+        <meta property="og:site_name" content={Metadata.NAME} />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:image" content={meta.image} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={Metadata.OPENGRAPH.TWITTER_USER} />
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+        <meta name="twitter:image" content={meta.image} />
+      </Head>
+      <div className="container mx-auto flex flex-col justify-center px-8">
+        <a className="sr-only sr-only-focusable" href="#main-content" tabIndex="1">
+          {t('skip-content')}
+        </a>
       </div>
+      <Header />
+      <main
+        id="main-content"
+        className="container pt-20 pb-10 px-44 mx-auto flex flex-col justify-center px-8 w-full m-4 mx-auto shadow-xl bg-white dark:bg-gray-700 dark:backdrop-filter dark:backdrop-blur-lg dark:bg-opacity-20"
+      >
+        {children}
+      </main>
+      <Footer />
     </>
   )
 }

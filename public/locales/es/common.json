@@ -1,7 +1,16 @@
 {
-  "skip-content": "Salta al contenido principal",
+  "skip-content": "Ir al contenido principal",
   "nav-home": "Inicio",
   "nav-about": "Acerca de",
   "nav-blog": "Blog",
-  "nav-photos": "Fotografía"
+  "nav-photos": "Fotografía",
+  "nav-uses": "Lo que uso",
+  "footer-made-width": "Hecho con",
+  "footer-made-from": "desde",
+  "footer-made-by": "por",
+  "footer-copyright": "Algunos contenidos con derechos reservados.",
+  "footer-creativecommons": "Donde no se indique copyright, los contenidos están disponibles bajo una licencia",
+  "footer-doodle-credits": "Caricatura original de",
+  "language-en": "Inglés",
+  "language-es": "Español"
 }
