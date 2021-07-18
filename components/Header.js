@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 
@@ -5,70 +6,87 @@ import ExternalLink from '@io/components/ExternalLink'
 
 export default function Header() {
   const { t } = useTranslation('common')
+  const [ON_STATE, OFF_STATE] = ['on', 'off']
+  const linksClassNames = 'px-4 py-1 mr-1 text-base text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-400 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform rounded-md focus:outline-none focus-visible:shadow-outline focus-visible:ring-2 ring-offset-current ring-offset-2'
+
+  const [magicState, setMagicState] = useState(OFF_STATE)
+  const revealTheMagic = (e) => {
+    e.stopPropagation()
+    setMagicState(ON_STATE)
+  }
 
   return (
     <header>
-      <nav className="bg-gray-50 dark:bg-transparent">
-        <div className="container px-6 py-3 mx-auto md:flex md:justify-between md:items-center">
-          {/* Page brand name */}
-          <div className="flex items-center justify-between">
-            <div>
-              <Link href="/">
-                <a className="text-2xl md:text-4xl font-bold text-gray-800 dark:text-white hover:text-gray-700 dark:hover:text-gray:300">
-                  .com
-                </a>
-              </Link>
-            </div>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="flex md:hidden">
+      <div className="container items-center pt-3 mx-auto">
+        <div className="text-gray-700 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform bg-transparent">
+          <div className="flex flex-col flex-wrap py-5 mx-auto md:items-center md:flex-row">
+            {/* Page brand name */}
+            <Link href="/">
+              <a className="pr-2 lg:pr-8 lg:px-6 focus:outline-none ">
+                <div className="inline-flex items-center">
+                  <div className="w-2 h-2 p-2 mt-2 mr-1 rounded-full bg-gradient-to-tr from-gray-700 to-primary-400 dark:from-gray-50 dark:to-gray-400 motion-safe:hover:animate-ping motion-safe:hover:duration-75">
+                  </div>
+                  <h2 className="block p-2 text-2xl font-bold tracking-tighter text-gray-800 cursor-pointer md:text-3xl lg:text-4xl lg:mr-8 dark:text-white hover:text-gray-700 dark:hover:text-gray:200 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform">
+                    com
+                  </h2>
+                </div>
+              </a>
+            </Link>
+            {/* Menu of the website */}
+            <nav className="flex flex-wrap items-center justify-center text-base md:ml-auto md:mr-auto">
+              <ul className="items-center inline-block list-none lg:inline-flex">
+                <li>
+                  <Link href="/">
+                    <a className={linksClassNames}>
+                      {t('nav-home')}
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about">
+                    <a className={linksClassNames}>
+                      {t('nav-about')}
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <ExternalLink
+                    classNames={linksClassNames}
+                    href="https://iolivares.blog"
+                    isIOLink={true}
+                  >
+                    {t('nav-blog')}
+                  </ExternalLink>
+                </li>
+                <li>
+                  <ExternalLink
+                    classNames={linksClassNames}
+                    href="https://iolivares.blog"
+                    isIOLink={true}
+                  >
+                    {t('nav-photos')}
+                  </ExternalLink>
+                </li>
+              </ul>
+            </nav>
+            {/* Button CTA of Magic */}
             <button
-              type="button"
-              className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
-              aria-label="toggle menu"
+              className="w-150 px-8 py-2 my-2 font-medium border-none text-primary-500 hover:text-gray-50 bg-gray-50 hover:bg-primary-500 dark:text-gray-100 dark:hover:text-gray-900 dark:bg-gray-800 dark:hover:bg-gray-200 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2"
+              onClick={revealTheMagic}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              {magicState !== ON_STATE ? (
+                <div className="inline-flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                  <span className="px-1 inline-block"></span>
+                  {t('nav-reveal-magic')}
+                </div>
+              ) : t('nav-magic-revealed')}
             </button>
           </div>
-
-          {/* Mobile Menu open: "block", Menu closed: "hidden" */}
-          <div className="items-center md:flex">
-            <div className="flex flex-col md:flex-row md:mx-6">
-              <Link href="/">
-                <a
-                  className="my-1 text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-                >
-                  {t('nav-home')}
-                </a>
-              </Link>
-              <Link href="/about">
-                <a
-                  className="my-1 text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-                >
-                  {t('nav-about')}
-                </a>
-              </Link>
-              <ExternalLink
-                classNames="my-1 text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-                href="https://iolivares.blog"
-                isIOLink={true}
-              >
-                {t('nav-blog')}
-              </ExternalLink>
-              <ExternalLink
-                classNames="my-1 text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-                href="https://iolivares.blog"
-                isIOLink={true}
-              >
-                {t('nav-photos')}
-              </ExternalLink>
-            </div>
-          </div>
-        </div>
-      </nav>
+        </div>       
+      </div>
     </header>
   )
 }

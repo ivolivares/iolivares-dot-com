@@ -8,12 +8,14 @@ import { Listbox, Transition } from '@headlessui/react'
 import ExternalLink from '@io/components/ExternalLink'
 import Langs from '@io/data/supportedLangs'
 import socialMedia from '@io/data/socialMedia'
+import { email, sendEmail, domain, name } from '@io/lib/email'
 
 export default function Footer() {
   const defaultLang = 'en'
-  const {push, pathname, asPath, query, locale} = useRouter()
-  const [selected, setSelected] = useState(locale)
+  const { push, pathname, asPath, query, locale } = useRouter()
+  const [ selected, setSelected ] = useState(locale)
   const { t } = useTranslation('common')
+  const linksClassNames = "px-4 py-1 mr-1 rounded-md text-gray-50 hover:text-gray-300 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform rounded-md focus:outline-none focus-visible:shadow-outline focus-visible:ring-2 ring-offset-current ring-offset-2"
 
   const setLanguage = (newLang) => {
     setSelected(newLang)
@@ -25,16 +27,14 @@ export default function Footer() {
       <div className="container mx-auto flex flex-col text-left pt-5 pb-6">
         <pre className="text-xs">
           &gt; $ cd ~/io{locale !== defaultLang ? '/' + locale : ''}{asPath}
-          <span className="w-1 h-4 inline-block bg-primary-800 ml-2 rounded-sm animate-pulse"> </span>
+          <span className="w-1 h-4 inline-block bg-primary-800 dark:bg-gray-400 ml-2 rounded-sm motion-safe:animate-ping motion-safe:duration-75"> </span>
         </pre>
       </div>
       <footer className="bg-gray-900 shadow-xl">
         <div className="flex flex-col flex-wrap justify-center p-5 md:flex-row">
           <nav className="flex flex-wrap items-center justify-center w-full mx-auto mb-6">
             <Link href="/about">
-              <a
-                className="px-4 py-1 mr-1 rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 text-gray-50 hover:text-gray-300"
-              >
+              <a className={linksClassNames}>
                 {t('nav-about')}
               </a>
             </Link>
@@ -42,7 +42,7 @@ export default function Footer() {
             <ExternalLink
               href="https://iolivares.blog"
               isIOLink={true}
-              classNames="px-4 py-1 mr-1 rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 text-gray-50 hover:text-gray-300"
+              classNames={linksClassNames}
             >
               {t('nav-blog')}
             </ExternalLink>
@@ -50,24 +50,22 @@ export default function Footer() {
             <ExternalLink
               href="https://iolivares.photos"
               isIOLink={true}
-              classNames="px-4 py-1 mr-1 rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 text-gray-50 hover:text-gray-300"
+              classNames={linksClassNames}
             >
               {t('nav-photos')}
             </ExternalLink>
             <span>·</span>
             <Link href="/uses">
-              <a
-                className="px-4 py-1 mr-1 rounded-md focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 text-gray-50 hover:text-gray-300"
-              >
+              <a className={linksClassNames}>
                 {t('nav-uses')}
               </a>
             </Link>
           </nav>
-          <div className="inline-flex justify-center w-full mx-auto mt-2 mr-2 sm:ml-auto sm:mt-0">
+          <div className="inline-flex justify-center w-full mx-auto sm:ml-auto sm:mt-0">
             {socialMedia.map((icon, iconIdx) => (
               <ExternalLink
                 href={icon.url}
-                classNames="mx-4 hover:opacity-75"
+                classNames="mx-4 hover:opacity-75 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform focus:outline-none focus-visible:shadow-outline focus-visible:ring-2 ring-offset-current ring-offset-3"
                 key={iconIdx}
               >
                 <Image
@@ -80,25 +78,51 @@ export default function Footer() {
               </ExternalLink>
             ))}
           </div>
+          <div className="w-full lg:w-1/2 flex flex-col flex-wrap justify-center pt-5 md:flex-row">
+            <div className="text-gray-100 w-full text-center text-sm">
+              <p>
+                {t('footer-email-me')}
+                {` `}
+                <a
+                  className="ml-1 inline-block text-primary-400 hover:text-primary-300 email-protection"
+                  data-domain={domain}
+                  data-name={name}
+                  data-lang={locale}
+                  href="#"
+                  onClick={sendEmail}
+                  rel="noopener"
+                >
+                  {email}
+                </a>
+              </p>
+              <p>{t('footer-socialmedia-me')}</p>
+            </div>
+          </div>
         </div>
         <div className="w-full px-8 mt-4 bg-gray-100 dark:bg-gray-800">
-          <div className="container flex flex-col flex-wrap justify-between p-5 mx-auto sm:flex-row">
-            <div className="text-sm text-left text-gray-800 dark:text-gray-50">
-              <p>&copy; 2006-{(new Date()).getFullYear()} {t('footer-copyright')} </p>
+          <div className="container flex flex-col flex-wrap justify-between py-5 mx-auto sm:flex-row">
+            <div className="text-xs text-left text-gray-800 dark:text-gray-50">
               <p>
-                {t('footer-creativecommons')} 
+                {`© ${t('full-name')} 2006-${(new Date()).getFullYear()}`}.
+                {` `}
+                {t('footer-copyright')}
+              </p>
+              <p>
+                {t('footer-creativecommons')}
+                {` `}
                 <ExternalLink
                   href={`http://creativecommons.org/licenses/by-nc/4.0/deed.${locale}`}
-                  classNames="ml-1 inline-block text-primary-800 hover:text-primary-600 dark:hover:text-primary-300"
+                  classNames="inline-block text-primary-400 hover:text-primary-600 dark:hover:text-primary-300"
                 >
                   CC BY-NC 4.0
                 </ExternalLink>
               </p>
               <p>
-                {t('footer-doodle-credits')} 
+                {t('footer-doodle-credits')}
+                {` `}
                 <ExternalLink
                   href="https://www.instagram.com/maetschl.cartoons/"
-                  classNames="ml-1 inline-block text-primary-800 hover:text-primary-600 dark:hover:text-primary-300"
+                  classNames="inline-block text-primary-400 hover:text-primary-600 dark:hover:text-primary-300"
                 >
                   Maetschl Cartoons.
                 </ExternalLink>
@@ -108,7 +132,7 @@ export default function Footer() {
               <div className="w-40 mt-2">
                 <Listbox value={selected} onChange={setLanguage}>
                   <div className="relative mt-1">
-                    <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-gray-50 dark:bg-gray-900 rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
+                    <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-gray-50 dark:bg-gray-900 rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-gray-700 dark:focus-visible:ring-gray-50 focus-visible:ring-offset-gray-700 dark:focus-visible:ring-offset-gray-300 sm:text-sm">
                       <span className="block truncate">{t(`language-${locale}`)}</span>
                       <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                         <svg
@@ -133,7 +157,7 @@ export default function Footer() {
                           <Listbox.Option
                             key={langIdx}
                             className={({ active }) =>
-                              `${active ? 'text-primary-800 bg-gray-100 dark:bg-gray-100' : 'text-gray-900 dark:text-gray-100'}
+                              `${active ? 'text-primary-500 bg-gray-100 dark:bg-gray-100' : 'text-gray-900 dark:text-gray-100'}
                             cursor-default select-none relative py-2 pl-10 pr-4`
                             }
                             value={lang}
@@ -148,7 +172,7 @@ export default function Footer() {
                                 </span>
                                 {selected ? (
                                   <span
-                                    className={`${active ? 'text-primary-600' : 'text-gray-100'
+                                    className={`${active ? 'text-primary-500' : 'text-gray-100'
                                       }
                                   absolute inset-y-0 left-0 flex items-center pl-3`}
                                   >
@@ -181,10 +205,19 @@ export default function Footer() {
         <p className="inline-block">
           <span>{t('footer-made-width')}</span>
           <span className="ml-2 mr-3">❤️</span>
+          <span>&amp;</span>
+          <span className="ml-3 mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </span>
           <span>{t('footer-made-from')}</span>
-          <span className="mx-3">🇨🇱</span>
-          <span className="mr-2">{t('footer-made-by')}</span>
-          <span>{t('full-name')}</span>
+          <span className="ml-2 mr-3">🇨🇱</span>
+          <span className="mr-2">
+            <Link href="/uses">
+              {t('footer-made-with')}
+            </Link>
+          </span>
         </p>
       </div>
     </>

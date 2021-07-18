@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next'
 import ExternalLink from '@io/components/ExternalLink'
 import Container from '@io/components/Container'
 
-const UsesLayout = ({ frontMatter, children }) => {
+const AboutLayout = ({ frontMatter, children }) => {
   const { locale } = useRouter()
   const { t } = useTranslation('common')
 
@@ -18,7 +18,7 @@ const UsesLayout = ({ frontMatter, children }) => {
       </article>
       <div className="text-right text-sm mt-5">
         <ExternalLink
-          href={`https://github.com/ivolivares/iolivares-dot-com/edit/main/data/uses.${locale}.mdx`}
+          href={`https://github.com/ivolivares/iolivares-dot-com/edit/main/data/about.${locale}.mdx`}
         >
           {t('edit-on-github')}
         </ExternalLink>
@@ -27,4 +27,4 @@ const UsesLayout = ({ frontMatter, children }) => {
   )
 }
 
-export default UsesLayout
+export default AboutLayout

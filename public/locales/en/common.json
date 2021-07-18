@@ -6,12 +6,17 @@
   "nav-blog": "Blog",
   "nav-photos": "Photography",
   "nav-uses": "Uses",
-  "footer-made-width": "Made with",
-  "footer-made-from": "from",
-  "footer-made-by": "by",
+  "nav-reveal-magic": "Revela the Magic",
+  "nav-magic-revealed": "Magic reveladed",
+  "footer-email-me": "I'm always up for a chat. Just send me an email at",
+  "footer-socialmedia-me": "or just say a \"Hi 👋\" on any of these social networks.",
   "footer-copyright": "Some contents are copyrighted.",
   "footer-creativecommons": "Where no copyright is indicated, the contents are available under",
   "footer-doodle-credits": "Original cartoon by",
+  "footer-made-width": "Made with",
+  "footer-made-from": "from",
+  "footer-made-with": "with various tech.",
   "language-en": "English",
-  "language-es": "Spanish"
+  "language-es": "Spanish",
+  "edit-on-github": "Edit this page on Github"
 }

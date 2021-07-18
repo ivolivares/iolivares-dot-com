@@ -8,7 +8,7 @@ import Footer from '@io/components/Footer'
 import Metadata from '@io/data/metadata'
 
 export default function Container(props) {
-  const { children, ...customMeta } = props
+  const { children, classNames, ...customMeta } = props
   const router = useRouter()
   const { t } = useTranslation('common')
   const meta = {
@@ -39,15 +39,22 @@ export default function Container(props) {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
       </Head>
-      <div className="container mx-auto flex flex-col justify-center px-8">
-        <a className="sr-only sr-only-focusable" href="#main-content" tabIndex="1">
+
+      {/* Skip to content A11Y feature */}
+      <div className="container relative flex mx-auto">
+        <a
+          className="absolute -top-36 focus-visible:top-36 left-3 z-10 focus:outline-none focus-visible:ring-2 focus-visible:primary-700 text-gray-800 dark:text-gray-50"
+          href="#main-content"
+          tabIndex="1"
+        >
           {t('skip-content')}
         </a>
       </div>
+
       <Header />
       <main
         id="main-content"
-        className="container pt-20 pb-10 px-44 mx-auto flex flex-col justify-center px-8 w-full m-4 mx-auto shadow-xl bg-white dark:bg-gray-700 dark:backdrop-filter dark:backdrop-blur-lg dark:bg-opacity-20"
+        className={classNames ? classNames : 'container pb-10 px-44 mx-auto flex flex-col justify-center px-8 w-full m-4 mx-auto shadow-xl bg-white dark:bg-gray-700 dark:backdrop-filter dark:backdrop-blur-lg dark:bg-opacity-20'}
       >
         {children}
       </main>

@@ -1,7 +1,7 @@
 // eslint-disable react/jsx-no-target-blank
 
 const ExternalLink = ({
-  href, isIOLink = false, classNames = 'text-gray-500 hover:text-gray-600', children,
+  href, isIOLink = false, classNames = 'text-primary-400 hover:text-primary-600 dark:hover:text-primary-300', children,
 }) => (
   isIOLink ?
     <a

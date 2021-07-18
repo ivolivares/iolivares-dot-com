@@ -1,35 +1,53 @@
 @tailwind base;
+
+@layer base {
+  ::selection {
+    @apply bg-primary-300 text-gray-800;
+  }
+
+  html {
+    min-width: 360px;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Noto Sans', sans-serif;
+  }
+
+  #__next {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  a {
+    @apply text-primary-400;
+  }
+  a:hover {
+    @apply text-primary-600;
+  }
+  a:focus {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-current focus-visible:ring-offset-2;
+  }
+
+  /* Remove Safari input shadow on mobile */
+  textarea,
+  input:matches([type='email'], [type='number'], [type='password'], [type='search'], [type='tel'], [type='text'], [type='url']) {
+      -webkit-appearance: none;
+  }
+
+  img {
+    /* Don't apply styles to next/image */
+    @apply m-0;
+    &.prose {
+      @apply m-0;
+    }
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
 
-::selection {
-  background-color: #e5bc72;
-  color: #292525;
-}
-
-html {
-  min-width: 360px;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Noto Sans', sans-serif;
-}
-
-@layer base {
-  a {
-    @apply text-primary-800;
-  }
-  a:hover {
-    @apply text-primary-300;
-  }
-}
-
-#__next {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
 
 code[class*='language-'],
 pre[class*='language-'] {
@@ -45,17 +63,13 @@ pre {
   scrollbar-width: none; /* Firefox */
 }
 
-/* Remove Safari input shadow on mobile */
-input[type='text'],
-input[type='email'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
 table {
   display: block;
   overflow-y: scroll;
+}
+
+.prose {
+  @apply max-w-full;
 }
 
 .prose pre {
@@ -75,4 +89,45 @@ table {
   /* Override removing top margin, causing layout shift */
   margin-top: 1.25em !important;
   margin-bottom: 1.25em !important;
+}
+
+/* Doodle my self */
+#mydoodleanimated svg path {
+  stroke-width: 4;
+  animation: draw 4s linear 0s 1 normal forwards;
+}
+
+#mydoodleanimated #mydoodleface {
+  stroke-dasharray: 2810;
+  stroke-dashoffset: 2810;
+}
+
+#mydoodleanimated #mydoodleface-draw {
+  opacity: 0;
+  animation: show .9s linear 4.3s 1 normal forwards;
+}
+
+/* Animations */
+@keyframes draw {
+  from {
+    stroke-dashoffset: 2810;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Theorically email protection */
+.email-protection {
+  unicode-bidi: bidi-override;
+  direction: rtl;
 }
