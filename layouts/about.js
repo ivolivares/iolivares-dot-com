@@ -12,6 +12,7 @@ const AboutLayout = ({ frontMatter, children }) => {
     <Container
       title={frontMatter.title}
       description={frontMatter.summary}
+      classNames="container pb-10 px-64 mx-auto flex flex-col justify-center w-full m-4 mx-auto shadow-xl bg-white dark:bg-gray-700 dark:backdrop-filter dark:backdrop-blur-lg dark:bg-opacity-20"
     >
       <article className="flex flex-col">
         <div className="prose dark:prose-dark">{children}</div>

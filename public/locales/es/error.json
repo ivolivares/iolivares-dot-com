@@ -1,6 +1,10 @@
 {
   "drawing-credits": "Dibujo 3D original de Gabriel Soares",
-  "title": "409 - Conflicto no humano",
-  "description": "¿Por qué estás aquí? Tal vez algo salió mal, de lo contrario estás buscando algo no está aquí de verdad, o tal vez estamos en un conflicto no humano entre las máquinas y nosotros. Nunca lo sabremos, pero lo que sabemos es: Lo que usted está tratando de ver no está aquí. Por favor, inténtalo de nuevo alguna vez.",
-  "cta-link": "Volver a la página de inicio"
+  "error-404-page-title": "Error 404: No encontrado | Iván Olivares Rojas",
+  "error-404-title": "404 - No encontrado",
+  "error-404-description": "¿Estás buscando algo que debería estar acá? ¿Ya miraste la URL? Quizá ahí hay algo mal, o quizá el ratón se robó la lengua del gato pero eso nunca lo sabremos.",
+  "error-page-title": "Algo salió mal | Iván Olivares Rojas",
+  "error-title": "409 - Conflicto no humano",
+  "error-description": "¿Por qué estás aquí? Tal vez algo salió mal, de lo contrario estás buscando algo no está aquí de verdad, o tal vez estamos en un conflicto no humano entre las máquinas y nosotros. Nunca lo sabremos, pero lo que sabemos es: Lo que usted está tratando de ver no está aquí. Por favor, inténtalo de nuevo alguna vez.",
+  "error-cta-link": "Volver a la página de inicio"
 }

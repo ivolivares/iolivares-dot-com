@@ -54,7 +54,7 @@ export default function Container(props) {
       <Header />
       <main
         id="main-content"
-        className={classNames ? classNames : 'container pb-10 px-44 mx-auto flex flex-col justify-center px-8 w-full m-4 mx-auto shadow-xl bg-white dark:bg-gray-700 dark:backdrop-filter dark:backdrop-blur-lg dark:bg-opacity-20'}
+        className={classNames ? classNames : 'container pb-10 px-44 mx-auto flex flex-col justify-center w-full m-4 mx-auto shadow-xl bg-white dark:bg-gray-700 dark:backdrop-filter dark:backdrop-blur-lg dark:bg-opacity-20'}
       >
         {children}
       </main>

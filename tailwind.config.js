@@ -11,16 +11,6 @@ module.exports = {
       },
       colors: {
         primary: {
-          // '50': '#fefdfb',
-          // '100': '#fdfbf6',
-          // '200': '#f8edd8',
-          // '300': '#f2dfba',
-          // '400': '#edd09c',
-          // '500': '#e5bc71',
-          // '600': '#dca641',
-          // '700': '#c68e24',
-          // '800': '#a4751e',
-          // '900': '#745315',
           '50': '#f1f7f7',
           '100': '#d6f0f6',
           '200': '#a7e3ec',
@@ -44,14 +34,13 @@ module.exports = {
           '800': '#292525',
           '900': '#1c191a',
         },
-        'khaby-lame': '#c2c2c2',
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
             color: theme('colors.gray.800'),
             a: {
-              color: theme('colors.primary.800'),
+              color: theme('colors.primary.300'),
               '&:hover': {
                 color: theme('colors.primary.600'),
               },
@@ -74,12 +63,12 @@ module.exports = {
           css: {
             color: theme('colors.gray.100'),
             a: {
-              color: theme('colors.primary.800'),
+              color: theme('colors.primary.300'),
               '&:hover': {
                 color: theme('colors.primary.600'),
               },
               code: {
-                color: theme('colors.primary.800'),
+                color: theme('colors.primary.300'),
               },
             },
             blockquote: {

@@ -34,6 +34,14 @@ const MyDoodleAnimated = () => (
       height="512"
       className="absolute flex justify-center items-center"
     />
+    <div id="eyes" className="absolute flex justify-between">
+      <div id="eye" className="absolute bg-white flex items-center justify-center rounded-lg">
+        <div id="iris" className="bg-black rounded-full"></div>
+      </div>
+      <div id="eye" className="absolute bg-white flex items-center justify-center rounded-lg">
+        <div id="iris" className="bg-black rounded-full"></div>
+      </div>
+    </div>
   </div>
 )
 

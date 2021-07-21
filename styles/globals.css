@@ -1,5 +1,4 @@
 @tailwind base;
-
 @layer base {
   ::selection {
     @apply bg-primary-300 text-gray-800;
@@ -21,8 +20,13 @@
   }
 
   a {
-    @apply text-primary-400;
+    @apply text-primary-400 dark:text-primary-300;
   }
+  /* @media (prefers-color-scheme: dark) {
+    a {
+      @apply text-primary-300;
+    }
+  } */
   a:hover {
     @apply text-primary-600;
   }
@@ -43,91 +47,125 @@
       @apply m-0;
     }
   }
+  code[class*='language-'],
+  pre[class*='language-'] {
+    @apply text-gray-800 dark:text-gray-50;
+  }
+
+  pre::-webkit-scrollbar {
+    display: none;
+  }
+
+  pre {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  table {
+    display: block;
+    overflow-y: scroll;
+  }
 }
 
 @tailwind components;
-@tailwind utilities;
+@layer components {
+  .prose {
+    @apply max-w-full;
+  }
 
+  .prose pre {
+    @apply bg-gray-50 border border-gray-200 dark:border-gray-700 dark:bg-gray-900;
+  }
 
-code[class*='language-'],
-pre[class*='language-'] {
-  @apply text-gray-800 dark:text-gray-50;
-}
+  .prose code {
+    @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-md bg-gray-100 dark:bg-gray-900;
+  }
 
-pre::-webkit-scrollbar {
-  display: none;
-}
+  .prose img {
+    /* Don't apply styles to next/image */
+    @apply m-0;
+  }
 
-pre {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
+  .prose > :first-child {
+    /* Override removing top margin, causing layout shift */
+    margin-top: 1.25em !important;
+    margin-bottom: 1.25em !important;
+  }
 
-table {
-  display: block;
-  overflow-y: scroll;
-}
+  /* Doodle my self */
+  #mydoodleanimated svg path {
+    stroke-width: 4;
+    animation: draw 4s linear 0s 1 normal forwards;
+  }
 
-.prose {
-  @apply max-w-full;
-}
-
-.prose pre {
-  @apply bg-gray-50 border border-gray-200 dark:border-gray-700 dark:bg-gray-900;
-}
-
-.prose code {
-  @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-md bg-gray-100 dark:bg-gray-900;
-}
-
-.prose img {
-  /* Don't apply styles to next/image */
-  @apply m-0;
-}
-
-.prose > :first-child {
-  /* Override removing top margin, causing layout shift */
-  margin-top: 1.25em !important;
-  margin-bottom: 1.25em !important;
-}
-
-/* Doodle my self */
-#mydoodleanimated svg path {
-  stroke-width: 4;
-  animation: draw 4s linear 0s 1 normal forwards;
-}
-
-#mydoodleanimated #mydoodleface {
-  stroke-dasharray: 2810;
-  stroke-dashoffset: 2810;
-}
-
-#mydoodleanimated #mydoodleface-draw {
-  opacity: 0;
-  animation: show .9s linear 4.3s 1 normal forwards;
-}
-
-/* Animations */
-@keyframes draw {
-  from {
+  #mydoodleanimated #mydoodleface {
+    stroke-dasharray: 2810;
     stroke-dashoffset: 2810;
   }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 
-@keyframes show {
-  from {
+  #mydoodleanimated #mydoodleface-draw {
     opacity: 0;
+    animation: show .9s linear 4.3s 1 normal forwards;
   }
-  to {
-    opacity: 1;
+
+  #mydoodleanimated #eyes {
+    left: 42%;
+    width: 22%;
+    height: 100%;
+    opacity: 0;
+    animation: show .1s linear 5s 1 normal forwards;
+  }
+  
+  #mydoodleanimated #eye {
+    width: 22.4%;
+    height: 4.7%;
+    top: 38.5%;
+  }
+  
+  #mydoodleanimated #eye:last-child {
+    left: 78%;
+  }
+
+  #mydoodleanimated #iris {
+    width: 62.4%;
+    height: 62.4%;
+    -webkit-transform-origin: 50%;
+    -webkit-animation: blink 5s infinite;
+  }
+
+  /* Animations */
+  @keyframes draw {
+    from {
+      stroke-dashoffset: 2810;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes show {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes blink {
+    0%, 100% {
+      transform: scale(1, .05);
+    }
+    5%, 95% {
+      transform: scale(1, 1);
+    }
   }
 }
 
-/* Theorically email protection */
-.email-protection {
-  unicode-bidi: bidi-override;
-  direction: rtl;
+@tailwind utilities;
+@layer utilities {
+  /* Theorically email protection */
+  .email-protection {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+  }
 }
