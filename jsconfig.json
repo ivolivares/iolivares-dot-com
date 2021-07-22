@@ -6,7 +6,8 @@
       "@io/data/*": ["data/*"],
       "@io/layouts/*": ["layouts/*"],
       "@io/lib/*": ["lib/*"],
-      "@io/styles/*": ["styles/*"]
+      "@io/styles/*": ["styles/*"],
+      "@io/images/*": ["public/static/images/*"],
     }
   }
 }

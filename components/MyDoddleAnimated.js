@@ -4,7 +4,7 @@
 */
 import Image from 'next/image'
 
-import MyDoodle from '../public/static/images/doodle.png'
+import MyDoodle from '@io/images/doodle.png'
 import MyDoodlePath from '@io/data/doodleSVG'
 
 const MyDoodleAnimated = () => (  

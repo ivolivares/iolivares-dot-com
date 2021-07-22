@@ -38,7 +38,9 @@ const Home = () => {
         <div className="flex flex-col items-start text-left lg:flex-grow md:w-1/2">
           <h1 className="mb-8 text-3xl font-bold tracking-tighter text-left text-gray-800 dark:text-gray-100 lg:text-5xl title-font">
             <span className="mr-3 inline-block">👋</span>
-            {t('hey-iam-io')}
+            <span className="decoration-clone bg-clip-text text-transparent bg-gradient-to-b from-primary-300 to-primary-500">
+              {t('hey-iam-io')}
+            </span>
             {/* TODO: Audio TTS icon */}
             <span className="ml-3 inline-block">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

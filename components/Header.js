@@ -69,8 +69,8 @@ export default function Header() {
                 </li>
               </ul>
             </nav>
-            {/* Button CTA of Magic */}
-            <button
+            {/* TODO: Button CTA of Magic */}
+            {/* <button
               className="w-150 px-8 py-2 my-2 font-medium border-none text-primary-500 hover:text-gray-50 bg-gray-50 hover:bg-primary-500 dark:text-gray-100 dark:hover:text-gray-900 dark:bg-gray-800 dark:hover:bg-gray-200 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2"
               onClick={revealTheMagic}
             >
@@ -83,7 +83,7 @@ export default function Header() {
                   {t('nav-reveal-magic')}
                 </div>
               ) : t('nav-magic-revealed')}
-            </button>
+            </button> */}
           </div>
         </div>       
       </div>

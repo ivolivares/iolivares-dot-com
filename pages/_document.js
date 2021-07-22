@@ -9,12 +9,17 @@ class ioDocument extends Document {
       <Html>
         <Head>
           <link
+            crossOrigin={true}
             rel="preconnect"
             href="https://fonts.gstatic.com"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-            rel="stylesheet"
+            rel="preconnect"
+            href="https://fonts.googleapis.com"
+          />
+          <link
+              href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;600;700&display=swap"
+              rel="stylesheet"
           />
           <link href="/static/favicons/favicon.ico" rel="shortcut icon" />
           <link href="/site.webmanifest" rel="manifest" />
