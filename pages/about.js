@@ -19,11 +19,11 @@ export default function About({ mdxSource, frontMatter }) {
 }
 
 export async function getStaticProps({ locale }) {
-  const uses = await getFileBySlug('about', locale)
+  const about = await getFileBySlug('about', locale)
 
   return {
     props: {
-      ...uses,
+      ...about,
       ...await serverSideTranslations(locale, ['common']),
     },
     revalidate: 3600, // 3600 seconds = 1 hour

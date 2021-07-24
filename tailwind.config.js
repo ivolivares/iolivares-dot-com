@@ -2,12 +2,22 @@ const { spacing, fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   mode: 'jit',
-  purge: ['./pages/**/*.js', './components/**/*.js', './layouts/**/*.js'],
+  purge: [
+    './pages/**/*.js',
+    './components/**/*.js',
+    './layouts/**/*.js',
+
+    // Force tailwind jit to include css rules in compiled css. Specifically,
+    // `.rough-notation` which is not in the above whitelisted files because it
+    // is rendered by a package. More info:
+    // https://tailwindcss.com/docs/just-in-time-mode#known-limitations
+    "./tailwind.safelist.txt",
+  ],
   darkMode: 'media',
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', ...fontFamily.serif],
+        sans: ['Inter', ...fontFamily.sans],
       },
       colors: {
         primary: {

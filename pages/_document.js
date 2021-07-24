@@ -9,7 +9,15 @@ class ioDocument extends Document {
       <Html>
         <Head>
           <link
-            crossOrigin={true}
+            rel="preconnect"
+            href="https://iolivares.blog"
+          />
+          <link
+            rel="preconnect"
+            href="https://iolivares.photos"
+          />
+          <link
+            crossOrigin="true"
             rel="preconnect"
             href="https://fonts.gstatic.com"
           />

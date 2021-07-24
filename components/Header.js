@@ -61,7 +61,7 @@ export default function Header() {
                 <li>
                   <ExternalLink
                     classNames={linksClassNames}
-                    href="https://iolivares.blog"
+                    href="https://iolivares.photos"
                     isIOLink={true}
                   >
                     {t('nav-photos')}
