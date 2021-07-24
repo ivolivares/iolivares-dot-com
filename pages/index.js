@@ -41,7 +41,13 @@ const Home = () => {
             </span>
             {/* TODO: Audio TTS icon */}
             <span className="ml-3 inline-block">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                className="h-6 w-6 text-primary-200 hover:text-primary-600 dark:text-gray-600 dark:hover:text-gray-100 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -66,7 +72,7 @@ const Home = () => {
           </p> */}
           <div className="flex flex-col justify-left lg:flex-row">
             <Link href="/about">
-              <a className="flex items-center px-6 py-2 mt-auto font-semibold text-gray-50 hover:text-gray-50 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform bg-primary-400 rounded-lg hover:bg-primary-500 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
+              <a className="flex items-center px-6 py-2 mt-auto font-semibold text-gray-50 hover:text-gray-50 bg-primary-600 hover:bg-primary-400 rounded-lg motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
                 {t('hey-button-cta')}
               </a>
             </Link>
