@@ -77,13 +77,13 @@ const Home = () => {
               </a>
             </Link>
             <p className="mt-2 text-sm text-left text-gray-800 dark:text-gray-50 md:ml-6 md:mt-0">
-              {t('hey-headline-cta')}
-              <br className="hidden lg:block" />
               <Link href="/about">
                 <a className="inline-flex items-center font-semibold text-primary-400 md:mb-2 lg:mb-0 hover:text-primary-500">
                   {t('hey-link-cta')}
                 </a>
               </Link>
+              <br className="hidden lg:block" />
+              {t('hey-headline-cta')}
             </p>
           </div>
         </div>
