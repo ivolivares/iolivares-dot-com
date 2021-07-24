@@ -71,13 +71,23 @@ export default function Header() {
             </nav>
             {/* TODO: Button CTA of Magic */}
             {/* <button
-              className="w-150 px-8 py-2 my-2 font-medium border-none text-primary-500 hover:text-gray-50 bg-gray-50 hover:bg-primary-500 dark:text-gray-100 dark:hover:text-gray-900 dark:bg-gray-800 dark:hover:bg-gray-200 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2"
+              className="w-150 px-8 py-2 my-2 font-medium border-none text-primary-500
+              hover:text-gray-50 bg-gray-50 hover:bg-primary-500 dark:text-gray-100
+              dark:hover:text-gray-900 dark:bg-gray-800 dark:hover:bg-gray-200
+              motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out
+              motion-safe:transform focus:shadow-outline focus:outline-none focus:ring-2
+              ring-offset-current ring-offset-2"
               onClick={revealTheMagic}
             >
               {magicState !== ON_STATE ? (
                 <div className="inline-flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002
+                         2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                   <span className="px-1 inline-block"></span>
                   {t('nav-reveal-magic')}

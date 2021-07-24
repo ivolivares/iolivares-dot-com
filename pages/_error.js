@@ -32,11 +32,12 @@ const Error = ({ statusCode }) => {
         <p className="px-20 text-gray-700 dark:text-gray-50">
           {description}
         </p>
-        {/* <Link href="/">
-          <a className="max-w-full p-1 sm:p-4 w-64 font-semibold mx-auto text-center rounded-lg bg-gray-400 text-gray-100 hover:text-gray-800 cursor-pointer shadow hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-gray-300 select-none">
-            {t('error-cta-link')}
-          </a>
-        </Link> */}
+        {/* <Link href="/"> */}
+        {/* eslint-disable-next-line max-len */}
+        {/* <a className="max-w-full p-1 sm:p-4 w-64 font-semibold mx-auto text-center rounded-lg bg-gray-400 text-gray-100 hover:text-gray-800 cursor-pointer shadow hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-gray-300 select-none">
+          {t('error-cta-link')}
+        </a> */}
+        {/* </Link> */}
         <div className="flex justify-center mx-auto max-w-xl">
           <Image
             alt={`Khaby Lame (TikTok actor), drawing in 3D by Gabriel Soares`}
