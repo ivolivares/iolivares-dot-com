@@ -7,9 +7,9 @@ module.exports = {
     './components/**/*.js',
     './layouts/**/*.js',
 
-    // Force tailwind jit to include css rules in compiled css. Specifically,
-    // `.rough-notation` which is not in the above whitelisted files because it
-    // is rendered by a package. More info:
+    // Force tailwind jit to include css rules in compiled css.
+    // Specifically, `.rough-notation` which is not in the above whitelisted files
+    // because it is rendered by a package. More info:
     // https://tailwindcss.com/docs/just-in-time-mode#known-limitations
     "./tailwind.safelist.txt",
   ],

@@ -3,6 +3,7 @@
  * @see https://github.com/leerob/leerob.io/blob/main/components/MDXComponents.js
  */
 import Link from 'next/link'
+import ExternalLink from '@io/components/ExternalLink'
 
 const CustomLink = (props) => {
   const href = props.href
@@ -16,7 +17,7 @@ const CustomLink = (props) => {
     )
   }
 
-  return <a target="_blank" rel="noopener noreferrer" {...props} />
+  return <ExternalLink {...props} />
 }
 
 export default CustomLink

@@ -17,7 +17,7 @@ const ExternalLink = ({
       className={classNames}
       target="_blank"
       rel="noopener noreferrer"
-      href={href}
+      href={`${href}${href.indexOf('?') < 0 ? '?' : '&'}from=iolivares.com`}
     >
       {children}
     </a>
