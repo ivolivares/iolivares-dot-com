@@ -7,7 +7,7 @@ import ExternalLink from '@io/components/ExternalLink'
 export default function Header() {
   const { t } = useTranslation('common')
   const [ON_STATE, OFF_STATE] = ['on', 'off']
-  const linksClassNames = 'px-4 py-1 mr-1 text-base text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-400 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform rounded-md focus:outline-none focus-visible:shadow-outline focus-visible:ring-2 ring-offset-current ring-offset-2'
+  const linksClassNames = 'px-1 md:px-4 py-1 mr-1 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-400 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform rounded-md focus:outline-none focus-visible:shadow-outline focus-visible:ring-2 ring-offset-current ring-offset-2'
 
   const [magicState, setMagicState] = useState(OFF_STATE)
   const revealTheMagic = (e) => {
@@ -17,24 +17,24 @@ export default function Header() {
 
   return (
     <header>
-      <div className="container items-center pt-3 mx-auto">
+      <div className="container items-center sm:pt-3 mx-auto">
         <div className="text-gray-700 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform bg-transparent">
-          <div className="flex flex-col flex-wrap py-5 mx-auto md:items-center md:flex-row">
+          <div className="flex flex-row py-2 lg:py-5 mx-auto">
             {/* Page brand name */}
             <Link href="/">
-              <a className="pr-2 lg:pr-8 lg:px-6 focus:outline-none ">
+              <a className="px-2 md:px-6 pr-2 md:pr-8 focus:outline-none ">
                 <div className="inline-flex items-center">
-                  <div className="w-2 h-2 p-2 mt-2 mr-1 rounded-full bg-gradient-to-tr from-gray-700 to-primary-400 dark:from-gray-50 dark:to-gray-400 motion-safe:hover:animate-ping motion-safe:hover:duration-75">
+                  <div className="w-1 h-1 p-1 mt-2 sm:w-2 sm:h-2 sm:p-2 sm:mt-3 sm:mr-1 rounded-full bg-gradient-to-tr from-gray-700 to-primary-400 dark:from-gray-50 dark:to-gray-400 motion-safe:hover:animate-ping motion-safe:hover:duration-75">
                   </div>
-                  <h2 className="block p-2 text-2xl font-bold tracking-tighter text-gray-800 cursor-pointer md:text-3xl lg:text-4xl lg:mr-8 dark:text-white hover:text-gray-700 dark:hover:text-gray:200 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform">
+                  <h2 className="block py-2 pr-2 pl-1 text-2xl font-bold tracking-tighter text-gray-800 cursor-pointer md:text-3xl lg:text-4xl lg:mr-8 dark:text-white hover:text-gray-700 dark:hover:text-gray:200 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform">
                     com
                   </h2>
                 </div>
               </a>
             </Link>
             {/* Menu of the website */}
-            <nav className="flex flex-wrap items-center justify-center text-base md:ml-auto md:mr-auto">
-              <ul className="items-center inline-block list-none lg:inline-flex">
+            <nav className="flex flex-wrap items-center justify-center text-xs md:text-base ml-auto mr-auto">
+              <ul className="items-center inline-flex list-none">
                 <li>
                   <Link href="/">
                     <a className={linksClassNames}>

@@ -15,7 +15,7 @@ export default function Footer() {
   const { push, pathname, asPath, query, locale } = useRouter()
   const [ selected, setSelected ] = useState(locale)
   const { t } = useTranslation('common')
-  const linksClassNames = "px-4 py-1 mr-1 rounded-md text-gray-50 hover:text-gray-300 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform rounded-md focus:outline-none focus-visible:shadow-outline focus-visible:ring-2 ring-offset-current ring-offset-2"
+  const linksClassNames = "px-2 sm:px-4 py-1 md:mr-1 rounded-md text-gray-50 hover:text-gray-300 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform rounded-md focus:outline-none focus-visible:shadow-outline focus-visible:ring-2 ring-offset-current ring-offset-2"
 
   const setLanguage = (newLang) => {
     setSelected(newLang)
@@ -24,15 +24,17 @@ export default function Footer() {
 
   return (
     <>
-      <div className="container mx-auto flex flex-col text-left pt-5 pb-6">
+      <div className="container mx-auto flex flex-col text-left pt-5 pb-6 px-3 md:px-0">
         <pre className="text-xs">
           &gt; $ cd ~/io{locale !== defaultLang ? '/' + locale : ''}{asPath}
-          <span className="w-1 h-4 inline-block bg-primary-800 dark:bg-gray-400 ml-2 rounded-sm motion-safe:animate-ping motion-safe:duration-75"> </span>
+          <span className="w-1 h-4 inline-block bg-primary-800 dark:bg-gray-400 ml-2 rounded-sm motion-safe:animate-ping motion-safe:duration-75">
+            {` `}
+          </span>
         </pre>
       </div>
       <footer className="bg-gray-900 shadow-xl">
         <div className="flex flex-col flex-wrap justify-center p-5 md:flex-row">
-          <nav className="flex flex-wrap items-center justify-center w-full mx-auto mb-6">
+          <nav className="flex flex-wrap items-center justify-center w-full mx-auto mb-6 text-xs md:text-base">
             <Link href="/about">
               <a className={linksClassNames}>
                 {t('nav-about')}
@@ -65,7 +67,7 @@ export default function Footer() {
             {socialMedia.map((icon, iconIdx) => (
               <ExternalLink
                 href={icon.url}
-                classNames="mx-4 hover:opacity-75 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform focus:outline-none focus-visible:shadow-outline focus-visible:ring-2 ring-offset-current ring-offset-3"
+                classNames="mx-2 sm:mx-4 hover:opacity-75 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform focus:outline-none focus-visible:shadow-outline focus-visible:ring-2 ring-offset-current ring-offset-3"
                 key={iconIdx}
               >
                 <Image
@@ -79,7 +81,7 @@ export default function Footer() {
             ))}
           </div>
           <div className="w-full lg:w-1/2 flex flex-col flex-wrap justify-center pt-5 md:flex-row">
-            <div className="text-gray-100 w-full text-center text-sm">
+            <div className="text-gray-100 w-full text-center text-xs md:text-ms">
               <p>
                 {t('footer-email-me')}
                 {` `}
@@ -100,7 +102,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="w-full px-8 mt-4 bg-gray-100 dark:bg-gray-800">
-          <div className="container flex flex-col flex-wrap justify-between py-5 mx-auto sm:flex-row">
+          <div className="container py-5 mx-auto flex flex-col md:flex-row flex-wrap justify-center md:justify-between items-start md:items-center">
             <div className="text-xs text-left text-gray-800 dark:text-gray-50">
               <p>
                 {`© ${t('full-name')} 2006-${(new Date()).getFullYear()}`}.
@@ -128,7 +130,7 @@ export default function Footer() {
                 </ExternalLink>
               </p>
             </div>
-            <div className="text-sm text-left text-gray-800 dark:text-gray-50">
+            <div className="text-sm text-left text-gray-800 dark:text-gray-50 mt-3 md:mt-0 flex justify-center md:justify-end w-full md:w-auto">
               <div className="w-40 mt-2">
                 <Listbox value={selected} onChange={setLanguage}>
                   <div className="relative mt-1">

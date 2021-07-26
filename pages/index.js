@@ -13,34 +13,35 @@ const Home = () => {
 
   return (
     <Container>
-      <section className="container flex flex-col py-16 mx-auto lg:items-center md:flex-row">
+      <section className="container flex flex-col pt-4 pb-16 md:py-16 mx-auto items-top lg:items-center md:flex-row">
         {/* No motion, static image. */}
-        <div className="w-full mb-10 lg:w-5/6 lg:max-w-lg md:w-1/2 dark:bg-gray-300 rounded-full motion-safe:hidden motion-reduce:block">
+        <div className="w-full xl:w-5/6 mb-10 motion-safe:hidden justify-center flex-col motion-reduce:flex">
           <Image
             src={MyDoodle}
             alt="My Doodle by Maetschl Cartoons"
             priority={true}
             placeholder="blur"
             layout="intrinsic"
+            className="dark:bg-gray-300 rounded-full"
             width="512"
             height="512"
           />
         </div>
 
         {/* Motion available, go animations! */}
-        <div className="w-full mb-10 lg:w-5/6 lg:max-w-lg md:w-1/2 dark:bg-gray-300 rounded-full motion-safe:block motion-reduce:hidden">
+        <div className="m-auto mb-10 md:my-0 w-1/2 md:w-full xl:w-5/6 motion-safe:flex justify-center flex-col motion-reduce:hidden">
           <MyDoodleAnimated />
         </div>
 
         {/* Headline text */}
-        <div className="flex flex-col items-start text-left lg:flex-grow md:w-1/2">
-          <h1 className="mb-8 text-3xl font-bold tracking-tighter text-left text-gray-800 dark:text-gray-100 lg:text-5xl title-font">
+        <div className="flex flex-col items-start text-left xl:flex-grow">
+          <h1 className="mb-8 title-font text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter text-left text-gray-800 dark:text-gray-100">
             <span className="mr-3 inline-block">👋</span>
             <span className="decoration-clone bg-clip-text text-transparent bg-gradient-to-b from-primary-300 to-primary-500">
               {t('hey-iam-io')}
             </span>
             {/* TODO: Audio TTS icon */}
-            <span className="ml-3 inline-block">
+            <span className="ml-2 inline-block">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -57,34 +58,36 @@ const Home = () => {
               </svg>
             </span>
           </h1>
-          <p className="mb-8 ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50 ">
+          <p className="mb-8 md:ml-5 lg:ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50 ">
             {t('hey-first-line')}
           </p>
-          <p className="mb-8 ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
+          <p className="mb-8 md:ml-5 lg:ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
             {t('hey-second-line')}
           </p>
-          <p className="mb-8 ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
+          <p className="mb-8 md:ml-5 lg:ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
             {t('hey-third-line')}
           </p>
           {/* eslint-disable-next-line max-len */}
           {/* <p className="mb-8 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
             TODO: Spotify now playing component
           </p> */}
-          <div className="flex flex-col justify-left lg:flex-row">
+          <div className="flex flex-col justify-end lg:justify-start lg:flex-row w-full">
             <Link href="/about">
-              <a className="flex items-center px-6 py-2 mt-auto font-semibold text-gray-50 hover:text-gray-50 bg-primary-600 hover:bg-primary-400 rounded-lg motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
+              <a className="w-auto px-6 py-2 mt-auto font-semibold text-center lg:text-left text-gray-50 hover:text-gray-50 bg-primary-600 hover:bg-primary-400 rounded-lg motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
                 {t('hey-button-cta')}
               </a>
             </Link>
-            <p className="mt-2 text-sm text-left text-gray-800 dark:text-gray-50 md:ml-6 md:mt-0">
-              <Link href="/about">
-                <a className="inline-flex items-center font-semibold text-primary-400 md:mb-2 lg:mb-0 hover:text-primary-500">
-                  {t('hey-link-cta')}
-                </a>
-              </Link>
-              <br className="hidden lg:block" />
-              {t('hey-headline-cta')}
-            </p>
+            <div className="hidden lg:flex">
+              <p className="mt-2 text-sm text-left text-gray-800 dark:text-gray-50 md:ml-6 md:mt-0">
+                <Link href="/about">
+                  <a className="inline-flex items-center font-semibold text-primary-400 md:mb-2 lg:mb-0 hover:text-primary-500">
+                    {t('hey-link-cta')}
+                  </a>
+                </Link>
+                <br className="hidden lg:block" />
+                {t('hey-headline-cta')}
+              </p>
+            </div>
           </div>
         </div>
       </section>

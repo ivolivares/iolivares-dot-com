@@ -1,11 +1,11 @@
 @tailwind base;
 @layer base {
   ::selection {
-    @apply bg-primary-300 text-gray-800;
+    @apply bg-primary-300 text-gray-800 dark:text-gray-50;
   }
 
   html {
-    min-width: 360px;
+    min-width: 320px;
     scroll-behavior: smooth;
   }
 
@@ -22,11 +22,6 @@
   a {
     @apply text-primary-400 dark:text-primary-300;
   }
-  /* @media (prefers-color-scheme: dark) {
-    a {
-      @apply text-primary-300;
-    }
-  } */
   a:hover {
     @apply text-primary-600;
   }
@@ -36,7 +31,7 @@
 
   /* Remove Safari input shadow on mobile */
   textarea,
-  input:matches([type='email'], [type='number'], [type='password'], [type='search'], [type='tel'], [type='text'], [type='url']) {
+  input:matches([type='email'],[type='number'], [type='password'], [type='search'], [type='tel'], [type='text'], [type='url']) {
     -webkit-appearance: none;
   }
 

@@ -132,6 +132,7 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
     require('tailwindcss-accessibility'),
     require('tailwindcss-image-rendering')(),
   ],

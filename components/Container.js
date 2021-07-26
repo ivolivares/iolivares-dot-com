@@ -40,6 +40,15 @@ export default function Container(props) {
         <meta name="twitter:image" content={meta.image} />
       </Head>
 
+      {/* Debug screens */}
+      <div className="border-2 border-dashed w-full h-10 pt-1 border-red-400 text-center">
+        <span className="hidden sm:inline-block">SM ·</span>
+        <span className="hidden md:inline-block"> MD ·</span>
+        <span className="hidden lg:inline-block"> LG ·</span>
+        <span className="hidden xl:inline-block"> XL ·</span>
+        <span className="hidden 2xl:inline-block"> 2XL</span>
+      </div>
+
       {/* Skip to content A11Y feature */}
       <div className="container relative flex mx-auto">
         <a
@@ -54,7 +63,7 @@ export default function Container(props) {
       <Header />
       <main
         id="main-content"
-        className={classNames ? classNames : 'container pb-10 px-40 mx-auto flex flex-col justify-center w-full m-4 mx-auto shadow-xl bg-white dark:bg-gray-700 dark:backdrop-filter dark:backdrop-blur-lg dark:bg-opacity-20'}
+        className={classNames ? classNames : 'lg:container pb-10 px-5 sm:px-10 lg:px-20 xl:px-35 2xl:px-40 mx-auto sm:mt-4 mb-4 flex flex-col justify-center w-full mx-auto shadow-xl bg-white dark:bg-gray-700 dark:backdrop-filter dark:backdrop-blur-lg dark:bg-opacity-20'}
       >
         {children}
       </main>
