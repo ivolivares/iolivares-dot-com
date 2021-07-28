@@ -1,7 +1,22 @@
 {
-  "skip-content": "Salta al contenido principal",
+  "skip-content": "Ir al contenido principal",
   "nav-home": "Inicio",
   "nav-about": "Acerca de",
+  "nav-talks": "Conferencias",
   "nav-blog": "Blog",
-  "nav-photos": "Fotografía"
+  "nav-photos": "Fotografía",
+  "nav-uses": "Lo que uso",
+  "nav-reveal-magic": "Revelar la magia",
+  "nav-magic-revealed": "Magia revelada",
+  "footer-email-me": "Siempre estoy dispuesto a charlar. Sólo escríbeme a",
+  "footer-socialmedia-me": "o simplemente manda un \"Hola 👋\" en cualquiera de estas redes sociales.",
+  "footer-copyright": "Algunos contenidos con derechos reservados.",
+  "footer-creativecommons": "Donde no se indique copyright, los contenidos están disponibles bajo una licencia",
+  "footer-doodle-credits": "Caricatura original de",
+  "footer-made-width": "Hecho con",
+  "footer-made-from": "desde",
+  "footer-made-with": "con varias tecnologías.",
+  "language-en": "Inglés",
+  "language-es": "Español",
+  "edit-on-github": "Editar esta página en Github"
 }

@@ -3,11 +3,17 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { getFileBySlug } from '@io/lib/mdx'
 import UsesLayout from '@io/layouts/uses'
+import MDXComponents from '@io/components/MDXComponents'
 
 export default function Uses({ mdxSource, frontMatter }) {
   return (
     <UsesLayout frontMatter={frontMatter}>
-      <MDXRemote {...mdxSource} />
+      <MDXRemote
+        {...mdxSource}
+        components={{
+          ...MDXComponents,
+        }}
+      />
     </UsesLayout>
   )
 }
