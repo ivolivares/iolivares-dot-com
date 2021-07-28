@@ -7,7 +7,7 @@ import { Listbox, Transition } from '@headlessui/react'
 
 import ExternalLink from '@io/components/ExternalLink'
 import Langs from '@io/data/supportedLangs'
-import socialMedia from '@io/data/socialMedia'
+import Metadata from '@io/data/metadata'
 import { email, sendEmail, domain, name } from '@io/lib/email'
 
 export default function Footer() {
@@ -34,7 +34,7 @@ export default function Footer() {
       </div>
       <footer className="bg-gray-900 shadow-xl">
         <div className="flex flex-col flex-wrap justify-center p-5 md:flex-row">
-          <nav className="flex flex-wrap items-center justify-center w-full mx-auto mb-6 text-xs md:text-base">
+          <nav className="flex flex-wrap items-center justify-center w-full mx-auto mb-6 text-sm md:text-base">
             <Link href="/about">
               <a className={linksClassNames}>
                 {t('nav-about')}
@@ -64,7 +64,7 @@ export default function Footer() {
             </Link>
           </nav>
           <div className="inline-flex justify-center w-full mx-auto sm:ml-auto sm:mt-0">
-            {socialMedia.map((icon, iconIdx) => (
+            {Metadata.SOCIAL_NETWORKS.map((icon, iconIdx) => (
               <ExternalLink
                 href={icon.url}
                 classNames="mx-2 sm:mx-4 hover:opacity-75 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform focus:outline-none focus-visible:shadow-outline focus-visible:ring-2 ring-offset-current ring-offset-3"
@@ -203,7 +203,7 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-      <div className="container mx-auto p-5 text-sm text-center text-gray-800 dark:text-gray-100">
+      <div className="container mx-auto p-5 text-xs text-center text-gray-800 dark:text-gray-100">
         <p className="inline-block">
           <span>{t('footer-made-width')}</span>
           <span className="ml-2 mr-3">❤️</span>

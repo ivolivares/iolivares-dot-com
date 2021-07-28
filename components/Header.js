@@ -26,14 +26,14 @@ export default function Header() {
                 <div className="inline-flex items-center">
                   <div className="w-1 h-1 p-1 mt-2 sm:w-2 sm:h-2 sm:p-2 sm:mt-3 sm:mr-1 rounded-full bg-gradient-to-tr from-gray-700 to-primary-400 dark:from-gray-50 dark:to-gray-400 motion-safe:hover:animate-ping motion-safe:hover:duration-75">
                   </div>
-                  <h2 className="block py-2 pr-2 pl-1 text-2xl font-bold tracking-tighter text-gray-800 cursor-pointer md:text-3xl lg:text-4xl lg:mr-8 dark:text-white hover:text-gray-700 dark:hover:text-gray:200 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform">
+                  <h2 className="block py-2 pr-2 pl-1 text-2xl font-bold tracking-tighter cursor-pointer md:text-3xl lg:text-4xl lg:mr-8 text-gray-800 hover:text-primary-700 dark:text-gray-50 dark:hover:text-gray-400 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform">
                     com
                   </h2>
                 </div>
               </a>
             </Link>
             {/* Menu of the website */}
-            <nav className="flex flex-wrap items-center justify-center text-xs md:text-base ml-auto mr-auto">
+            <nav className="flex flex-wrap items-center justify-center text-sm md:text-base ml-auto mr-auto">
               <ul className="items-center inline-flex list-none">
                 <li>
                   <Link href="/">

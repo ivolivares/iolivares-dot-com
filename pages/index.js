@@ -6,7 +6,10 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import Container from '@io/components/Container'
 import MyDoodleAnimated from '@io/components/MyDoddleAnimated'
+import TransWithLinks from '@io/components/TransWithLinks'
 import MyDoodle from '../public/static/images/doodle.png'
+
+
 
 const Home = () => {
   const { t } = useTranslation('home')
@@ -15,7 +18,7 @@ const Home = () => {
     <Container>
       <section className="container flex flex-col pt-4 pb-16 md:py-16 mx-auto items-top lg:items-center md:flex-row">
         {/* No motion, static image. */}
-        <div className="w-full xl:w-5/6 mb-10 motion-safe:hidden justify-center flex-col motion-reduce:flex">
+        <div className="m-auto mb-10 md:my-0 w-1/2 md:w-full xl:w-5/6 motion-safe:hidden justify-center flex-col motion-reduce:flex">
           <Image
             src={MyDoodle}
             alt="My Doodle by Maetschl Cartoons"
@@ -41,7 +44,8 @@ const Home = () => {
               {t('hey-iam-io')}
             </span>
             {/* TODO: Audio TTS icon */}
-            <span className="ml-2 inline-block">
+            {/* <span className="ml-2 hidden sm:inline-block"> */}
+            <span className="ml-2 hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -59,7 +63,9 @@ const Home = () => {
             </span>
           </h1>
           <p className="mb-8 md:ml-5 lg:ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50 ">
-            {t('hey-first-line')}
+            <TransWithLinks
+              i18nText={t('hey-first-line')}
+            />
           </p>
           <p className="mb-8 md:ml-5 lg:ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
             {t('hey-second-line')}

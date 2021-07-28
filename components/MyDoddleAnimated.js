@@ -15,7 +15,7 @@ const MyDoodleAnimated = () => (
       height="512"
       viewBox="0 0 1024 1024"
       version="1.1"
-      className="max-w-prose w-full absolute justify-center items-center"
+      className="max-w-prose w-full h-auto absolute justify-center items-center"
     >
       <path
         id="mydoodleface"

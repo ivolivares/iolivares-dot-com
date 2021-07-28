@@ -31,6 +31,7 @@ class ioDocument extends Document {
           />
           <link href="/static/favicons/favicon.ico" rel="shortcut icon" />
           <link href="/site.webmanifest" rel="manifest" />
+          <link href="/webmanifest.json" rel="manifest" />
           <link
             href="/static/favicons/apple-touch-icon.png"
             rel="apple-touch-icon"

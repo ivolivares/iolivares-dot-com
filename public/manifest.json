@@ -1,26 +1,56 @@
 {
   "name": "Iván Olivares Rojas",
   "short_name": "Iván",
-  "description": "Technical leader and software architect centered on producing beautiful interfaces and experiences for consumers.",
+  "description": "Digital Operations Manager supporting streaming platforms WarnerMedia, previously Software Architect at Globant. Building web experiences in JavaScript since 2006 ❤️",
   "lang": "en-US",
   "start_url": "/?utm_source=web_app_manifest",
   "display": "standalone",
   "orientation": "portrait-primary",
+  "theme_color": "#5cb0c1",
   "background_color": "#ffffff",
-  "theme_color": "#00C569",
   "icons": [
     {
-      "src": "https://iolivares.com/static/images/emojis/technologist.png",
-      "sizes": "72x72 96x96 128x128 192x192 256x256",
+      "src": "https://iolivares.com/static/favicons/android-chrome-36x36.png",
+      "sizes": "36x36",
       "type": "image/png"
     },
     {
-      "src": "https://iolivares.com/static/images/media/splash-384x384.png",
+      "src": "https://iolivares.com/static/favicons/android-chrome-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "https://iolivares.com/static/favicons/android-chrome-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "https://iolivares.com/static/favicons/android-chrome-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "https://iolivares.com/static/favicons/android-chrome-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "https://iolivares.com/static/favicons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://iolivares.com/static/favicons/android-chrome-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "https://iolivares.com/static/favicons/android-chrome-384x384.png",
       "sizes": "384x384",
       "type": "image/png"
     },
     {
-      "src": "https://iolivares.com/static/images/media/splash-512x512.png",
+      "src": "https://iolivares.com/static/favicons/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

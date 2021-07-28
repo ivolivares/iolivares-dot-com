@@ -44,6 +44,8 @@ module.exports = {
           '800': '#292525',
           '900': '#1c191a',
         },
+        globant: '#BFD732',
+        warnermedia: '#E5BC73',
       },
       typography: (theme) => ({
         DEFAULT: {

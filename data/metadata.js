@@ -2,11 +2,11 @@ const Metadata = {
   APP: {
     NAME: 'Iv&aacute;n Olivares',
     COLOR: '#ffffff',
-    SAFARI_PINNED_COLOR: '#818181',
+    SAFARI_PINNED_COLOR: '#5cb0c1',
   },
   NAME: 'Iván Olivares Rojas',
-  DEFAULT_TITLE: 'Building the web since 2006 | Iván Olivares Rojas',
-  DESCRIPTION: 'Software architect with management experience. JavaScript enthusiast, building web experiences since 2006.',
+  DEFAULT_TITLE: 'Building web experiences since 2006 | Iván Olivares Rojas',
+  DESCRIPTION: 'Digital Operations Manager supporting streaming platforms WarnerMedia, previously Software Architect at Globant. Building web experiences in JavaScript since 2006 ❤️',
   FAVICON_ROUTE: '/favicon',
   URL: 'https://www.iolivares.com',
   OPENGRAPH: {
@@ -20,7 +20,7 @@ const Metadata = {
     },
     {
       name: 'twitter',
-      url: 'https://twitter.com/ivolivares'
+      url: 'https://twitter.com/intent/follow?screen_name=ivolivares'
     },
     {
       name: 'linkedin',

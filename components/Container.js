@@ -41,13 +41,13 @@ export default function Container(props) {
       </Head>
 
       {/* Debug screens */}
-      <div className="border-2 border-dashed w-full h-10 pt-1 border-red-400 text-center">
+      {/* <div className="border-2 border-dashed w-full h-10 pt-1 border-red-400 text-center">
         <span className="hidden sm:inline-block">SM ·</span>
         <span className="hidden md:inline-block"> MD ·</span>
         <span className="hidden lg:inline-block"> LG ·</span>
         <span className="hidden xl:inline-block"> XL ·</span>
         <span className="hidden 2xl:inline-block"> 2XL</span>
-      </div>
+      </div> */}
 
       {/* Skip to content A11Y feature */}
       <div className="container relative flex mx-auto">

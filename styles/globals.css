@@ -1,7 +1,7 @@
 @tailwind base;
 @layer base {
   ::selection {
-    @apply bg-primary-300 text-gray-800 dark:text-gray-50;
+    @apply bg-primary-300 dark:bg-primary-600 text-gray-800 dark:text-gray-50;
   }
 
   html {
@@ -64,6 +64,55 @@
 
 @tailwind components;
 @layer components {
+  a.glb-link {
+    position: relative;
+    overflow: hidden;
+    @apply text-globant font-bold;
+  }
+
+  a.glb-link::after {
+    content: "";
+    @apply bg-globant bg-opacity-50;
+    position: absolute;
+    left: 12px;
+    bottom: -6px;
+    width: calc(100% - 8px);
+    height: calc(100% - 12px);
+    transition: 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
+  }
+
+  a.wm-link {
+    position: relative;
+    overflow: hidden;
+    @apply text-warnermedia font-bold;
+  }
+
+  a.wm-link::after {
+    content: "";
+    @apply bg-warnermedia bg-opacity-50;
+    position: absolute;
+    left: 12px;
+    bottom: -6px;
+    width: calc(100% - 8px);
+    height: calc(100% - 12px);
+    transition: 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
+  }
+
+  a.wm-link:hover::after,
+  a.glb-link:hover::after,
+  a.wm-link:focus::after,
+  a.glb-link:focus::after {
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 100%;
+  }
+
+  a.glb-link:hover,
+  a.wm-link:hover {
+    @apply text-gray-800 dark:text-gray-200 font-bold;
+  }
+
   .prose {
     @apply max-w-full;
   }
