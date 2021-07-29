@@ -6,11 +6,12 @@ const Metadata = {
   },
   NAME: 'Iván Olivares Rojas',
   DEFAULT_TITLE: 'Building web experiences since 2006 | Iván Olivares Rojas',
-  DESCRIPTION: 'Digital Operations Manager supporting streaming platforms WarnerMedia, previously Software Architect at Globant. Building web experiences in JavaScript since 2006 ❤️',
+  DESCRIPTION: 'Digital Operations Manager supporting streaming platforms at WarnerMedia, previously Software Architect at Globant.',
   FAVICON_ROUTE: '/favicon',
   URL: 'https://www.iolivares.com',
   OPENGRAPH: {
     IMAGE: 'https://iolivares.com/static/images/opengraph.png',
+    IMAGE_ALT: 'Iván Olivares Rojas Website - Building web experiences since 2006',
     TWITTER_USER: '@ivolivares',
   },
   SOCIAL_NETWORKS: [
