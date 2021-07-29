@@ -25,9 +25,10 @@ export default function Container(props) {
     <>
       <Head>
         <title>{meta.title}</title>
-        <meta name="robots" content="follow, index" />
-        <meta name="description" content={meta.description} />
         <link rel="canonical" href={meta.canonical} />
+        <meta name="description" content={meta.description} />
+        <meta name="robots" content="follow, index" />
+        <meta name="description" content="follow, index" />
         <meta property="og:url" content={meta.canonical} />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content={Metadata.NAME} />
@@ -43,6 +44,7 @@ export default function Container(props) {
         <meta property="og:image:height" content="200" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content={Metadata.OPENGRAPH.TWITTER_USER} />
+        <meta name="twitter:creator" content={Metadata.OPENGRAPH.TWITTER_USER} />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image_lg} />

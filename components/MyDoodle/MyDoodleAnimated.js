@@ -5,9 +5,9 @@
 import Image from 'next/image'
 
 import MyDoodle from '@io/images/doodle.png'
-import MyDoodlePath from '@io/data/doodleSVG'
+import MyDoodlePath from '@io/components/MyDoodle/doodleSVG'
 
-const MyDoodleAnimated = () => (  
+const MyDoodleAnimated = () => (
   <div id="mydoodleanimated" className="relative flex justify-center items-center dark:bg-gray-300 rounded-full">
     <svg
       xmlns="http://www.w3.org/2000/svg"
