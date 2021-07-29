@@ -5,8 +5,8 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import Container from '@io/components/Container'
-import MyDoodleAnimated from '@io/components/MyDoddleAnimated'
 import TransWithLinks from '@io/components/TransWithLinks'
+import { MyDoodleAnimated } from '@io/components/MyDoodle'
 import MyDoodle from '../public/static/images/doodle.png'
 
 
@@ -18,7 +18,7 @@ const Home = () => {
     <Container>
       <section className="container flex flex-col pt-4 pb-16 md:py-16 mx-auto items-top lg:items-center md:flex-row">
         {/* No motion, static image. */}
-        <div className="m-auto mb-10 md:my-0 w-1/2 md:w-full xl:w-5/6 motion-safe:hidden justify-center flex-col motion-reduce:flex">
+        <div className="m-auto mb-5 md:my-0 w-1/2 md:w-full xl:w-5/6 motion-safe:hidden justify-center flex-col motion-reduce:flex">
           <Image
             src={MyDoodle}
             alt="My Doodle by Maetschl Cartoons"
@@ -32,7 +32,7 @@ const Home = () => {
         </div>
 
         {/* Motion available, go animations! */}
-        <div className="m-auto mb-10 md:my-0 w-1/2 md:w-full xl:w-5/6 motion-safe:flex justify-center flex-col motion-reduce:hidden">
+        <div className="m-auto mb-5 md:my-0 w-1/2 md:w-full xl:w-5/6 motion-safe:flex justify-center flex-col motion-reduce:hidden">
           <MyDoodleAnimated />
         </div>
 

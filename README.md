@@ -6,7 +6,7 @@ This is my website for my personal brand (my name). This is the version from 202
 
 I'm moving to Vercel (ex now.sh) from Firebase and NextJS v10+, for different reasons (here maybe in the future you will see a link to a blog post).
 
-I decide to split my websites in 3 domains: .com, .blog and .photos, where I'm sharing my latest work in different aspects and .com is the main hub, also to open me to use different code-bases and technologies (yest, just for fun).
+I decide to split my websites in 3 domains: .com, .blog and .photos, where I'm sharing my latest work in different aspects and .com is the main hub, also to open me to use different code-bases and technologies (yes, just for fun).
 
 If you have any doubt about this repo, [just tweet me @ivolivares](https://twitter.com/ivolivares).
 
@@ -24,10 +24,11 @@ $ yarn
 $ yarn dev
 ```
 
-To use the APIs, we need some keys, please create a `.env.local` file similar to [`.env.example`](https://github.com/ivolivares/iolivares-dot-com/blob/main/.env.example) file in the repo.
+To use the APIs, we need some keys, please create a `.env` file similar to [`.env.example`](https://github.com/ivolivares/iolivares-dot-com/blob/main/.env.example) file in the repo.
 
 ## Built Using
 
+- [JavaScript ES6](https://tc39.es/ecma262/)
 - [Vercel](https://vercel.com)
 - [Next.js](https://nextjs.org)
 - [Next i18next](https://github.com/isaachinman/next-i18next)

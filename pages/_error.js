@@ -23,13 +23,13 @@ const Error = ({ statusCode }) => {
   return (
     <Container
       title={pageTitle}
-      classNames="container pt-5 px-64 mx-auto flex flex-col justify-center w-full m-4 mx-auto shadow-2xl"
+      classNames="lg:container pb-10 px-5 sm:px-10 lg:px-20 xl:px-35 2xl:px-64 mx-auto sm:mt-4 mb-4 flex flex-col justify-center w-full m-4 mx-auto shadow-xl bg-white dark:bg-gray-700 dark:backdrop-filter dark:backdrop-blur-lg dark:bg-opacity-20"
     >
       <div className="flex flex-col justify-center mx-auto w-full">
-        <h1 className="mt-10 mb-4 px-20 font-bold text-3xl md:text-5xl tracking-tight text-gray-800 dark:text-gray-50">
+        <h1 className="mt-10 mb-4 font-bold text-3xl md:text-5xl tracking-tight text-gray-800 dark:text-gray-50">
           {title}
         </h1>
-        <p className="px-20 text-gray-700 dark:text-gray-50">
+        <p className="text-gray-700 dark:text-gray-50">
           {description}
         </p>
         {/* <Link href="/"> */}
