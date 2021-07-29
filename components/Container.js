@@ -14,7 +14,8 @@ export default function Container(props) {
   const meta = {
     title: Metadata.DEFAULT_TITLE,
     description: Metadata.DESCRIPTION,
-    image: Metadata.OPENGRAPH.IMAGE,
+    image_lg: Metadata.OPENGRAPH.IMAGE_LG,
+    image_sm: Metadata.OPENGRAPH.IMAGE_SM,
     type: 'website',
     canonical: `${Metadata.URL}${router.locale !== 'en' ? '/' + router.locale : ''}${router.asPath}`,
     ...customMeta
@@ -32,12 +33,19 @@ export default function Container(props) {
         <meta property="og:site_name" content={Metadata.NAME} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
-        <meta property="og:image" content={meta.image} />
+        <meta property="og:image" content={meta.image_lg} />
+        <meta property="og:image:alt" content={Metadata.OPENGRAPH.IMAGE_ALT} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image" content={meta.image_sm} />
+        <meta property="og:image:alt" content={Metadata.OPENGRAPH.IMAGE_ALT} />
+        <meta property="og:image:width" content="300" />
+        <meta property="og:image:height" content="200" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content={Metadata.OPENGRAPH.TWITTER_USER} />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.image} />
+        <meta name="twitter:image" content={meta.image_lg} />
       </Head>
 
       {/* Debug screens */}
