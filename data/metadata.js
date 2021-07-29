@@ -11,6 +11,7 @@ const Metadata = {
   URL: 'https://www.iolivares.com',
   OPENGRAPH: {
     IMAGE_LG: 'https://iolivares.com/static/images/opengraph1200x630.png',
+    IMAGE_LG2: 'https://iolivares.com/static/images/opengraph1200x627.png',
     IMAGE_SM: 'https://iolivares.com/static/images/opengraph300x200.png',
     IMAGE_ALT: 'Iván Olivares Rojas Website - Building web experiences since 2006',
     TWITTER_USER: '@ivolivares',

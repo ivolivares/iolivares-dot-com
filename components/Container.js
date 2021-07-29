@@ -15,6 +15,7 @@ export default function Container(props) {
     title: Metadata.DEFAULT_TITLE,
     description: Metadata.DESCRIPTION,
     image_lg: Metadata.OPENGRAPH.IMAGE_LG,
+    image_lg2: Metadata.OPENGRAPH.IMAGE_LG2,
     image_sm: Metadata.OPENGRAPH.IMAGE_SM,
     type: 'website',
     canonical: `${Metadata.URL}${router.locale !== 'en' ? '/' + router.locale : ''}${router.asPath}`,
@@ -39,7 +40,11 @@ export default function Container(props) {
         <meta property="og:image:alt" content={Metadata.OPENGRAPH.IMAGE_ALT} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image" content={meta.image_sm} />
+        <meta name="image" property="og:image" content={meta.image_lg2} />
+        <meta property="og:image:alt" content={Metadata.OPENGRAPH.IMAGE_ALT} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="627" />
+        <meta name="image" property="og:image" content={meta.image_sm} />
         <meta property="og:image:alt" content={Metadata.OPENGRAPH.IMAGE_ALT} />
         <meta property="og:image:width" content="300" />
         <meta property="og:image:height" content="200" />
