@@ -1,7 +1,7 @@
 // https://securityheaders.com
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'strict-dynamic'¡;
+  script-src 'strict-dynamic' 'nonce-r4nd0m-p0mp4' 'unsafe-inline' http: https:;
   child-src *.youtube.com *.twitter.com cdn.panelbear.com;
   style-src 'self' 'unsafe-inline' *.googleapis.com;
   img-src * blob: data:;
@@ -9,6 +9,8 @@ const ContentSecurityPolicy = `
   connect-src *;
   font-src 'self';
   object-src 'none';
+  base-uri 'self';
+  require-trusted-types-for 'script';
 `
 
 const securityHeaders = [
