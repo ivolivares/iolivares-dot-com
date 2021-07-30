@@ -40,11 +40,11 @@ export default function Container(props) {
         <meta property="og:image:alt" content={Metadata.OPENGRAPH.IMAGE_ALT} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="627" />
-        <meta name="image" property="og:image" content={meta.image_lg} />
+        <meta property="og:image" content={meta.image_lg} />
         <meta property="og:image:alt" content={Metadata.OPENGRAPH.IMAGE_ALT} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta name="image" property="og:image" content={meta.image_sm} />
+        <meta property="og:image" content={meta.image_sm} />
         <meta property="og:image:alt" content={Metadata.OPENGRAPH.IMAGE_ALT} />
         <meta property="og:image:width" content="300" />
         <meta property="og:image:height" content="200" />
