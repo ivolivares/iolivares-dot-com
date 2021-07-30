@@ -29,7 +29,7 @@ class ioDocument extends Document {
               href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;600;700&display=swap"
               rel="stylesheet"
           />
-          <link href="/static/favicons/favicon.ico" rel="shortcut icon" />
+          <link href="/favicon.ico" rel="shortcut icon" />
           <link href="/site.webmanifest" rel="manifest" />
           <link href="/webmanifest.json" rel="manifest" />
           <link
