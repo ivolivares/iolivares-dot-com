@@ -51,7 +51,7 @@
     ],
     "theme_color": "#5cb0c1",
     "background_color": "#ffffff",
-    "start_url": "https://iolivares.com",
+    "start_url": "/",
     "display": "standalone",
     "orientation": "portrait"
 }
