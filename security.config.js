@@ -2,8 +2,8 @@
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'strict-dynamic' 'nonce-r4nd0m-p0mp4' 'unsafe-inline' http: https:;
-  child-src *.youtube.com *.twitter.com cdn.panelbear.com;
-  style-src 'self' 'unsafe-inline' *.googleapis.com;
+  child-src *.youtube.com *.twitter.com *.panelbear.com;
+  style-src 'self' 'unsafe-inline' *.googleapis.com *.gstatic.com;
   img-src * blob: data:;
   media-src 'none';
   connect-src *;
