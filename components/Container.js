@@ -70,7 +70,6 @@ export default function Container(props) {
         <a
           className="absolute -top-36 focus-visible:top-36 left-3 z-10 focus:outline-none focus-visible:ring-2 focus-visible:primary-700 text-gray-800 dark:text-gray-50"
           href="#main-content"
-          tabIndex="1"
         >
           {t('skip-content')}
         </a>
