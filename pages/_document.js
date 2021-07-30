@@ -6,7 +6,7 @@ import JSONLD from '@io/data/json-ld'
 class ioDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html prefix="og:http://ogp.me/ns#">
         <Head>
           <link
             rel="preconnect"
