@@ -7,14 +7,14 @@ module.exports = {
   },
   i18n,
   reactStrictMode: true,
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: securityHeaders
-      }
-    ]
-  },
+  // async headers() {
+  //   return [
+  //     {
+  //       source: '/(.*)',
+  //       headers: securityHeaders
+  //     }
+  //   ]
+  // },
   images: {
     domains: [
       'i.scdn.co', // Spotify Album Art
