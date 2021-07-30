@@ -1,16 +1,13 @@
 // https://securityheaders.com
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'strict-dynamic' 'nonce-r4nd0m-p0mp4' 'unsafe-inline' http: https:;
-  child-src *.youtube.com *.twitter.com *.panelbear.com;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com cdn.panelbear.com api.panelbear.com;
+  child-src *.youtube.com *.google.com *.twitter.com;
   style-src 'self' 'unsafe-inline' *.googleapis.com *.gstatic.com;
   img-src * blob: data:;
   media-src 'none';
   connect-src *;
-  font-src 'self';
-  object-src 'none';
-  base-uri 'self';
-  require-trusted-types-for 'script';
+  font-src 'self' *.googleapis.com *.gstatic.com;
 `
 
 const securityHeaders = [
@@ -48,7 +45,7 @@ const securityHeaders = [
   // Opt-out of Google FLoC: https://amifloced.org/
   {
     key: 'Permissions-Policy',
-    value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()'
+    value: 'camera=(), microphone=(), geolocation=()'
   }
 ]
 

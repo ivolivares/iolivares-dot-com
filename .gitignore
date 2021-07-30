@@ -26,6 +26,7 @@ yarn-error.log*
 
 # local env files
 .env
+sentry.properties
 
 # Yarn
 .yarnrc.yml

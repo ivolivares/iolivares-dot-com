@@ -1,20 +1,21 @@
 const { i18n } = require('./next-i18next.config')
+const { withSentryConfig } = require('@sentry/nextjs')
 const securityHeaders = require('./security.config')
 
-module.exports = {
+module.exports = withSentryConfig({
   future: {
     strictPostcssConfiguration: true
   },
   i18n,
   reactStrictMode: true,
-  // async headers() {
-  //   return [
-  //     {
-  //       source: '/(.*)',
-  //       headers: securityHeaders
-  //     }
-  //   ]
-  // },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: securityHeaders
+      }
+    ]
+  },
   images: {
     domains: [
       'i.scdn.co', // Spotify Album Art
@@ -43,4 +44,4 @@ module.exports = {
 
     return config
   }
-}
+})
