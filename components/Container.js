@@ -36,8 +36,8 @@ export default function Container(props) {
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content={Metadata.NAME} />
         <meta property="og:description" content={meta.description} />
-        <meta name="title" property="og:title" content={meta.title} />
-        <meta name="image" property="og:image" content={meta.image} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:image" content={meta.image} />
         <meta property="og:image:alt" content={meta.image_alt} />
         <meta property="og:image:width" content="1600" />
         <meta property="og:image:height" content="882" />
