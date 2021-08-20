@@ -29,7 +29,7 @@ export default function Container(props) {
         <link rel="canonical" href={meta.canonical} />
         <meta name="description" content={meta.description} />
         <meta name="robots" content="follow, index" />
-        <meta name="description" content="follow, index" />
+        <meta name="googlebot" content="follow, index" />
         <meta name="author" content={Metadata.NAME} />
         <meta property="og:url" content={meta.canonical} />
         <meta property="og:type" content={meta.type} />
