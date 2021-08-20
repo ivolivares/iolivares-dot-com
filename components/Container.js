@@ -14,9 +14,10 @@ export default function Container(props) {
   const meta = {
     title: Metadata.DEFAULT_TITLE,
     description: Metadata.DESCRIPTION,
-    image_lg: Metadata.OPENGRAPH.IMAGE_LG,
-    image_lg2: Metadata.OPENGRAPH.IMAGE_LG2,
-    image_sm: Metadata.OPENGRAPH.IMAGE_SM,
+    image: Metadata.OPENGRAPH.IMAGE,
+    image_sm: Metadata.OPENGRAPH.IMAGE_SMALL,
+    image_alt: Metadata.OPENGRAPH.IMAGE_ALT,
+    tw_user: Metadata.OPENGRAPH.TWITTER_USER,
     type: 'website',
     canonical: `${Metadata.URL}${router.locale !== 'en' ? '/' + router.locale : ''}${router.asPath}`,
     ...customMeta
@@ -36,24 +37,20 @@ export default function Container(props) {
         <meta property="og:site_name" content={Metadata.NAME} />
         <meta property="og:description" content={meta.description} />
         <meta name="title" property="og:title" content={meta.title} />
-        <meta name="image" property="og:image" content={meta.image_lg2} />
-        <meta property="og:image:alt" content={Metadata.OPENGRAPH.IMAGE_ALT} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="627" />
-        <meta property="og:image" content={meta.image_lg} />
-        <meta property="og:image:alt" content={Metadata.OPENGRAPH.IMAGE_ALT} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta name="image" property="og:image" content={meta.image} />
+        <meta property="og:image:alt" content={meta.image_alt} />
+        <meta property="og:image:width" content="1600" />
+        <meta property="og:image:height" content="882" />
         <meta property="og:image" content={meta.image_sm} />
-        <meta property="og:image:alt" content={Metadata.OPENGRAPH.IMAGE_ALT} />
+        <meta property="og:image:alt" content={meta.image_alt} />
         <meta property="og:image:width" content="300" />
         <meta property="og:image:height" content="200" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content={Metadata.OPENGRAPH.TWITTER_USER} />
-        <meta name="twitter:creator" content={Metadata.OPENGRAPH.TWITTER_USER} />
+        <meta name="twitter:site" content={meta.tw_user} />
+        <meta name="twitter:creator" content={meta.tw_user} />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.image_lg} />
+        <meta name="twitter:image" content={meta.image} />
       </Head>
 
       {/* Debug screens */}
