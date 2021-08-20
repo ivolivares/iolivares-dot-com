@@ -11,6 +11,14 @@
       "destination": "/about"
     },
     {
+      "source": "/me",
+      "destination": "/about"
+    },
+    {
+      "source": "/view-source",
+      "destination": "https://github.com/ivolivares/iolivares-dot-com"
+    },
+    {
       "source": "/techs",
       "destination": "/uses"
     },

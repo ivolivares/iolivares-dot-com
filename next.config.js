@@ -4,7 +4,10 @@ const securityHeaders = require('./security.config')
 
 module.exports = withSentryConfig({
   future: {
-    strictPostcssConfiguration: true
+    strictPostcssConfiguration: true,
+  },
+  experimental: {
+    esmExternals: true,
   },
   i18n,
   reactStrictMode: true,
@@ -23,11 +26,6 @@ module.exports = withSentryConfig({
     ]
   },
   webpack: (config, { dev, isServer }) => {
-    // TODO: Implement sitemap generator
-    // if (isServer) {
-    //   require('./scripts/generate-sitemap')
-    // }
-
     /**
      * Replace React with Preact only in client production build
      * Snipet by DarrenWhite
