@@ -18,6 +18,5 @@ Disallow: /harm/to/self
 # |_|\___/|_|_| \_/ \__,_|_|  \___||___(_)___\___/|_| |_| |_|
 #
 
-# TODO:
-# Allow: /
-# Sitemap: https://iolivares.com/sitemap.xml
+Allow: /
+Sitemap: https://iolivares.com/sitemap.xml
