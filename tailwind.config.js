@@ -52,9 +52,12 @@ module.exports = {
           css: {
             color: theme('colors.gray.800'),
             a: {
-              color: theme('colors.primary.300'),
+              color: theme('colors.gray.800'),
+              backgroundColor: theme('colors.primary.100'),
+              padding: '0 .0125',
+              fontWeight: '500',
               '&:hover': {
-                color: theme('colors.primary.600'),
+                backgroundColor: theme('colors.primary.200'),
               },
               code: {
                 color: theme('colors.primary.800'),
@@ -75,9 +78,13 @@ module.exports = {
           css: {
             color: theme('colors.gray.100'),
             a: {
-              color: theme('colors.primary.300'),
+              color: theme('colors.gray.300'),
+              backgroundColor: theme('colors.gray.600'),
+              padding: '0 0.125rem',
+              fontWeight: '500',
               '&:hover': {
-                color: theme('colors.primary.600'),
+                color: theme('colors.gray.800'),
+                backgroundColor: theme('colors.primary.200'),
               },
               code: {
                 color: theme('colors.primary.300'),

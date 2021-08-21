@@ -11,6 +11,7 @@
 
   body {
     font-family: 'Inter', sans-serif;
+    font-weight: 300;
   }
 
   #__next {
@@ -128,6 +129,19 @@
   .prose img {
     /* Don't apply styles to next/image */
     @apply m-0;
+  }
+
+  /* Used by /about page */
+  .prose .photo-of-me {
+    @apply md:float-right float-none md:ml-4 mb-4 md:w-1/2 w-full;
+  }
+
+  /* Used by /uses pages */
+  .prose .list-item a {
+    @apply bg-transparent;
+  }
+  .prose .list-item a:hover {
+    @apply bg-primary-200 text-gray-800;
   }
 
   .prose > :first-child {

@@ -43,6 +43,7 @@ const Error = ({ statusCode }) => {
             alt={`Khaby Lame (TikTok actor), drawing in 3D by Gabriel Soares`}
             src={errorImageSource}
             layout="intrinsic"
+            placeholder="blur"
           />
         </div>
         <p className="mb-1 text-center text-xs italic">

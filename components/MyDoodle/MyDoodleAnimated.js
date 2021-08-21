@@ -30,6 +30,7 @@ const MyDoodleAnimated = () => (
       src={MyDoodle}
       alt="My Doodle by Maetschl Cartoons"
       layout="intrinsic"
+      placeholder="blur"
       width="512"
       height="512"
       className="absolute flex justify-center items-center"

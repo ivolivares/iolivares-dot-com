@@ -8,7 +8,7 @@ import Container from '@io/components/Container'
 import TransWithLinks from '@io/components/TransWithLinks'
 import { MyDoodleAnimated } from '@io/components/MyDoodle'
 import MyDoodle from '../public/static/images/doodle.png'
-
+import Conferences from '@io/components/Conferences'
 
 
 const Home = () => {
@@ -62,12 +62,12 @@ const Home = () => {
               </svg>
             </span>
           </h1>
-          <p className="mb-8 md:ml-5 lg:ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50 ">
+          <p className="mb-4 md:ml-5 lg:ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50 ">
             <TransWithLinks
               i18nText={t('hey-first-line')}
             />
           </p>
-          <p className="mb-8 md:ml-5 lg:ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
+          <p className="mb-4 md:ml-5 lg:ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
             {t('hey-second-line')}
           </p>
           <p className="mb-8 md:ml-5 lg:ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
@@ -95,6 +95,16 @@ const Home = () => {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+      <section>
+        <h2 className="mb-8 title-font text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter text-left text-gray-800 dark:text-gray-100">
+          <span className="decoration-clone bg-clip-text text-transparent bg-gradient-to-b from-primary-300 to-primary-500">
+            {t('conf-title')}
+          </span>
+        </h2>
+        <div className="flex flex-wrap">
+          <Conferences />
         </div>
       </section>
     </Container>

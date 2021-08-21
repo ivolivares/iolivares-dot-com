@@ -5,5 +5,10 @@
   "hey-third-line": "I mainly work with JavaScript, mostly with Next.js but I am passionate about Node.js too, and backend technologies as well.",
   "hey-button-cta": "I want to know more",
   "hey-headline-cta": "Spoiler alert: It will take you to a 20+ year history.",
-  "hey-link-cta": "Read more about Iván »"
+  "hey-link-cta": "Read more about Iván »",
+  "conf-title": "Conference talks",
+  "conf-play-video": "Play this video",
+  "confUpcomingText": "{{days}} days left",
+  "confUpcomingText_plural": "{{days}} days left",
+  "conf-ended-text": "Video coming soon"
 }

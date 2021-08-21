@@ -1,8 +1,8 @@
 // https://securityheaders.com
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com cdn.panelbear.com api.panelbear.com;
-  child-src *.youtube.com *.google.com *.twitter.com;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com *.cloudinary.com cdn.panelbear.com api.panelbear.com;
+  child-src *.youtube.com *.google.com *.twitter.com *.cloudinary.com;
   style-src 'self' 'unsafe-inline' *.googleapis.com *.gstatic.com;
   img-src * blob: data:;
   media-src 'none';

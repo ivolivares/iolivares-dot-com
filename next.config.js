@@ -22,7 +22,8 @@ module.exports = withSentryConfig({
   images: {
     domains: [
       'i.scdn.co', // Spotify Album Art
-      'pbs.twimg.com' // Twitter Profile Picture
+      'pbs.twimg.com', // Twitter Profile Picture
+      'res.cloudinary.com', // Cloudinary Pictures
     ]
   },
   webpack: (config, { dev, isServer }) => {
