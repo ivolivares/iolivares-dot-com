@@ -62,6 +62,13 @@ export default function Footer() {
                 {t('nav-uses')}
               </a>
             </Link>
+            <span>·</span>
+            <ExternalLink
+              href="https://status.iolivares.com"
+              classNames={linksClassNames}
+            >
+              {t('nav-status')}
+            </ExternalLink>
           </nav>
           <div className="inline-flex justify-center w-full mx-auto sm:ml-auto sm:mt-0">
             {Metadata.SOCIAL_NETWORKS.map((icon, iconIdx) => (

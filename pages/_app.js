@@ -7,7 +7,7 @@ import '@io/styles/globals.css'
 const nextI18NextConfig = require('../next-i18next.config')
 
 const IoApp = ({ Component, pageProps }) => {
-  // Load analytics only once durint the app lifecycle
+  // Load analytics only once during the app lifecycle
   useAnalytics()
 
   return (

@@ -1,3 +1,31 @@
+import confTypes from '@io/lib/confTypes'
+import { daysTo } from '@io/lib/dates'
+
+const setConfType = (conf) => {
+  const { YOUTUBE, UPCOMING, ENDED, TODAY } = confTypes
+  const remainingDays = daysTo(conf.date)
+
+  let type = YOUTUBE
+  
+  if (remainingDays === 0 || remainingDays === -1) {
+    type = TODAY
+  }
+
+  if (remainingDays > 0) {
+    type = UPCOMING
+  }
+
+  if (remainingDays < -1 && conf.link.indexOf('youtu.be') === -1) {
+    type = ENDED
+  }
+
+  return {
+    type,
+    remainingDays,
+    ...conf
+  }
+}
+
 /**
  * Conferences Schema:
  * @typedef String slug
@@ -28,9 +56,7 @@ const Conferences = [
     },
     link: 'https://google.cl',
     image: 'https://res.cloudinary.com/iolivares-photos/image/upload/c_fill,w_800,g_face/v1629530560/io-dot-com/conferences/webperf101.jpg',
-    type: 'ended',
     new: false,
-    playable: false,
   },
   {
     slug: 'nextjsconf-building-the-next-generation-of-airlines-websites',
@@ -46,9 +72,7 @@ const Conferences = [
     },
     link: 'https://youtu.be/JhokA9fWVo0',
     image: 'https://res.cloudinary.com/iolivares-photos/image/upload/c_fill,w_800,g_face/v1629530560/io-dot-com/conferences/nextjsconf2020.jpg',
-    type: 'youtube',
     new: false,
-    playable: true,
   },
   {
     slug: 'globant-techtalk-web-perf-101-2021',
@@ -64,36 +88,31 @@ const Conferences = [
     },
     link: 'https://youtu.be/VMUMJadTauc',
     image: 'https://res.cloudinary.com/iolivares-photos/image/upload/c_fill,w_800,g_face/v1629530560/io-dot-com/conferences/webperf101.jpg',
-    type: 'youtube',
     new: false,
-    playable: true,
   },
   {
     slug: 'webconftech-observability-101-2021',
     active: true,
     date: new Date('2021-08-23'),
     title: {
-      es: 'Observability 101: Monitorear tu app no es solo cosa de devops',
-      en: 'Observability 101: Monitoring your app is not about devops',
+      es: 'WebConf LATAM 2021: "Observability 101: Monitorear tu app no es solo cosa de devops"',
+      en: 'WebConf LATAM 2021: "Observability 101: Monitoring your app is not about devops"',
     },
     description: {
-      es: 'En esta charla buscaré explicar el concepto de Observabilidad y la importancia de monitorear en equipo nuestra app.',
-      en: 'In this talk I will try to explain the concept of Observability and the importance of monitoring our app as a team.',
+      es: 'En esta charla buscaré explicar el concepto de Observabilidad y la importancia de monitorear en equipo nuestra app. Charla en español, a diferencia de la Reliable Web Summit donde el mismo contenido estará en inglés.',
+      en: 'In this talk I will try to explain the concept of Observability and the importance of monitoring our app as a team. Talk in Spanish, opposed to Reliable Web Summit conference which is the same content but in English.',
     },
     link: 'https://webconf.tech',
     image: 'https://res.cloudinary.com/iolivares-photos/image/upload/c_fill,w_800,g_face/v1629530560/io-dot-com/conferences/webconf2021.jpg',
-    type: 'upcoming',
-    upcomingDate: new Date('2021-08-23'),
     new: true,
-    playable: false,
   },
   {
     slug: 'reliablesummit-observability-101-2021',
     active: true,
     date: new Date('2021-08-26'),
     title: {
-      es: 'Observability 101: Monitorear tu app no es solo cosa de devops',
-      en: 'Observability 101: Monitoring your app is not about devops',
+      es: 'Reliable Web Summit 2021: "Observability 101: Monitorear tu app no es solo cosa de devops"',
+      en: 'Reliable Web Summit 2021: "Observability 101: Monitoring your app is not about devops"',
     },
     description: {
       es: 'En esta charla buscaré explicar el concepto de Observabilidad y la importancia de monitorear en equipo nuestra app.',
@@ -101,12 +120,10 @@ const Conferences = [
     },
     link: 'https://reliablewebsummit.com',
     image: 'https://res.cloudinary.com/iolivares-photos/image/upload/c_fill,w_800,g_face/v1629530560/io-dot-com/conferences/reliablesummit2021.jpg',
-    type: 'upcoming',
-    upcomingDate: new Date('2021-08-26'),
     new: true,
-    playable: false,
   },
 ].sort((a, b) => b.date - a.date) // Sort confs by date
   .filter((c) => c.active) // Filter just active confs
+  .map((c) => setConfType(c)) // Set event type
 
 export default Conferences
