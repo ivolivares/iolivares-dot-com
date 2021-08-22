@@ -43,28 +43,12 @@ const setConfType = (conf) => {
 
 const Conferences = [
   {
-    slug: 'school-talk-not',
-    active: false,
-    date: new Date('2014-02-09'),
-    title: {
-      es: 'Este es un ejemplo de un evento que ya pasó pero no tengo el video',
-      en: 'This is just a title placeholder for a video, talk or conference',
-    },
-    description: {
-      es: 'lipsum lorem demo placeholder thumbnail dor sit amet conference talk video description long for having text here',
-      en: 'lipsum lorem demo placeholder thumbnail dor sit amet conference talk video description long for having text here',
-    },
-    link: 'https://google.cl',
-    image: 'https://res.cloudinary.com/iolivares-photos/image/upload/c_fill,w_800,g_face/v1629530560/io-dot-com/conferences/webperf101.jpg',
-    new: false,
-  },
-  {
     slug: 'nextjsconf-building-the-next-generation-of-airlines-websites',
     active: true,
     date: new Date('2020-10-27'),
     title: {
-      es: 'Construyendo la próxima generación de sitios web de aerolíneas',
-      en: 'Building the Next Generation of Airlines Websites',
+      es: 'NextJS Conf 2020: "Construyendo la próxima generación de sitios web de aerolíneas"',
+      en: 'NextJS Conf 2020: "Building the Next Generation of Airlines Websites"',
     },
     description: {
       es: 'Esta charla es sobre la experiencia de un grupo de mercenarios en Globant creando una aerolínea 100% digital con Next.JS',
@@ -124,6 +108,6 @@ const Conferences = [
   },
 ].sort((a, b) => b.date - a.date) // Sort confs by date
   .filter((c) => c.active) // Filter just active confs
-  .map((c) => setConfType(c)) // Set event type
+  .map((c) => setConfType(c)) // Set conference type based on dates
 
 export default Conferences
