@@ -11,5 +11,6 @@
   "conf-play-youtube": "Reproducir en Youtube",
   "conf-upcoming-text": "Falta <number/> día",
   "conf-upcoming-text-plural": "Faltan <number/> días",
-  "conf-ended-text": "Próximamente el video"
+  "conf-ended-text": "Próximamente el video",
+  "conf-today-text": "¡En vivo HOY!"
 }
