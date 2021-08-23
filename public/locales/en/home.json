@@ -11,5 +11,6 @@
   "conf-play-youtube": "Play on Youtube",
   "conf-upcoming-text": "<number/> day left",
   "conf-upcoming-text-plural": "<number/> days left",
-  "conf-ended-text": "Video coming soon"
+  "conf-ended-text": "Video coming soon",
+  "conf-today-text": "Live today"
 }
