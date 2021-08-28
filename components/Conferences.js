@@ -25,15 +25,17 @@ export default function Conferences() {
             title={t('conf-view-title')}
             classNames="group sm:flex w-full overflow-hidden rounded-lg bg-white dark:bg-gray-200"
           >
-            <div className="absolute sm:relative w-full sm:w-1/4">
+            <div className="flex sm:relative w-full sm:w-1/4">
               <Image
                 src={conf.image}
                 alt={conf.title[locale]}
-                className="object-cover w-full h-48"
-                layout="fill"
+                className="responsive sm:object-cover rounded-t-lg sm:rounded-none w-full h-48"
+                layout="intrinsic"
+                width={1280}
+                height={720}
               />
             </div>
-            <div className="flex-1 px-6 pt-4 pb-2 rounded-lg sm:rounded-none bg-white dark:bg-gray-200 dark:hover:bg-gray-100">
+            <div className="flex-1 flex-col px-6 pt-4 pb-2 rounded-lg sm:rounded-none bg-white dark:bg-gray-200 dark:hover:bg-gray-100">
               <h3 className="mb-3 text-xl font-semibold tracking-tight text-gray-800 group-hover:text-primary-600 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform">
                 {conf.title[locale]}
               </h3>

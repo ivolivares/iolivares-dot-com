@@ -88,7 +88,7 @@ const Conferences = [
     },
     link: 'https://webconf.tech',
     image: 'https://res.cloudinary.com/iolivares-photos/image/upload/c_fill,w_800,g_face/v1629530560/io-dot-com/conferences/webconf2021.jpg',
-    new: true,
+    new: false,
   },
   {
     slug: 'reliablesummit-observability-101-2021',
@@ -104,7 +104,7 @@ const Conferences = [
     },
     link: 'https://reliablewebsummit.com',
     image: 'https://res.cloudinary.com/iolivares-photos/image/upload/c_fill,w_800,g_face/v1629530560/io-dot-com/conferences/reliablesummit2021.jpg',
-    new: true,
+    new: false,
   },
 ].sort((a, b) => b.date - a.date) // Sort confs by date
   .filter((c) => c.active) // Filter just active confs
