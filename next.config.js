@@ -8,6 +8,7 @@ module.exports = withSentryConfig({
   },
   experimental: {
     esmExternals: true,
+    optimizeImages: true,
   },
   i18n,
   reactStrictMode: true,
@@ -15,8 +16,8 @@ module.exports = withSentryConfig({
     return [
       {
         source: '/(.*)',
-        headers: securityHeaders
-      }
+        headers: securityHeaders,
+      },
     ]
   },
   images: {

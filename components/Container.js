@@ -11,6 +11,7 @@ export default function Container(props) {
   const { children, classNames, ...customMeta } = props
   const router = useRouter()
   const { t } = useTranslation('common')
+  console.log(router)
   const meta = {
     title: Metadata.DEFAULT_TITLE,
     description: Metadata.DESCRIPTION,
@@ -19,7 +20,7 @@ export default function Container(props) {
     image_alt: Metadata.OPENGRAPH.IMAGE_ALT,
     tw_user: Metadata.OPENGRAPH.TWITTER_USER,
     type: 'website',
-    canonical: `${Metadata.URL}${router.locale !== 'en' ? '/' + router.locale : ''}${router.asPath}`,
+    canonical: `${window.location.origin}${router.locale !== 'en' ? '/' + router.locale : ''}${router.asPath}`,
     ...customMeta
   }
 
