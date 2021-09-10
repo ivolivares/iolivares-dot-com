@@ -20,7 +20,7 @@ export default function Container(props) {
     image_alt: Metadata.OPENGRAPH.IMAGE_ALT,
     tw_user: Metadata.OPENGRAPH.TWITTER_USER,
     type: 'website',
-    canonical: `${window.location.origin}${router.locale !== 'en' ? '/' + router.locale : ''}${router.asPath}`,
+    canonical: `${Metadata.URL}${router.locale !== 'en' ? '/' + router.locale : ''}${router.asPath}`,
     ...customMeta
   }
 

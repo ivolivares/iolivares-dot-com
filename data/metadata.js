@@ -8,7 +8,7 @@ const Metadata = {
   DEFAULT_TITLE: 'Building web experiences since 2006 | Iván Olivares Rojas',
   DESCRIPTION: 'Digital Operations Manager supporting streaming platforms at WarnerMedia, previously Software Architect at Globant.',
   FAVICON_ROUTE: '/favicon',
-  URL: 'https://www.iolivares.com',
+  URL: 'https://iolivares.com',
   OPENGRAPH: {
     IMAGE: 'https://iolivares.com/static/images/opengraph1600x882.jpg',
     IMAGE_SMALL: 'https://iolivares.com/static/images/opengraph300x200.jpg',
