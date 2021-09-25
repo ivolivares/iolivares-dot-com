@@ -35,7 +35,7 @@ export default function Conferences() {
                 height={720}
               />
             </div>
-            <div className="flex-1 flex-col px-6 pt-4 pb-2 rounded-lg sm:rounded-none bg-white dark:bg-gray-200 dark:hover:bg-gray-100">
+            <div className="flex-1 flex-col px-6 pt-4 pb-2 rounded-b-lg sm:rounded-none bg-white dark:bg-gray-200 dark:hover:bg-gray-100">
               <h3 className="mb-3 text-xl font-semibold tracking-tight text-gray-800 group-hover:text-primary-600 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform">
                 {conf.title[locale]}
               </h3>

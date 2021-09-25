@@ -26,7 +26,7 @@ export default function Footer() {
     <>
       <div className="container mx-auto flex flex-col text-left pt-5 pb-6 px-3 md:px-0">
         <pre className="text-xs">
-          &gt; $ cd ~/io{locale !== defaultLang ? '/' + locale : ''}{asPath}
+          {`> $ cd ~/io${locale !== defaultLang ? '/' + locale : ''}${asPath}`}
           <span className="w-1 h-4 inline-block bg-primary-800 dark:bg-gray-400 ml-2 rounded-sm motion-safe:animate-ping motion-safe:duration-75">
             {` `}
           </span>
@@ -110,7 +110,7 @@ export default function Footer() {
         </div>
         <div className="w-full px-8 mt-4 bg-gray-100 dark:bg-gray-800">
           <div className="container py-5 mx-auto flex flex-col md:flex-row flex-wrap justify-center md:justify-between items-start md:items-center">
-            <div className="text-xs text-left text-gray-800 dark:text-gray-50">
+            <div className="text-xs text-center md:text-left text-gray-800 dark:text-gray-50">
               <p>
                 {`© ${t('full-name')} 2006-${(new Date()).getFullYear()}`}.
                 {` `}
