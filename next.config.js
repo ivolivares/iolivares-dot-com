@@ -3,6 +3,7 @@ const { withSentryConfig } = require('@sentry/nextjs')
 const securityHeaders = require('./security.config')
 
 module.exports = withSentryConfig({
+  swcMinify: true,
   future: {
     strictPostcssConfiguration: true,
   },
@@ -21,6 +22,7 @@ module.exports = withSentryConfig({
     ]
   },
   images: {
+    formats: ['image/avif', 'image/webp'],
     domains: [
       'i.scdn.co', // Spotify Album Art
       'pbs.twimg.com', // Twitter Profile Picture
