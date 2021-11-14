@@ -60,13 +60,13 @@ export default function Conferences() {
                 )}
 
                 {(conf.type === ENDED) && (
-                  <span className="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-gray-200 bg-gray-400 rounded-full">
+                  <span className="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-gray-200 bg-gray-600 group-hover:opacity-60 rounded-full">
                     {t('conf-ended-text')}
                   </span>
                 )}
 
                 {(conf.type === YOUTUBE) && (
-                  <span className="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-primary-100 bg-primary-400 rounded-full group-hover:bg-primary-600 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform">
+                  <span className="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-primary-100 bg-primary-600 rounded-full group-hover:opacity-60 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 inline-block" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                     </svg>

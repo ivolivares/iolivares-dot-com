@@ -35,10 +35,9 @@ const setConfType = (conf) => {
  * @typedef Object description // Object with description in langs
  * @typedef URL link
  * @typedef URL image
- * @typedef Array type ['youtube', 'upcoming', 'ended']
+ * @typedef Array type ['youtube', 'upcoming', 'ended'] // Automatically calculated
  * @typedef Date upcomingDate (optional)
  * @typedef Boolean new
- * @typedef Boolean playable
  */
 
 const Conferences = [
@@ -86,7 +85,7 @@ const Conferences = [
       es: 'En esta charla buscaré explicar el concepto de Observabilidad y la importancia de monitorear en equipo nuestra app. Charla en español, a diferencia de la Reliable Web Summit donde el mismo contenido estará en inglés.',
       en: 'In this talk I will try to explain the concept of Observability and the importance of monitoring our app as a team. Talk in Spanish, opposed to Reliable Web Summit conference which is the same content but in English.',
     },
-    link: 'https://webconf.tech',
+    link: 'https://youtu.be/cKZcAnA35To',
     image: 'https://res.cloudinary.com/iolivares-photos/image/upload/c_fill,w_800,g_face/v1629530560/io-dot-com/conferences/webconf2021.jpg',
     new: false,
   },
