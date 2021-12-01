@@ -6,13 +6,20 @@ import '@io/styles/globals.css'
 
 const nextI18NextConfig = require('../next-i18next.config')
 
+const Yourself = ({ children }) => children
+
 const IoApp = ({ Component, pageProps }) => {
   // Load analytics only once during the app lifecycle
   useAnalytics()
 
+  // Layout
+  const Layout = Component.Layout || Yourself
+
   return (
     <ThemeProvider attribute="media">
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ThemeProvider>
   )
 }

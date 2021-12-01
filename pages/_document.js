@@ -10,10 +10,6 @@ class ioDocument extends Document {
         <Head>
           <link
             rel="preconnect"
-            href="https://iolivares.blog"
-          />
-          <link
-            rel="preconnect"
             href="https://iolivares.photos"
           />
           <link
@@ -69,7 +65,7 @@ class ioDocument extends Document {
             content={Metadata.APP.NAME}
           />
         </Head>
-        <body className="bg-primary-50 dark:bg-gray-800">
+        <body className="bg-primary-50 dark:bg-gray-900">
           <Main />
           <NextScript />
           <JSONLD />

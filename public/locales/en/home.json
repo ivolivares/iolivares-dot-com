@@ -3,14 +3,5 @@
   "hey-first-line": "I'm a Software Developer living in Santiago, Chile. I currently work as a Digital Operations Manager at <wm /> where I work on supporting streaming products, and previously I worked at <glb />.",
   "hey-second-line": "In my free time, I like to help others being a part of technology through mentorships or speaking at meetups/conference events to help new generations to learn together about technology.",
   "hey-third-line": "I mainly work with JavaScript, mostly with Next.js but I am passionate about Node.js too, and backend technologies as well.",
-  "hey-button-cta": "I want to know more",
-  "hey-headline-cta": "Spoiler alert: It will take you to a 20+ year history.",
-  "hey-link-cta": "Read more about Iván »",
-  "conf-title": "Conference talks",
-  "conf-view-title": "Go to this Conference Talk",
-  "conf-play-youtube": "Play on Youtube",
-  "conf-upcoming-text": "<number/> day left",
-  "conf-upcoming-text-plural": "<number/> days left",
-  "conf-ended-text": "Video coming soon",
-  "conf-today-text": "Live today"
+  "hey-button-cta": "I wanna know more"
 }

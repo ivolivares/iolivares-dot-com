@@ -2,8 +2,8 @@
   "skip-content": "Ir al contenido principal",
   "nav-home": "Inicio",
   "nav-about": "Acerca de",
-  "nav-talks": "Conferencias",
-  "nav-blog": "Blog",
+  "nav-talks": "Confs",
+  "nav-articles": "Artículos",
   "nav-photos": "Fotografía",
   "nav-uses": "Lo que uso",
   "nav-status": "Estado",
@@ -19,5 +19,5 @@
   "footer-made-with": "con varias tecnologías.",
   "language-en": "Inglés",
   "language-es": "Español",
-  "edit-on-github": "Editar esta página en Github"
+  "edit-this-page": "Editar esta página"
 }

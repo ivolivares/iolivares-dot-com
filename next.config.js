@@ -1,26 +1,13 @@
 const { i18n } = require('./next-i18next.config')
 const { withSentryConfig } = require('@sentry/nextjs')
-const securityHeaders = require('./security.config')
 
 module.exports = withSentryConfig({
   swcMinify: true,
+  reactStrictMode: true,
   future: {
     strictPostcssConfiguration: true,
   },
-  experimental: {
-    esmExternals: true,
-    optimizeImages: true,
-  },
   i18n,
-  reactStrictMode: true,
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: securityHeaders,
-      },
-    ]
-  },
   images: {
     formats: ['image/avif', 'image/webp'],
     domains: [

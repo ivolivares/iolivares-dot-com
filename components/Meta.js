@@ -2,26 +2,23 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 
-import Header from '@io/components/Header'
-import Footer from '@io/components/Footer'
-
 import Metadata from '@io/data/metadata'
 
-export default function Container(props) {
-  const { children, classNames, ...customMeta } = props
+export default function Meta(props) {
   const router = useRouter()
   const { t } = useTranslation('common')
-  console.log(router)
+  const { title, description } = props
+
   const meta = {
-    title: Metadata.DEFAULT_TITLE,
-    description: Metadata.DESCRIPTION,
+    name: Metadata.name,
+    title: title || Metadata.DEFAULT_TITLE,
+    description: description || Metadata.DESCRIPTION,
     image: Metadata.OPENGRAPH.IMAGE,
     image_sm: Metadata.OPENGRAPH.IMAGE_SMALL,
     image_alt: Metadata.OPENGRAPH.IMAGE_ALT,
     tw_user: Metadata.OPENGRAPH.TWITTER_USER,
     type: 'website',
     canonical: `${Metadata.URL}${router.locale !== 'en' ? '/' + router.locale : ''}${router.asPath}`,
-    ...customMeta
   }
 
   return (
@@ -32,10 +29,10 @@ export default function Container(props) {
         <meta name="description" content={meta.description} />
         <meta name="robots" content="follow, index" />
         <meta name="googlebot" content="follow, index" />
-        <meta name="author" content={Metadata.NAME} />
+        <meta name="author" content={meta.NAME} />
         <meta property="og:url" content={meta.canonical} />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content={Metadata.NAME} />
+        <meta property="og:site_name" content={meta.NAME} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
@@ -55,7 +52,8 @@ export default function Container(props) {
       </Head>
 
       {/* Debug screens */}
-      {/* <div className="border-2 border-dashed w-full h-10 pt-1 border-red-400 text-center">
+      {/* <div className="border-2 w-full h-10 pt-1 bg-red-400 border-red-400 text-center">
+        <span className="hidden xs:inline-block">XS ·</span>
         <span className="hidden sm:inline-block">SM ·</span>
         <span className="hidden md:inline-block"> MD ·</span>
         <span className="hidden lg:inline-block"> LG ·</span>
@@ -64,23 +62,11 @@ export default function Container(props) {
       </div> */}
 
       {/* Skip to content A11Y feature */}
-      <div className="container relative flex mx-auto">
-        <a
-          className="absolute -top-36 focus-visible:top-36 left-3 z-10 focus:outline-none focus-visible:ring-2 focus-visible:primary-700 text-gray-800 dark:text-gray-50"
-          href="#main-content"
-        >
+      <div className="w-full max-w-5xl relative flex mx-auto">
+        <a className="skip-to-content text-gray-800 dark:text-primary-400" href="#main-content">
           {t('skip-content')}
         </a>
       </div>
-
-      <Header />
-      <main
-        id="main-content"
-        className={classNames ? classNames : 'lg:container pb-10 px-5 sm:px-10 lg:px-20 xl:px-35 2xl:px-40 mx-auto sm:mt-4 mb-4 flex flex-col justify-center w-full mx-auto shadow-xl bg-white dark:bg-gray-700 dark:backdrop-filter dark:backdrop-blur-lg dark:bg-opacity-20'}
-      >
-        {children}
-      </main>
-      <Footer />
     </>
   )
 }
