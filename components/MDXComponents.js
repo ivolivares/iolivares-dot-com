@@ -1,10 +1,10 @@
 import Image from 'next/image'
-import NotationHighlight from '@io/components/NotationHighlight'
-import CustomLink from '@io/components/CustomLink'
-import { ListGroup, ListItems, ListItem } from '@io/components/List'
-import Timeline from '@io/components/Timeline'
-import LastTalk from '@io/components/LastTalk'
-import AllTalks from '@io/components/AllTalks'
+import NotationHighlight from 'components/NotationHighlight'
+import CustomLink from 'components/CustomLink'
+import { ListGroup, ListItems, ListItem } from 'components/List'
+import Timeline from 'components/Timeline'
+import LastTalk from 'components/LastTalk'
+import AllTalks from 'components/AllTalks'
 
 const MDXComponents = {
   Image,

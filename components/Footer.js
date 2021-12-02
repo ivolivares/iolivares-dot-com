@@ -5,10 +5,10 @@ import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { Listbox, Transition } from '@headlessui/react'
 
-import ExternalLink from '@io/components/ExternalLink'
-import Langs from '@io/lib/supportedLangs'
-import Metadata from '@io/data/metadata'
-import { email, sendEmail, domain, name } from '@io/lib/email'
+import ExternalLink from 'components/ExternalLink'
+import Langs from 'lib/supportedLangs'
+import Metadata from 'data/metadata'
+import { email, sendEmail, domain, name } from 'lib/email'
 
 export default function Footer() {
   const defaultLang = 'en'

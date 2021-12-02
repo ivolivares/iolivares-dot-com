@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 
-import ExternalLink from '@io/components/ExternalLink'
-import Meta from '@io/components/Meta'
-import Header from '@io/components/Header'
-import Footer from '@io/components/Footer'
+import ExternalLink from 'components/ExternalLink'
+import Meta from 'components/Meta'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
 
 export default function UsesLayout({ children }) {
   const { frontMatter } = children.props

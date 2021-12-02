@@ -4,8 +4,8 @@
 */
 import Image from 'next/image'
 
-import MyDoodle from '@io/images/doodle.png'
-import MyDoodlePath from '@io/components/MyDoodle/doodleSVG'
+import MyDoodle from 'public/static/images/doodle.png'
+import MyDoodlePath from 'components/MyDoodle/doodleSVG'
 
 const MyDoodleAnimated = () => (
   <div id="mydoodleanimated" className="relative flex justify-center items-center dark:bg-gray-300 rounded-full">

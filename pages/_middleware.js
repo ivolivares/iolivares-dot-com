@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-export function middleware(req, event) {
+export function middleware(_req, _event) {
   /* Policy created with https://securityheaders.com */
   const ContentSecurityPolicy = `  
     default-src 'self';

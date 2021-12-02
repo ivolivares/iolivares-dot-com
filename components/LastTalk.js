@@ -2,9 +2,9 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 import { useTranslation } from 'next-i18next'
-import { formatDate } from '@io/lib/dates'
-import ExternalLink from '@io/components/ExternalLink'
-import talks from '@io/data/talks'
+import { formatDate } from 'lib/dates'
+import ExternalLink from 'components/ExternalLink'
+import talks from 'data/talks'
 
 export default function LastTalk() {
   const { locale } = useRouter()

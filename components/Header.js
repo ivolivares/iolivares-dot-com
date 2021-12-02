@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 
-import ExternalLink from '@io/components/ExternalLink'
+import ExternalLink from 'components/ExternalLink'
 
 export default function Header() {
   const { t } = useTranslation('common')

@@ -4,10 +4,10 @@ import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import MainLayout from '@io/layouts/Main'
-import TransWithLinks from '@io/components/TransWithLinks'
-import { MyDoodleAnimated } from '@io/components/MyDoodle'
-import MyDoodle from '../public/static/images/doodle.png'
+import MainLayout from 'layouts/Main'
+import TransWithLinks from 'components/TransWithLinks'
+import { MyDoodleAnimated } from 'components/MyDoodle'
+import MyDoodle from 'public/static/images/doodle.png'
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
