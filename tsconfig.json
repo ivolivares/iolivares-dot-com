@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "jsx": "preserve",
+    "paths": {
+      "@io/components/*": ["components/*"],
+      "@io/data/*": ["data/*"],
+      "@io/layouts/*": ["layouts/*"],
+      "@io/lib/*": ["lib/*"],
+      "@io/styles/*": ["styles/*"],
+      "@io/images/*": ["public/static/images/*"],
+    },
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "target": "es5"
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
