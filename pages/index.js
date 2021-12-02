@@ -72,7 +72,9 @@ const Home = () => {
           />
         </p>
         <p className="mb-4 md:ml-5 lg:ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
-          {t('hey-second-line')}
+          <TransWithLinks
+            i18nText={t('hey-second-line')}
+          />
         </p>
         <p className="mb-8 md:ml-5 lg:ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
           {t('hey-third-line')}

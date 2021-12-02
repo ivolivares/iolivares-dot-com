@@ -2,11 +2,8 @@ const { i18n } = require('./next-i18next.config')
 const { withSentryConfig } = require('@sentry/nextjs')
 
 module.exports = withSentryConfig({
-  // swcMinify: true,
+  swcMinify: true,
   reactStrictMode: true,
-  future: {
-    strictPostcssConfiguration: true,
-  },
   i18n,
   images: {
     formats: ['image/avif', 'image/webp'],
