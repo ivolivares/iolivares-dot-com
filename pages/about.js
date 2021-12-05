@@ -17,7 +17,7 @@ export async function getStaticProps({ locale }) {
   }
 }
 
-function About({ mdxSource }) {
+const About = ({ mdxSource }) => {
   return (
     <MDXRemote
       {...mdxSource}
