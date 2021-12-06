@@ -6,7 +6,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { useIsFontReady } from '@io/lib/useIsFontReady'
-import MainLayout from '@io/layouts/Main'
+import MainLayout from '@io/layouts/main'
 import TransWithLinks from '@io/components/TransWithLinks'
 import MyDoodleLoader from '@io/components/MyDoodle/MyDoodleLoader'
 import MyDoodle from '@io/images/doodle.png'

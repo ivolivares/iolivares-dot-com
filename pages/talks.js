@@ -2,7 +2,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { getFileBySlug } from '@io/lib/mdx'
-import TalksLayout from '@io/layouts/Talks'
+import TalksLayout from '@io/layouts/talks'
 import MDXComponents from '@io/components/MDXComponents'
 
 export const getStaticProps = async ({ locale }) => {
