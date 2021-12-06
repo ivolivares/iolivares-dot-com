@@ -17,7 +17,7 @@ const Talks = [
       en: 'Building the Next Generation of Airlines Websites',
     },
     where: 'NextJS Conf 2020',
-    date: new Date('2020-10-27'),
+    date: new Date(2020, 10, 7), // Remember: Month is 0-indexed, so: 10 is November,
     duration: '25:18',
     badge: {
       es: 'Transformación Digital',
@@ -35,7 +35,7 @@ const Talks = [
       en: 'Web Performance 101 in 2021',
     },
     where: 'Globant Tech Talk',
-    date: new Date('2021-02-09'),
+    date: new Date(2021, 1, 9),
     duration: '01:04:12',
     badge: {
       es: 'Web Vitals',
@@ -53,7 +53,7 @@ const Talks = [
       en: 'Observability 101: Monitoring your app is not about devops',
     },
     where: 'WebConf LATAM 2021',
-    date: new Date('2021-08-23'),
+    date: new Date(2021, 7, 23),
     duration: '18:32',
     badge: {
       es: 'Observabilidad',
@@ -71,7 +71,7 @@ const Talks = [
       en: 'Observability 101: Monitoring your app is not about devops',
     },
     where: 'Reliable Web Summit 2021',
-    date: new Date('2021-08-26'),
+    date: new Date(2021, 7, 26),
     duration: '00:00',
     badge: {
       es: 'Observabilidad',
