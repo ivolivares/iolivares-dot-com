@@ -3,12 +3,12 @@ import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import MainLayout from 'layouts/Main'
-import ExternalLink from 'components/ExternalLink'
+import MainLayout from '@io/layouts/Main'
+import ExternalLink from '@io/components/ExternalLink'
 
-import errorImageSource from 'public/static/images/khaby-lame-by-gabriel-soares.png'
+import errorImageSource from '@io/images/khaby-lame-by-gabriel-soares.png'
 
-export async function getStaticProps({ locale }) {
+export const getStaticProps = async ({ locale }) => {
   return {
     props: {
       statusCode: 429,

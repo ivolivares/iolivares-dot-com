@@ -1,11 +1,11 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import { getFileBySlug } from 'lib/mdx'
-import AboutLayout from 'layouts/About'
-import MDXComponents from 'components/MDXComponents'
+import { getFileBySlug } from '@io/lib/mdx'
+import AboutLayout from '@io/layouts/About'
+import MDXComponents from '@io/components/MDXComponents'
 
-export async function getStaticProps({ locale }) {
+export const getStaticProps = async ({ locale }) => {
   const about = await getFileBySlug('about', locale)
 
   return {

@@ -6,7 +6,7 @@
 import regexifyString from 'regexify-string'
 import Link from 'next/link'
 
-import ExternalLink from 'components/ExternalLink'
+import ExternalLink from '@io/components/ExternalLink'
 
 const WMLink = () => {
   return (

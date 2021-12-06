@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
-import Metadata from 'data/metadata'
-import JSONLD from 'data/json-ld'
+import Metadata from '@io/data/metadata'
+import JSONLD from '@io/data/json-ld'
 
 class ioDocument extends Document {
   render() {

@@ -1,4 +1,4 @@
-import ExternalLink from "components/ExternalLink"
+import ExternalLink from "@io/components/ExternalLink"
 
 const ListItem = ({ href, text, description}) => {
   return (

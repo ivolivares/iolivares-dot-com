@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 
-import Metadata from 'data/metadata'
+import Metadata from '@io/data/metadata'
 
 export default function Meta(props) {
   const router = useRouter()

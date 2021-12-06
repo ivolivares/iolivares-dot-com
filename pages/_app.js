@@ -1,8 +1,8 @@
 import { ThemeProvider } from 'next-themes'
 import { appWithTranslation } from 'next-i18next'
-import { useAnalytics } from 'lib/analytics'
+import { useAnalytics } from '@io/lib/analytics'
 
-import 'styles/globals.css'
+import '@io/styles/globals.css'
 
 const nextI18NextConfig = require('../next-i18next.config')
 
