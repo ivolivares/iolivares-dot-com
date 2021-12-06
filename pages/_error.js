@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import MainLayout from '@io/layouts/main'
+import MainLayout from '@io/layouts/MainLayout'
 import ExternalLink from '@io/components/ExternalLink'
 
 import errorImageSource from '@io/images/khaby-lame-by-gabriel-soares.png'
