@@ -2,7 +2,7 @@ import Meta from '@io/components/Meta'
 import Header from '@io/components/Header'
 import Footer from '@io/components/Footer'
 
-export default function MainLayout({ children }) {
+const MainLayout = ({ children }) => {
   const { tagline } = children.props
 
   return (
@@ -26,3 +26,5 @@ export default function MainLayout({ children }) {
     </>
   )
 }
+
+export default MainLayout

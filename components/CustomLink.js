@@ -1,6 +1,6 @@
 /**
  * Originally inspired by Lee Robinson website
- * @see https://github.com/leerob/leerob.io/blob/main/@io/components/MDXComponents.js
+ * @see https://github.com/leerob/leerob.io/blob/main/components/MDXComponents.js
  */
 import Link from 'next/link'
 import ExternalLink from '@io/components/ExternalLink'

@@ -6,7 +6,7 @@ import Meta from '@io/components/Meta'
 import Header from '@io/components/Header'
 import Footer from '@io/components/Footer'
 
-export default function AboutLayout({ children }) {
+const AboutLayout = ({ children }) => {
   const { frontMatter } = children.props
   const { tagline } = frontMatter
   const { locale } = useRouter()
@@ -42,3 +42,5 @@ export default function AboutLayout({ children }) {
     </>
   )
 }
+
+export default AboutLayout
