@@ -13,6 +13,30 @@
     <loc>https://iolivares.com/es/uses</loc>
   </url>
   <url>
+    <loc>https://iolivares.com/es//about.en</loc>
+  </url>
+  <url>
+    <loc>https://iolivares.com/es//about.es</loc>
+  </url>
+  <url>
+    <loc>https://iolivares.com/es//talks.en</loc>
+  </url>
+  <url>
+    <loc>https://iolivares.com/es//talks.es</loc>
+  </url>
+  <url>
+    <loc>https://iolivares.com/es//uses.en</loc>
+  </url>
+  <url>
+    <loc>https://iolivares.com/es//uses.es</loc>
+  </url>
+  <url>
+    <loc>https://iolivares.com/es//failover/not_translated.en</loc>
+  </url>
+  <url>
+    <loc>https://iolivares.com/es//failover/not_translated.es</loc>
+  </url>
+  <url>
     <loc>https://iolivares.com/about</loc>
   </url>
   <url>
@@ -23,5 +47,29 @@
   </url>
   <url>
     <loc>https://iolivares.com/uses</loc>
+  </url>
+  <url>
+    <loc>https://iolivares.com//about.en</loc>
+  </url>
+  <url>
+    <loc>https://iolivares.com//about.es</loc>
+  </url>
+  <url>
+    <loc>https://iolivares.com//talks.en</loc>
+  </url>
+  <url>
+    <loc>https://iolivares.com//talks.es</loc>
+  </url>
+  <url>
+    <loc>https://iolivares.com//uses.en</loc>
+  </url>
+  <url>
+    <loc>https://iolivares.com//uses.es</loc>
+  </url>
+  <url>
+    <loc>https://iolivares.com//failover/not_translated.en</loc>
+  </url>
+  <url>
+    <loc>https://iolivares.com//failover/not_translated.es</loc>
   </url>
 </urlset>
