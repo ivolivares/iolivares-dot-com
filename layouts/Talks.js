@@ -6,8 +6,7 @@ import Meta from '@io/components/Meta'
 import Header from '@io/components/Header'
 import Footer from '@io/components/Footer'
 
-const TalksLayout = ({ children }) => {
-  const { frontMatter } = children.props
+const TalksLayout = ({ children, frontMatter }) => {
   const { tagline } = frontMatter
   const { locale } = useRouter()
   const { t } = useTranslation('common')

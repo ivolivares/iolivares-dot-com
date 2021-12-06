@@ -17,17 +17,17 @@ export const getStaticProps = async ({ locale }) => {
   }
 }
 
-const About = ({ mdxSource }) => {
+const About = ({ mdxSource, frontMatter }) => {
   return (
-    <MDXRemote
-      {...mdxSource}
-      components={{
-        ...MDXComponents,
-      }}
-    />
+    <AboutLayout frontMatter={frontMatter}>
+      <MDXRemote
+        {...mdxSource}
+        components={{
+          ...MDXComponents,
+        }}
+      />
+    </AboutLayout>
   )
 }
-
-About.Layout = AboutLayout
 
 export default About
