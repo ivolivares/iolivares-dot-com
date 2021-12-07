@@ -14,8 +14,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:sitemap": "NODE_OPTIONS='--experimental-json-modules' node ./scripts/generate-sitemap.mjs",
     "prebuild": "npm run lint",
-    "postbuild": "NODE_OPTIONS='--experimental-json-modules' node ./scripts/generate-sitemap.mjs",
+    "postbuild": "npm run build:sitemap",
     "lint": "next lint",
     "start": "next start"
   },
