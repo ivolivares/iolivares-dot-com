@@ -8,11 +8,7 @@ export function middleware(req: NextRequest, _event: NextFetchEvent) {
   const { pathname } = req.nextUrl
   const redirectTo = redirects.filter(redirect => pathname.includes(redirect.source))[0]
   
-  console.debug(pathname)
-  console.debug(redirectTo)
-  
   if (redirectTo) {
-    console.info('Redirecting...')
     return NextResponse.redirect(redirectTo.destination, PERMANENT_REDIRECT)
   }
   
