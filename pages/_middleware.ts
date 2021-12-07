@@ -6,7 +6,7 @@ import redirects from '@io/data/redirects'
 
 export function middleware(req: NextRequest, _event: NextFetchEvent) {
   const { pathname } = req.nextUrl
-  const redirectTo = redirects.filter(redirect => redirect.source === pathname)[0]
+  const redirectTo = redirects.filter(redirect => pathname.includes(redirect.source))[0]
   
   console.debug(pathname)
   console.debug(redirectTo)
