@@ -6,19 +6,16 @@ import redirects from '@io/data/redirects'
 
 export function middleware(req: NextRequest, _event: NextFetchEvent) {
   const { pathname } = req.nextUrl
-  const response = securityHeaders(NextResponse)
-
-  console.debug(response)
-
   const redirectTo = redirects.filter(redirect => redirect.source === pathname)[0]
   
   console.debug(pathname)
   console.debug(redirectTo)
-
+  
   if (redirectTo) {
-    console.debug('Redirecting...')
+    console.info('Redirecting...')
     return NextResponse.redirect(redirectTo.destination, PERMANENT_REDIRECT)
   }
-
-  return response
+  
+  const response = NextResponse.next()
+  return securityHeaders(response)
 }
