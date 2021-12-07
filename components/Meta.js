@@ -7,12 +7,12 @@ import Metadata from '@io/data/metadata'
 export default function Meta(props) {
   const router = useRouter()
   const { t } = useTranslation('common')
-  const { title, description } = props
+  const { title, summary } = props
 
   const meta = {
     name: Metadata.name,
     title: title || Metadata.DEFAULT_TITLE,
-    description: description || Metadata.DESCRIPTION,
+    description: summary || Metadata.DESCRIPTION,
     image: Metadata.OPENGRAPH.IMAGE,
     image_sm: Metadata.OPENGRAPH.IMAGE_SMALL,
     image_alt: Metadata.OPENGRAPH.IMAGE_ALT,

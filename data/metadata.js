@@ -30,7 +30,7 @@ const Metadata = {
     },
     {
       name: 'facebook',
-      url: 'https://www.facebook.com/iolivares.blog'
+      url: 'https://www.facebook.com/iolivares.dev'
     },
     {
       name: 'instagram',
