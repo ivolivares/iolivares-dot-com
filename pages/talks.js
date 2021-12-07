@@ -2,32 +2,32 @@ import { MDXRemote } from 'next-mdx-remote'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { getFileBySlug } from '@io/lib/mdx'
-import AboutLayout from '@io/layouts/AboutLayout'
+import TalksLayout from '@io/layouts/TalksLayout'
 import MDXComponents from '@io/components/MDXComponents'
 
 export const getStaticProps = async ({ locale }) => {
-  const about = await getFileBySlug('about', locale)
+  const talks = await getFileBySlug('talks', locale)
 
   return {
     props: {
-      ...about,
-      ...await serverSideTranslations(locale, ['common', 'about']),
+      ...talks,
+      ...await serverSideTranslations(locale, ['common', 'talks']),
     },
     revalidate: 3600,
   }
 }
 
-const About = ({ mdxSource, frontMatter }) => {
+const Talks = ({ mdxSource, frontMatter }) => {
   return (
-    <AboutLayout frontMatter={frontMatter}>
+    <TalksLayout frontMatter={frontMatter}>
       <MDXRemote
         {...mdxSource}
         components={{
           ...MDXComponents,
         }}
       />
-    </AboutLayout>
+    </TalksLayout>
   )
 }
 
-export default About
+export default Talks

@@ -1,4 +1,4 @@
-const { spacing, fontFamily } = require('tailwindcss/defaultTheme')
+const { spacing, fontFamily, screens } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   mode: 'jit',
@@ -15,6 +15,10 @@ module.exports = {
   ],
   darkMode: 'media',
   theme: {
+    screens: {
+      'xs': '370px',
+      ...screens,
+    },
     extend: {
       fontFamily: {
         sans: ['Inter', ...fontFamily.sans],
@@ -54,7 +58,7 @@ module.exports = {
             a: {
               color: theme('colors.gray.800'),
               backgroundColor: theme('colors.primary.100'),
-              padding: '0 .0125',
+              // padding: '0 .0125',
               fontWeight: '500',
               '&:hover': {
                 backgroundColor: theme('colors.primary.200'),
@@ -79,12 +83,12 @@ module.exports = {
             color: theme('colors.gray.100'),
             a: {
               color: theme('colors.gray.300'),
-              backgroundColor: theme('colors.gray.600'),
-              padding: '0 0.125rem',
+              backgroundColor: theme('colors.gray.800'),
+              // padding: '0 0.125rem',
               fontWeight: '500',
               '&:hover': {
-                color: theme('colors.gray.800'),
-                backgroundColor: theme('colors.primary.200'),
+                color: theme('colors.gray.900'),
+                backgroundColor: theme('colors.primary.100'),
               },
               code: {
                 color: theme('colors.primary.300'),

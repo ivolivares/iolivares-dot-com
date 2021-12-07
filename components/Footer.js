@@ -15,7 +15,10 @@ export default function Footer() {
   const { push, pathname, asPath, query, locale } = useRouter()
   const [ selected, setSelected ] = useState(locale)
   const { t } = useTranslation('common')
-  const linksClassNames = "px-2 sm:px-4 py-1 md:mr-1 rounded-md text-gray-50 hover:text-gray-300 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform rounded-md focus:outline-none focus-visible:shadow-outline focus-visible:ring-2 ring-offset-current ring-offset-2"
+  const linksClassNames = 'px-2 sm:px-4 py-1 md:mr-1 rounded-md text-gray-50 hover:text-gray-300 ' +
+                'motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out ' +
+                'motion-safe:transform rounded-md focus:outline-none focus-visible:shadow-outline ' +
+                'focus-visible:ring-2 ring-offset-current ring-offset-2'
 
   const setLanguage = (newLang) => {
     setSelected(newLang)
@@ -24,7 +27,7 @@ export default function Footer() {
 
   return (
     <>
-      <div className="container mx-auto flex flex-col text-left pt-5 pb-6 px-3 md:px-0">
+      <div className="flex flex-col w-full mx-auto max-w-5xl text-left pt-5 pb-6 px-5 xl:px-0">
         <pre className="text-xs">
           {`> $ cd ~/io${locale !== defaultLang ? '/' + locale : ''}${asPath}`}
           <span className="w-1 h-4 inline-block bg-primary-800 dark:bg-gray-400 ml-2 rounded-sm motion-safe:animate-ping motion-safe:duration-75">
@@ -32,44 +35,8 @@ export default function Footer() {
           </span>
         </pre>
       </div>
-      <footer className="bg-gray-900 shadow-xl">
+      <footer className="bg-gray-200 dark:bg-gray-800 shadow-xl">
         <div className="flex flex-col flex-wrap justify-center p-5 md:flex-row">
-          <nav className="flex flex-wrap items-center justify-center w-full mx-auto mb-6 text-sm md:text-base">
-            <Link href="/about">
-              <a className={linksClassNames}>
-                {t('nav-about')}
-              </a>
-            </Link>
-            <span>·</span>
-            <ExternalLink
-              href="https://iolivares.blog"
-              isIOLink={true}
-              classNames={linksClassNames}
-            >
-              {t('nav-blog')}
-            </ExternalLink>
-            <span>·</span>
-            <ExternalLink
-              href="https://iolivares.photos"
-              isIOLink={true}
-              classNames={linksClassNames}
-            >
-              {t('nav-photos')}
-            </ExternalLink>
-            <span>·</span>
-            <Link href="/uses">
-              <a className={linksClassNames}>
-                {t('nav-uses')}
-              </a>
-            </Link>
-            <span>·</span>
-            <ExternalLink
-              href="https://status.iolivares.com"
-              classNames={linksClassNames}
-            >
-              {t('nav-status')}
-            </ExternalLink>
-          </nav>
           <div className="inline-flex justify-center w-full mx-auto sm:ml-auto sm:mt-0">
             {Metadata.SOCIAL_NETWORKS.map((icon, iconIdx) => (
               <ExternalLink
@@ -82,18 +49,18 @@ export default function Footer() {
                   alt={icon.name}
                   width="22"
                   height="22"
-                  className="filter brightness-0 invert"
+                  className="dark:filter dark:brightness-0 dark:invert"
                 />
               </ExternalLink>
             ))}
           </div>
           <div className="w-full lg:w-1/2 flex flex-col flex-wrap justify-center pt-5 md:flex-row">
-            <div className="text-gray-100 w-full text-center text-xs md:text-ms">
+            <div className="text-gray-800 dark:text-gray-100 w-full text-center text-xs md:text-ms">
               <p>
                 {t('footer-email-me')}
                 {` `}
                 <a
-                  className="ml-1 inline-block text-primary-400 hover:text-primary-300 email-protection"
+                  className="ml-1 inline-block text-primary-400 hover:text-primary-300 tracking-wide font-bold email-protection"
                   data-domain={domain}
                   data-name={name}
                   data-lang={locale}
@@ -108,9 +75,9 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="w-full px-8 mt-4 bg-gray-100 dark:bg-gray-800">
-          <div className="container py-5 mx-auto flex flex-col md:flex-row flex-wrap justify-center md:justify-between items-start md:items-center">
-            <div className="text-xs text-center md:text-left text-gray-800 dark:text-gray-50">
+        <div className="px-8 bg-gray-100 dark:bg-gray-900">
+          <div className="w-full mx-auto max-w-5xl py-5 flex flex-col md:flex-row flex-wrap justify-center md:justify-between items-start md:items-center">
+            <div className="text-xs text-center md:text-left w-full md:w-auto text-gray-800 dark:text-gray-100">
               <p>
                 {`© ${t('full-name')} 2006-${(new Date()).getFullYear()}`}.
                 {` `}
@@ -141,7 +108,7 @@ export default function Footer() {
               <div className="w-40 mt-2">
                 <Listbox value={selected} onChange={setLanguage}>
                   <div className="relative mt-1">
-                    <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-gray-50 dark:bg-gray-900 rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-gray-700 dark:focus-visible:ring-gray-50 focus-visible:ring-offset-gray-700 dark:focus-visible:ring-offset-gray-300 sm:text-sm">
+                    <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-gray-700 dark:focus-visible:ring-gray-50 focus-visible:ring-offset-gray-700 dark:focus-visible:ring-offset-gray-300 sm:text-sm">
                       <span className="block truncate">{t(`language-${locale}`)}</span>
                       <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                         <svg

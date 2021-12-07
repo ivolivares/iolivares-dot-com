@@ -1,22 +1,34 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import Container from '@io/components/Container'
+import { useIsFontReady } from '@io/lib/useIsFontReady'
+import MainLayout from '@io/layouts/MainLayout'
 import TransWithLinks from '@io/components/TransWithLinks'
-import { MyDoodleAnimated } from '@io/components/MyDoodle'
-import MyDoodle from '../public/static/images/doodle.png'
-import Conferences from '@io/components/Conferences'
+import MyDoodleLoader from '@io/components/MyDoodle/MyDoodleLoader'
+import MyDoodle from '@io/images/doodle.png'
 
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...await serverSideTranslations(locale, ['common', 'home']),
+  },
+  revalidate: 3600, // 1 hour
+})
 
 const Home = () => {
   const { t } = useTranslation('home')
+  const isFontReady = useIsFontReady()
+  const MyDoodleAnimated = dynamic(() => import('@io/components/MyDoodle/MyDoodleAnimated'), {
+    loading: () => <MyDoodleLoader />,
+    ssr: false,
+  })
 
   return (
-    <Container>
-      <section className="container flex flex-col pt-4 pb-8 sm:pb-16 md:py-16 mx-auto items-top lg:items-center md:flex-row">
+    <MainLayout>
+      <section className="flex flex-col pt-4 md:pt-16 mx-auto items-top lg:items-center md:flex-row">
         {/* No motion, static image. */}
         <div className="m-auto mb-5 md:my-0 w-1/2 md:w-full xl:w-5/6 motion-safe:hidden justify-center flex-col motion-reduce:flex">
           <Image
@@ -33,7 +45,8 @@ const Home = () => {
 
         {/* Motion available, go animations! */}
         <div className="m-auto mb-5 md:my-0 w-1/2 md:w-full xl:w-5/6 motion-safe:flex justify-center flex-col motion-reduce:hidden">
-          <MyDoodleAnimated />
+          {isFontReady && <MyDoodleAnimated />}
+          {/* <MyDoodleLoader /> */}
         </div>
 
         {/* Headline text */}
@@ -68,55 +81,28 @@ const Home = () => {
             />
           </p>
           <p className="mb-4 md:ml-5 lg:ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
-            {t('hey-second-line')}
+            <TransWithLinks
+              i18nText={t('hey-second-line')}
+            />
           </p>
           <p className="mb-8 md:ml-5 lg:ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
             {t('hey-third-line')}
           </p>
           {/* eslint-disable-next-line max-len */}
           {/* <p className="mb-8 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
-            TODO: Spotify now playing component
-          </p> */}
-          <div className="flex flex-col justify-end lg:justify-start lg:flex-row w-full">
+          TODO: Spotify now playing component
+        </p> */}
+          <div className="flex flex-col justify-end lg:flex-row w-full">
             <Link href="/about">
               <a className="w-auto px-6 py-2 mt-auto font-semibold text-center lg:text-left text-gray-50 hover:text-gray-50 bg-primary-600 hover:bg-primary-400 rounded-lg motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
                 {t('hey-button-cta')}
               </a>
             </Link>
-            <div className="hidden lg:flex">
-              <p className="mt-2 text-sm text-left text-gray-800 dark:text-gray-50 md:ml-6 md:mt-0">
-                <Link href="/about">
-                  <a className="inline-flex items-center font-semibold text-primary-400 md:mb-2 lg:mb-0 hover:text-primary-500">
-                    {t('hey-link-cta')}
-                  </a>
-                </Link>
-                <br className="hidden lg:block" />
-                {t('hey-headline-cta')}
-              </p>
-            </div>
           </div>
         </div>
       </section>
-      <section className="container flex flex-col sm:pt-10 mx-auto">
-        <h2 className="mb-8 title-font text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter text-center sm:text-left text-gray-800 dark:text-gray-100">
-          <span className="decoration-clone bg-clip-text text-transparent bg-gradient-to-b from-primary-300 to-primary-500">
-            {t('conf-title')}
-          </span>
-        </h2>
-        <div className="flex-wrap">
-          <Conferences />
-          {/* TODO: Eventually here I going to have a button to "more conferences" */}
-        </div>
-      </section>
-    </Container>
+    </MainLayout>
   )
 }
-
-export const getStaticProps = async ({ locale }) => ({
-  props: {
-    ...await serverSideTranslations(locale, ['common', 'home']),
-  },
-  revalidate: 3600, // 3600 seconds = 1 hour
-})
 
 export default Home

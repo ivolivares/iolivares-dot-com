@@ -21,13 +21,21 @@
   }
 
   a {
-    @apply text-primary-400 dark:text-primary-300;
+    @apply text-primary-500 dark:text-primary-300;
   }
   a:hover {
-    @apply text-primary-600;
+    @apply text-primary-800 dark:text-primary-400;
   }
   a:focus {
     @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-current focus-visible:ring-offset-2;
+  }
+
+  .skip-to-content {
+    @apply absolute px-4 py-3 motion-safe:transition-transform motion-safe:duration-200 transform -translate-y-12 left-1/4 focus:top-1 focus:translate-y-1 -top-8;
+  }
+
+  #main-content {
+    scroll-margin-top: 1.125rem;
   }
 
   /* Remove Safari input shadow on mobile */
@@ -65,6 +73,27 @@
 
 @tailwind components;
 @layer components {
+  a.nav-active,
+  a.nav-active:hover,
+  a.nav-active:active {
+    @apply relative overflow-hidden	text-primary-400 font-bold;
+  }
+  
+  a.nav-active:hover,
+  a.nav-active:active {
+    @apply opacity-80;
+  }
+
+  a.nav-active::after {
+    content: "";
+    @apply absolute bg-primary-400 bg-opacity-50;
+    left: 10px;
+    bottom: -6px;
+    width: calc(100% - 16px);
+    height: calc(100% - 20px);
+    transition: 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
+  }
+
   a.glb-link {
     position: relative;
     overflow: hidden;
@@ -73,8 +102,7 @@
 
   a.glb-link::after {
     content: "";
-    @apply bg-globant bg-opacity-50;
-    position: absolute;
+    @apply absolute bg-globant bg-opacity-50;
     left: 12px;
     bottom: -6px;
     width: calc(100% - 8px);
@@ -83,15 +111,12 @@
   }
 
   a.wm-link {
-    position: relative;
-    overflow: hidden;
-    @apply text-warnermedia font-bold;
+    @apply relative overflow-hidden text-warnermedia font-bold;
   }
 
   a.wm-link::after {
     content: "";
-    @apply bg-warnermedia bg-opacity-50;
-    position: absolute;
+    @apply absolute bg-warnermedia bg-opacity-50;
     left: 12px;
     bottom: -6px;
     width: calc(100% - 8px);
@@ -114,6 +139,8 @@
     @apply text-gray-800 dark:text-gray-200 font-bold;
   }
 
+  /* Prose = MDX content */
+
   .prose {
     @apply max-w-full;
   }
@@ -133,7 +160,12 @@
 
   /* Used by /about page */
   .prose .photo-of-me {
-    @apply md:float-right float-none md:ml-4 mb-4 md:w-1/2 w-full;
+    @apply float-none sm:float-right sm:ml-8 mb-4 w-full sm:w-1/3 text-center;
+  }
+
+  /* span = next/image component */
+  .prose .photo-of-me span {
+    @apply rounded-lg;
   }
 
   /* Used by /uses pages */
@@ -143,11 +175,25 @@
   .prose .list-item a:hover {
     @apply bg-primary-200 text-gray-800;
   }
+  
+  /* Timeline, used by /about page */
+  .timeline .timeline-item::before {
+      @apply bg-gray-600 dark:bg-gray-300 absolute h-full;
+      content: "";
+      left: 16px;
+      top: 20px;
+      width: 2px;
+      z-index: -1;
+  }
 
-  .prose > :first-child {
-    /* Override removing top margin, causing layout shift */
-    margin-top: 1.25em !important;
-    margin-bottom: 1.25em !important;
+  .timeline h3,
+  .timeline h4,
+  .timeline p {
+    /* Using !important to override prose styles */
+    scroll-margin-top: 0 !important;
+    margin-top: 0 !important;
+    scroll-margin-bottom: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   /* Doodle my self */
@@ -187,8 +233,8 @@
   #mydoodleanimated #iris {
     width: 62.4%;
     height: 62.4%;
-    -webkit-transform-origin: 50%;
-    -webkit-animation: blink 5s infinite;
+    transform-origin: 50%;
+    animation: blink 5s infinite;
   }
 
   /* Animations */
@@ -209,7 +255,8 @@
       opacity: 1;
     }
   }
-  @-webkit-keyframes blink {
+
+  @keyframes blink {
     0%, 100% {
       transform: scale(1, .05);
     }
