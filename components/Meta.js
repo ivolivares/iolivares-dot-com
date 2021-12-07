@@ -29,10 +29,10 @@ export default function Meta(props) {
         <meta name="description" content={meta.description} />
         <meta name="robots" content="follow, index" />
         <meta name="googlebot" content="follow, index" />
-        <meta name="author" content={meta.NAME} />
+        <meta name="author" content={meta.name} />
         <meta property="og:url" content={meta.canonical} />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content={meta.NAME} />
+        <meta property="og:site_name" content={meta.name} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
