@@ -10,7 +10,7 @@ export default function Meta(props) {
   const { title, summary } = props
 
   const meta = {
-    name: Metadata.name,
+    name: Metadata.NAME,
     title: title || Metadata.DEFAULT_TITLE,
     description: summary || Metadata.DESCRIPTION,
     image: Metadata.OPENGRAPH.IMAGE,
