@@ -9,7 +9,11 @@ export function middleware(req: NextRequest, _event: NextFetchEvent) {
   const response = securityHeaders(NextResponse)
   const redirectTo = redirects.filter(redirect => redirect.source === pathname)[0]
 
+  console.debug(pathname)
+  console.debug(redirectTo)
+
   if (redirectTo) {
+    console.debug('Redirecting...')
     return NextResponse.redirect(redirectTo.destination, PERMANENT_REDIRECT)
   }
 
