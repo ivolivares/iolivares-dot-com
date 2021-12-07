@@ -7,12 +7,12 @@ import Metadata from '@io/data/metadata'
 export default function Meta(props) {
   const router = useRouter()
   const { t } = useTranslation('common')
-  const { title, description } = props
+  const { title, summary } = props
 
   const meta = {
-    name: Metadata.name,
+    name: Metadata.NAME,
     title: title || Metadata.DEFAULT_TITLE,
-    description: description || Metadata.DESCRIPTION,
+    description: summary || Metadata.DESCRIPTION,
     image: Metadata.OPENGRAPH.IMAGE,
     image_sm: Metadata.OPENGRAPH.IMAGE_SMALL,
     image_alt: Metadata.OPENGRAPH.IMAGE_ALT,
@@ -29,10 +29,10 @@ export default function Meta(props) {
         <meta name="description" content={meta.description} />
         <meta name="robots" content="follow, index" />
         <meta name="googlebot" content="follow, index" />
-        <meta name="author" content={meta.NAME} />
+        <meta name="author" content={meta.name} />
         <meta property="og:url" content={meta.canonical} />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content={meta.NAME} />
+        <meta property="og:site_name" content={meta.name} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
