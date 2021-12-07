@@ -10,12 +10,9 @@ export function middleware(req: NextRequest, _event: NextFetchEvent) {
 
   console.debug(response)
 
+  const redirectTo = redirects.filter(redirect => redirect.source === pathname)[0]
+  
   console.debug(pathname)
-  const redirectTo = redirects.filter(redirect => {
-    console.debug(redirect)
-    return redirect.source === pathname
-  })[0]
-
   console.debug(redirectTo)
 
   if (redirectTo) {
