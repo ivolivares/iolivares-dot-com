@@ -7,9 +7,15 @@ import redirects from '@io/data/redirects'
 export function middleware(req: NextRequest, _event: NextFetchEvent) {
   const { pathname } = req.nextUrl
   const response = securityHeaders(NextResponse)
-  const redirectTo = redirects.filter(redirect => redirect.source === pathname)[0]
+
+  console.debug(response)
 
   console.debug(pathname)
+  const redirectTo = redirects.filter(redirect => {
+    console.debug(redirect)
+    return redirect.source === pathname
+  })[0]
+
   console.debug(redirectTo)
 
   if (redirectTo) {
