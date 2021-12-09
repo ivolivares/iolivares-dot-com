@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse, NextFetchEvent } from 'next/server'
+import type { NextRequest, NextFetchEvent } from 'next/server'
+import { NextResponse } from 'next/server'
 import { PERMANENT_REDIRECT } from 'http-status'
 
 import securityHeaders from '@io/lib/securityHeaders'
