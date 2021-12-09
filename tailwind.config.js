@@ -51,6 +51,9 @@ module.exports = {
         globant: '#BFD732',
         warnermedia: '#E5BC73',
       },
+      minHeight: {
+        '14': '3.5rem',
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {

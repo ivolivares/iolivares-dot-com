@@ -89,7 +89,7 @@ const Home = () => {
           <p className="mb-4 md:ml-5 lg:ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
             {t('hey-third-line')}
           </p>
-          <p className="mb-8 md:ml-5 lg:ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
+          <p className="mb-8 md:ml-5 lg:ml-10 min-h-14 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
             <NowPlaying />
           </p>
           <div className="md:ml-5 lg:ml-10 flex flex-col justify-end lg:flex-row w-full">

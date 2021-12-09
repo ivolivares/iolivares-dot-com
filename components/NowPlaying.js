@@ -20,10 +20,9 @@ export default function NowPlaying() {
 
   return (
     <span>
-      {!data && (
+      {!data ? (
         <span>{t('spotify-loading')}</span>
-      )}
-      {data?.isPlaying ? (
+      ) : (data?.isPlaying ? (
         <>
           <span className="mr-1">
             {t('spotify-playing-start')}
@@ -56,7 +55,7 @@ export default function NowPlaying() {
             {t('spotify-not-playing-cta')}
           </ExternalLink>
         </>
-      )}
+      ))}
     </span>
   )
 }
