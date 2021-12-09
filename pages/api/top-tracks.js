@@ -3,7 +3,7 @@
  * @see https://leerob.io/snippets/spotify
 */
 import { OK } from 'http-status'
-import { withSentry } from "@sentry/nextjs"
+import { withSentry } from '@sentry/nextjs'
 
 import { getTopTracks } from 'lib/spotify'
 
@@ -12,7 +12,6 @@ export default withSentry(async function handler(_, res) {
   const { items } = await response.json()
 
   const tracks = items.slice(0, 10).map((track) => {
-    console.log(track)
     return {
       artist: track.artists.map((_artist) => _artist.name).join(', '),
       album: track.album.name,

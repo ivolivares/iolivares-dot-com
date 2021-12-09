@@ -3,10 +3,9 @@
  * @see https://leerob.io/snippets/spotify
  */
 import { OK, NO_CONTENT, BAD_REQUEST } from 'http-status'
-import { withSentry } from "@sentry/nextjs"
+import { withSentry } from '@sentry/nextjs'
 
 import { getNowPlaying } from 'lib/spotify'
-
 
 export default withSentry(async function handler(_, res) {
   const response = await getNowPlaying()
