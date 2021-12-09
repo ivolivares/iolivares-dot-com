@@ -7,7 +7,7 @@ import { withSentry } from "@sentry/nextjs"
 
 import { getTopTracks } from 'lib/spotify'
 
-const topTracks = async (_, res) => {
+export default withSentry(async function handler(_, res) {
   const response = await getTopTracks()
   const { items } = await response.json()
 
@@ -29,6 +29,4 @@ const topTracks = async (_, res) => {
   )
 
   return res.status(OK).json({ tracks })
-}
-
-export default withSentry(topTracks)
+})

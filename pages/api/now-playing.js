@@ -7,7 +7,8 @@ import { withSentry } from "@sentry/nextjs"
 
 import { getNowPlaying } from 'lib/spotify'
 
-const nowPlaying = async (_, res) => {
+
+export default withSentry(async function handler(_, res) {
   const response = await getNowPlaying()
 
   if (response.status === NO_CONTENT || response.status > BAD_REQUEST) {
@@ -46,6 +47,4 @@ const nowPlaying = async (_, res) => {
     songUrl,
     title
   })
-}
-
-export default withSentry(nowPlaying)
+})
