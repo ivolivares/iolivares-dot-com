@@ -28,7 +28,7 @@ export default function Footer() {
   return (
     <>
       <div className="flex flex-col w-full mx-auto max-w-5xl text-left pt-5 pb-6 px-5 xl:px-0">
-        <pre className="text-xs">
+        <pre className="text-xs text-gray-800 dark:text-gray-100">
           {`> $ cd ~/io${locale !== defaultLang ? '/' + locale : ''}${asPath}`}
           <span className="w-1 h-4 inline-block bg-primary-800 dark:bg-gray-400 ml-2 rounded-sm motion-safe:animate-ping motion-safe:duration-75">
             {` `}

@@ -10,12 +10,13 @@ import MainLayout from '@io/layouts/MainLayout'
 import TransWithLinks from '@io/components/TransWithLinks'
 import MyDoodleLoader from '@io/components/MyDoodle/MyDoodleLoader'
 import MyDoodle from '@io/images/doodle.png'
+import NowPlaying from '@io/components/NowPlaying'
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
     ...await serverSideTranslations(locale, ['common', 'home']),
   },
-  revalidate: 3600, // 1 hour
+  revalidate: 1800,
 })
 
 const Home = () => {
@@ -85,16 +86,15 @@ const Home = () => {
               i18nText={t('hey-second-line')}
             />
           </p>
-          <p className="mb-8 md:ml-5 lg:ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
+          <p className="mb-4 md:ml-5 lg:ml-10 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
             {t('hey-third-line')}
           </p>
-          {/* eslint-disable-next-line max-len */}
-          {/* <p className="mb-8 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
-          TODO: Spotify now playing component
-        </p> */}
-          <div className="flex flex-col justify-end lg:flex-row w-full">
+          <p className="mb-8 md:ml-5 lg:ml-10 min-h-14 text-base leading-relaxed text-left text-gray-800 dark:text-gray-50">
+            <NowPlaying />
+          </p>
+          <div className="md:ml-5 lg:ml-10 flex flex-col justify-end lg:flex-row w-full">
             <Link href="/about">
-              <a className="w-auto px-6 py-2 mt-auto font-semibold text-center lg:text-left text-gray-50 hover:text-gray-50 bg-primary-600 hover:bg-primary-400 rounded-lg motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
+              <a className="w-full lg:w-auto px-6 py-2 mt-auto font-semibold text-center lg:text-left text-gray-50 hover:text-gray-50 bg-primary-600 hover:bg-primary-400 rounded-lg motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
                 {t('hey-button-cta')}
               </a>
             </Link>

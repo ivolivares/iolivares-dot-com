@@ -31,7 +31,11 @@ const LinkToTalks = ({ lang }) => {
   }
 
   return (
-    <Link href="/talks">{text[lang]}</Link>
+    <span className="font-medium">
+      <Link href="/talks">
+        {text[lang]}
+      </Link>
+    </span>
   )
 }
 

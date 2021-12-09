@@ -19,5 +19,14 @@
   "footer-made-with": "con varias tecnologías.",
   "language-en": "Inglés",
   "language-es": "Español",
-  "edit-this-page": "Editar esta página"
+  "edit-this-page": "Editar esta página",
+  "spotify-loading": "Actualizando info de Spotify...",
+  "spotify-not-playing": "Mi pasatiempo favorito es escuchar música o podcasts, aunque ahora mismo no estoy escuchando nada en Spotify, pero puedes",
+  "spotify-not-playing-cta": "sugerirme una nueva canción en Twitter.",
+  "spotify-not-playing-twitter-intent": "Te+sugiero+que+escuches+esta+canción+en+spotify:",
+  "spotify-playing-by": "de",
+  "spotify-playing-start": "Mi pasatiempo favorito es escuchar música o podcasts, de hecho ahora estoy escuchando",
+  "spotify-playing-where": "en Spotify,",
+  "spotify-playing-cta": "puedes hablarme de esta canción en Twitter.",
+  "spotify-playing-twitter-intent": "Estás+escuchando+<song-name>.+Creo+que+..."
 }
