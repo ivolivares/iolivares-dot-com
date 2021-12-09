@@ -4,16 +4,15 @@
 
 This is my website for my personal brand (my name). This is the version from 2021, if you want to see [2017 version, please go to this repo](https://github.com/ivolivares/iolivares-dot-com-2017).
 
-I'm moving to Vercel (ex now.sh) from Firebase and NextJS v10+, for different reasons (here maybe in the future you will see a link to a blog post).
-
-I decide to split my websites in 3 domains: .com, .blog and .photos, where I'm sharing my latest work in different aspects and .com is the main hub, also to open me to use different code-bases and technologies (yes, just for fun).
+I'm moving to Vercel (ex now.sh) from Firebase and NextJS, for different reasons (here maybe in the future you will see a link to a blog post).
 
 If you have any doubt about this repo, [just tweet me @ivolivares](https://twitter.com/ivolivares).
 
 ## Overview
 
 - `pages/api/*` - [API routes](https://nextjs.org/docs/api-routes/introduction) powering features like Spotify now playing or how healthy is my week.
-- `pages/*` - All (3 ones) static pages.
+- `pages/_middleware.ts` - [Middleware](https://nextjs.org/docs/middleware) used to redirects, security headers, cors, among other important features. The only TS code here.
+- `pages/*` - All static pages.
 
 ## Developing in your localhost
 
@@ -34,6 +33,8 @@ To use the APIs, we need some keys, please create a `.env` file similar to [`.en
 - [Next i18next](https://github.com/isaachinman/next-i18next)
 - [Next MDX Remote](https://github.com/hashicorp/next-mdx-remote)
 - [Tailwind CSS](https://tailwindcss.com)
+- [Headless UI](https://headlessui.dev)
 - [Gray Matter](https://github.com/jonschlinkert/gray-matter)
 - [Notion](https://www.notion.so)
 - [Panel Bear Analytics](https://panelbear.com)
+- [Sentry](https://sentry.io)
