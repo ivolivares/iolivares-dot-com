@@ -3,11 +3,14 @@ const { withSentryConfig } = require('@sentry/nextjs')
 
 /**
  * @type {import('next').NextConfig}
+ * 
+ * @note outputFileTracing is set to false to avoid conflicts in edge functions with Sentry,
+ * @see https://github.com/vercel/next.js/issues/30601
  */
 module.exports = withSentryConfig({
   swcMinify: true,
   reactStrictMode: true,
-  outputFileTracing: false, // To avoid conflicts with Sentry, @see https://github.com/vercel/next.js/issues/30601
+  outputFileTracing: false,
   i18n,
   images: {
     formats: ['image/avif', 'image/webp'],
