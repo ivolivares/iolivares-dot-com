@@ -7,6 +7,7 @@ const { withSentryConfig } = require('@sentry/nextjs')
 module.exports = withSentryConfig({
   swcMinify: true,
   reactStrictMode: true,
+  outputFileTracing: false, // To avoid conflicts with Sentry, @see https://github.com/vercel/next.js/issues/30601
   i18n,
   images: {
     formats: ['image/avif', 'image/webp'],
