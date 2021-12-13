@@ -83,6 +83,24 @@ const Talks = [
     new: false,
     active: false,
   },
+  {
+    title: {
+      es: 'Entrevista en Conversando Con Globers (CCG) Temporada 1 BonusTrack',
+      en: 'Interview on "Conversando Con Globers" (CCG) Season 1 BonusTrack',
+    },
+    where: 'Conversando con Globers CCG',
+    date: new Date(2021, 1, 2),
+    duration: '43:10',
+    badge: {
+      es: 'Entrevistas',
+      en: 'Interviews',
+    },
+    link: 'https://youtu.be/oZO8nrradp4',
+    image: 'https://res.cloudinary.com/iolivares-photos/image/upload/c_fill,w_800,g_face/v1639416921/io-dot-com/conferences/ccg-season1-bt_thumb_a8ze2u.jpg',
+    presentation: '',
+    new: false,
+    active: true,
+  },
 ]
 
 export default Talks
