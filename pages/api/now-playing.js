@@ -2,12 +2,21 @@
  * Originally inspired by Lee Robinson snippet
  * @see https://leerob.io/snippets/spotify
  */
-import { OK, NO_CONTENT, BAD_REQUEST } from 'http-status'
+import { OK, NO_CONTENT, BAD_REQUEST, UNAUTHORIZED } from 'http-status'
 import { withSentry } from '@sentry/nextjs'
 
-import { getNowPlaying } from 'lib/spotify'
+import { getNowPlaying } from '@io/lib/spotify'
+import { validateToken } from '@io/lib/authToken'
 
-export default withSentry(async function handler(_, res) {
+export default withSentry(async function handler(req, res) {
+  const validToken = await validateToken(req.headers.authorization)
+
+  if (!validToken) {
+    return res.status(UNAUTHORIZED).json({
+      auth: false,
+    })
+  }
+
   const response = await getNowPlaying()
 
   if (response.status === NO_CONTENT || response.status > BAD_REQUEST) {
@@ -34,7 +43,7 @@ export default withSentry(async function handler(_, res) {
 
   res.setHeader(
     'Cache-Control',
-    'public, s-maxage=60, stale-while-revalidate=30'
+    'public, s-maxage=60, stale-while-revalidate=30',
   )
 
   return res.status(OK).json({
