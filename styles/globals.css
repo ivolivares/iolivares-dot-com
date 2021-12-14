@@ -47,9 +47,6 @@
   img {
     /* Don't apply styles to next/image */
     @apply m-0;
-    &.prose {
-      @apply m-0;
-    }
   }
   code[class*='language-'],
   pre[class*='language-'] {

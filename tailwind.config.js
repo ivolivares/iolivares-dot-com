@@ -1,8 +1,7 @@
 const { spacing, fontFamily, screens } = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  mode: 'jit',
-  purge: [
+  content: [
     './pages/**/*.js',
     './components/**/*.js',
     './layouts/**/*.js',
@@ -13,7 +12,6 @@ module.exports = {
     // https://tailwindcss.com/docs/just-in-time-mode#known-limitations
     "./tailwind.safelist.txt",
   ],
-  darkMode: 'media',
   theme: {
     screens: {
       'xs': '370px',
@@ -138,17 +136,8 @@ module.exports = {
       }),
     }
   },
-  variants: {
-    imageRendering: ['responsive'],
-    typography: ['dark'],
-    extend: {
-      textDecoration: ['focus-visible'],
-      textColor: ['visited'],
-    },
-  },
   plugins: [
     require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio'),
     require('tailwindcss-accessibility'),
     require('tailwindcss-image-rendering')(),
   ],

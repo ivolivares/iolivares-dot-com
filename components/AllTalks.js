@@ -28,7 +28,7 @@ const AllTalks = () => {
                 key={index}
                 classNames="w-full py-4 sm:flex items-start group md:hover:bg-gray-100 md:dark:hover:bg-gray-800 px-4 rounded-md"
               >
-                <div className="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4 text-center md:text-left">
+                <div className="shrink-0 mb-4 sm:mb-0 sm:mr-4 text-center md:text-left">
                   <picture className="inline-flex rounded-lg overflow-hidden">
                     <Image
                       alt={talk.title[locale]}

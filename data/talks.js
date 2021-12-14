@@ -85,10 +85,10 @@ const Talks = [
   },
   {
     title: {
-      es: 'Entrevista en Conversando Con Globers (CCG) Temporada 1 BonusTrack',
-      en: 'Interview on "Conversando Con Globers" (CCG) Season 1 BonusTrack',
+      es: 'Entrevista en "Conversando Con Globers" (CCG) Temporada 1 BonusTrack',
+      en: 'Interview with "Conversando Con Globers" (CCG) Season 1 BonusTrack',
     },
-    where: 'Conversando con Globers CCG',
+    where: 'Conversando con Globers',
     date: new Date(2021, 1, 2),
     duration: '43:10',
     badge: {
