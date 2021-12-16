@@ -15,10 +15,6 @@ export default function Footer() {
   const { push, pathname, asPath, query, locale } = useRouter()
   const [ selected, setSelected ] = useState(locale)
   const { t } = useTranslation('common')
-  const linksClassNames = 'px-2 sm:px-4 py-1 md:mr-1 rounded-md text-gray-50 hover:text-gray-300 ' +
-                'motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out ' +
-                'motion-safe:transform rounded-md focus:outline-none focus-visible:shadow-outline ' +
-                'focus-visible:ring-2 ring-offset-current ring-offset-2'
 
   const setLanguage = (newLang) => {
     setSelected(newLang)

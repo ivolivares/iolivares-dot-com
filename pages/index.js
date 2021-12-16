@@ -75,7 +75,7 @@ const Home = () => {
           </p>
           <div className="md:ml-5 lg:ml-10 flex flex-col justify-end lg:flex-row w-full">
             <Link href="/about">
-              <a className="w-full lg:w-auto px-6 py-2 mt-auto font-semibold text-center lg:text-left text-gray-50 hover:text-gray-50 bg-primary-600 hover:bg-primary-400 rounded-lg motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
+              <a className="w-full lg:w-auto px-6 py-2 mt-auto font-semibold text-center lg:text-left text-gray-50 hover:text-gray-50 bg-primary-600 hover:bg-primary-400 rounded-lg z-0 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
                 {t('hey-button-cta')}
               </a>
             </Link>

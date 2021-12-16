@@ -10,7 +10,7 @@ import ExternalLink from '@io/components/ExternalLink'
 
 const WMLink = () => {
   return (
-    <ExternalLink href="https://www.warnermedia.com" classNames="wm-link">
+    <ExternalLink href="https://www.warnermedia.com" classNames="font-medium">
       WarnerMedia
     </ExternalLink>
   )
@@ -18,7 +18,7 @@ const WMLink = () => {
 
 const GLBLink = () => {
   return (
-    <ExternalLink href="https://www.globant.com" classNames="glb-link">
+    <ExternalLink href="https://www.globant.com" classNames="font-medium">
       Globant
     </ExternalLink>
   )

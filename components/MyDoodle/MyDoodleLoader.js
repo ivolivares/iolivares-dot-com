@@ -5,8 +5,7 @@ import MyDoodle from '@io/images/doodle.png'
 const MyDoodleLoader = () => {
 
   return (
-    <div className="flex justify-center items-center bg-gray-100 dark:bg-gray-600 rounded-full animate-pulse">
-      {/* <span className="animate-spin">⌛</span> */}
+    <div id="mydoodleanimated--loader" className="flex justify-center items-center bg-gray-100 dark:bg-gray-600 rounded-full animate-pulse">
       <Image
         src={MyDoodle}
         alt="My Doodle by Maetschl Cartoons"
