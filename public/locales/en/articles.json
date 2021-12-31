@@ -1,0 +1,10 @@
+{
+  "articles-single": "Here you can find thoughts and opinions on the software industry, leadership, music, programming, tech, and sometimes politics and my personal life. Until now, I wrote <strong>{{value, number}} articles</strong>. Remember: this content is always available in English and Spanish to open it to the more audience possible. Don't forget share it!",
+  "articles-to-read": "reads",
+  "articles-all-title": "All articles",
+  "articles-no-more": "I'm still writing new articles",
+  "articles-no-more-cta": "In the meantime, I invite you to see some of the talks I have given",
+  "articles-footer-title": "Keep reading",
+  "articles-footer-subtitle": "The latest articles about software industry, leadership, music and programming.",
+  "articles-footer-cta": "Read more"
+}

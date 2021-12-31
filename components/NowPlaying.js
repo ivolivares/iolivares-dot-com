@@ -28,7 +28,7 @@ export default function NowPlaying() {
             {t('spotify-playing-start')}
           </span>
           <ExternalLink
-            classNames="text-gray-800 dark:text-gray-200 font-medium max-w-max underline"
+            classNames="text-gray-800 dark:text-gray-200 font-medium max-w-max"
             href={data.songUrl}
           >
             {`${data.title} ${t('spotify-playing-by')} ${data?.artist ?? 'Spotify'}`}

@@ -1,6 +1,6 @@
 /**
  * Originally inspired by Lee Robinson website
- * @see https://github.com/leerob/leerob.io/blob/main/scripts/generate-sitemap.js
+ * @see https://github.com/leerob/leerob.io
  */
 import { writeFileSync } from 'fs'
 import { globby } from 'globby'

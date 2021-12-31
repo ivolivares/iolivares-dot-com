@@ -19,6 +19,7 @@
   "language-en": "Inglés",
   "language-es": "Español",
   "edit-this-page": "Editar esta página",
+  "discuss-on-twitter": "Discusión en Twitter",
   "spotify-loading": "Actualizando info de Spotify...",
   "spotify-not-playing": "Mi pasatiempo favorito es escuchar música o podcasts, aunque ahora mismo no estoy escuchando nada en Spotify, pero puedes",
   "spotify-not-playing-cta": "sugerirme una nueva canción en Twitter.",
@@ -27,5 +28,15 @@
   "spotify-playing-start": "Mi pasatiempo favorito es escuchar música o podcasts, de hecho ahora estoy escuchando",
   "spotify-playing-where": "en Spotify,",
   "spotify-playing-cta": "puedes hablarme de esta canción en Twitter.",
-  "spotify-playing-twitter-intent": "Estás+escuchando+<song-name>.+Creo+que+..."
+  "spotify-playing-twitter-intent": "Estás+escuchando+<song-name>.+Creo+que+...",
+  "share-on-facebook": "Compartir en Facebook",
+  "share-on-facebook-a11y": "Comparte este artículo via Facebook (se abrirá una nueva ventana)",
+  "share-on-twitter": "Compartir en Twitter",
+  "share-on-twitter-a11y": "Comparte este artículo via Twitter (se abrirá una nueva ventana)",
+  "share-on-linkedin": "Compartir en LinkedIn",
+  "share-on-linkedin-a11y": "Comparte este artículo via LinkedIn (se abrirá una nueva ventana)",
+  "share-on-email": "Compartir via E-mail",
+  "share-on-email-a11y": "Comparte este artículo via Mail (se abrirá una nueva ventana)",
+  "share-to-clipboard": "Copiar enlace al artículo",
+  "share-to-clipboard-a11y": "Copia este enlace a tu portapapeles"
 }

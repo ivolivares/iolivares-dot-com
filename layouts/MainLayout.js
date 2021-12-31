@@ -2,12 +2,12 @@ import Meta from '@io/components/Meta'
 import Header from '@io/components/Header'
 import Footer from '@io/components/Footer'
 
-const MainLayout = ({ children }) => {
-  const { tagline } = children.props
+const MainLayout = ({ children, ...props }) => {
+  const { tagline } = props
 
   return (
     <>
-      <Meta {...children.props} />
+      <Meta {...props} />
       <Header />
       <main
         id="main-content"

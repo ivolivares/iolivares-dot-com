@@ -13,12 +13,13 @@ module.exports = withSentryConfig({
   outputFileTracing: false,
   i18n,
   images: {
+    // TODO: Improve this config to support cloudinary as image optimization provider
     formats: ['image/avif', 'image/webp'],
     domains: [
       'i.scdn.co', // Spotify Album Art
       'pbs.twimg.com', // Twitter Profile Picture
       'res.cloudinary.com', // Cloudinary Pictures
-    ]
+    ],
   },
   webpack: (config, { dev, isServer }) => {
     /**

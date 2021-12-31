@@ -1,0 +1,159 @@
+{
+  "total": 4,
+  "latest": [
+    {
+      "slug": "es-lorem-ipsum-dor-sit-amet",
+      "lang": "es",
+      "content": {
+        "title": "es lorem ipsum dor sit amet dor sit amet lorem ipsum",
+        "tags": [
+          "Tag 1",
+          "Tag 2"
+        ],
+        "ttr": "4 min",
+        "summary": "es lorem ipsum dor sit a met dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet",
+        "slugs": {
+          "en": "lorem-ipsum-dor-sit-amet",
+          "es": "es-lorem-ipsum-dor-sit-amet"
+        },
+        "publishedAt": "2021-08-12",
+        "image": "https://res.cloudinary.com/iolivares-photos/image/upload/w_2000,ar_16:9,c_fill,g_auto,e_sharpen/v1640749045/io-dot-com/articles/photo-1637393932938-b9c209e67d5c_pzda0o.jpg"
+      }
+    },
+    {
+      "slug": "lorem-ipsum-dor-sit-amet",
+      "lang": "en",
+      "content": {
+        "title": "lorem ipsum dor sit amet dor sit amet lorem ipsum",
+        "tags": [
+          "Tag 1",
+          "Tag 2"
+        ],
+        "ttr": "4 min",
+        "summary": "lorem ipsum dor sit a met dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet",
+        "slugs": {
+          "en": "lorem-ipsum-dor-sit-amet",
+          "es": "es-lorem-ipsum-dor-sit-amet"
+        },
+        "publishedAt": "2021-08-12",
+        "image": "https://res.cloudinary.com/iolivares-photos/image/upload/w_2000,ar_16:9,c_fill,g_auto,e_sharpen/v1640749045/io-dot-com/articles/photo-1637393932938-b9c209e67d5c_pzda0o.jpg"
+      }
+    }
+  ],
+  "all": [
+    {
+      "slug": "2-lorem-ipsum-dor-sit-amets",
+      "lang": "en",
+      "content": {
+        "title": "2 lorem ipsum dor sit amet dor sit amet lorem ipsum",
+        "tags": [
+          "Tag 3",
+          "Tag 4"
+        ],
+        "ttr": "6 min",
+        "summary": "lorem ipsum dor sit a met dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet",
+        "slugs": {
+          "en": "2-lorem-ipsum-dor-sit-amets",
+          "es": "es-2-lorem-ipsum-dor-sit-amets"
+        },
+        "publishedAt": "2021-06-12",
+        "image": "https://res.cloudinary.com/iolivares-photos/image/upload/v1640749149/io-dot-com/articles/photo-1557876567-87bf2099ee7b_ek47qp.jpg"
+      }
+    },
+    {
+      "slug": "es-2-lorem-ipsum-dor-sit-amets",
+      "lang": "es",
+      "content": {
+        "title": "es 2 lorem ipsum dor sit amet dor sit amet lorem ipsum",
+        "tags": [
+          "Tag 3",
+          "Tag 4"
+        ],
+        "ttr": "6 min",
+        "summary": "es lorem ipsum dor sit a met dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet",
+        "slugs": {
+          "en": "2-lorem-ipsum-dor-sit-amets",
+          "es": "es-2-lorem-ipsum-dor-sit-amets"
+        },
+        "publishedAt": "2021-06-12",
+        "image": "https://res.cloudinary.com/iolivares-photos/image/upload/v1640749149/io-dot-com/articles/photo-1557876567-87bf2099ee7b_ek47qp.jpg"
+      }
+    },
+    {
+      "slug": "3-lorem-ipsum-dor-sit-ametss",
+      "lang": "en",
+      "content": {
+        "title": "3 lorem ipsum dor sit amet dor sit amet lorem ipsum",
+        "tags": [
+          "Tag 5",
+          "Tag 6"
+        ],
+        "ttr": "5 min",
+        "summary": "lorem ipsum dor sit a met dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet",
+        "slugs": {
+          "en": "3-lorem-ipsum-dor-sit-ametss",
+          "es": "es-3-lorem-ipsum-dor-sit-ametss"
+        },
+        "publishedAt": "2021-05-12",
+        "image": "https://res.cloudinary.com/iolivares-photos/image/upload/v1640749182/io-dot-com/articles/photo-1636352709172-ca33daf4daec_uu6f76.jpg"
+      }
+    },
+    {
+      "slug": "es-3-lorem-ipsum-dor-sit-ametss",
+      "lang": "es",
+      "content": {
+        "title": "es 3 lorem ipsum dor sit amet dor sit amet lorem ipsum",
+        "tags": [
+          "Tag 5",
+          "Tag 6"
+        ],
+        "ttr": "5 min",
+        "summary": "es lorem ipsum dor sit a met dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet",
+        "slugs": {
+          "en": "3-lorem-ipsum-dor-sit-ametss",
+          "es": "es-3-lorem-ipsum-dor-sit-ametss"
+        },
+        "publishedAt": "2021-05-12",
+        "image": "https://res.cloudinary.com/iolivares-photos/image/upload/v1640749182/io-dot-com/articles/photo-1636352709172-ca33daf4daec_uu6f76.jpg"
+      }
+    },
+    {
+      "slug": "4-lorem-ipsum-dor-sit-ametsss",
+      "lang": "en",
+      "content": {
+        "title": "4 lorem ipsum dor sit amet dor sit amet lorem ipsum",
+        "tags": [
+          "Tag 7",
+          "Tag 8"
+        ],
+        "ttr": "7 min",
+        "summary": "lorem ipsum dor sit a met dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet",
+        "slugs": {
+          "en": "4-lorem-ipsum-dor-sit-ametsss",
+          "es": "es-4-lorem-ipsum-dor-sit-ametsss"
+        },
+        "publishedAt": "2021-03-12",
+        "image": "https://res.cloudinary.com/iolivares-photos/image/upload/v1640749182/io-dot-com/articles/photo-1636352709172-ca33daf4daec_uu6f76.jpg"
+      }
+    },
+    {
+      "slug": "es-4-lorem-ipsum-dor-sit-ametsss",
+      "lang": "es",
+      "content": {
+        "title": "es 4 lorem ipsum dor sit amet dor sit amet lorem ipsum",
+        "tags": [
+          "Tag 7",
+          "Tag 8"
+        ],
+        "ttr": "7 min",
+        "summary": "es lorem ipsum dor sit a met dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet lorem ipsum dor sit amet",
+        "slugs": {
+          "en": "4-lorem-ipsum-dor-sit-ametsss",
+          "es": "es-4-lorem-ipsum-dor-sit-ametsss"
+        },
+        "publishedAt": "2021-03-12",
+        "image": "https://res.cloudinary.com/iolivares-photos/image/upload/v1640749182/io-dot-com/articles/photo-1636352709172-ca33daf4daec_uu6f76.jpg"
+      }
+    }
+  ]
+}

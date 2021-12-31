@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 
-import lifeTimeline from '@io/data/life-timeline'
+import lifeTimeline from '@io/data/life-timeline.json'
 
 const formatYear = (year, locale) => {
   if (typeof year === 'string') {

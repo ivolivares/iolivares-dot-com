@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
-
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
@@ -50,8 +49,8 @@ const Home = () => {
         </div>
 
         {/* Headline text */}
-        <div className="flex flex-col items-start text-left xl:flex-grow">
-          <h1 className="mb-8 title-font text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter text-left text-gray-800 dark:text-gray-100">
+        <div className="flex flex-col items-start text-left xl:flex-grow headlines">
+          <h1 className="mb-8 relative title-font text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter text-left text-gray-800 dark:text-gray-100">
             <span className="mr-3 inline-block">👋</span>
             <span className="decoration-clone bg-clip-text text-transparent bg-gradient-to-b from-primary-300 to-primary-500">
               {t('hey-iam-io')}
@@ -75,7 +74,7 @@ const Home = () => {
           </p>
           <div className="md:ml-5 lg:ml-10 flex flex-col justify-end lg:flex-row w-full">
             <Link href="/about">
-              <a className="w-full lg:w-auto px-6 py-2 mt-auto font-semibold text-center lg:text-left text-gray-50 hover:text-gray-50 bg-primary-600 hover:bg-primary-400 rounded-lg z-0 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
+              <a className="cta w-full lg:w-auto px-6 py-2 mt-auto font-semibold text-center lg:text-left text-gray-50 hover:text-gray-50 bg-primary-600 hover:bg-primary-400 rounded-lg z-0 motion-safe:transition motion-safe:duration-500 motion-safe:ease-in-out motion-safe:transform focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
                 {t('hey-button-cta')}
               </a>
             </Link>

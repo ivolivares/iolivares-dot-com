@@ -27,7 +27,7 @@ export default function Header() {
   
   const getNavClassName = (path) => {
     const currentPath = router.pathname.replace('/', '')
-    const linksClassNames = 'px-1 md:px-4 py-1 mr-1 font-medium ' +
+    const linksClassNames = 'px-1 md:px-4 py-2 mr-1 font-medium ' +
         'text-gray-600 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-400 ' +
         'motion-safe:transition-all motion-safe:transform ' +
         'rounded-md focus:outline-none focus-visible:shadow-outline ' +
@@ -35,10 +35,6 @@ export default function Header() {
 
     return currentPath === path ? linksClassNames + ' nav-active' : linksClassNames
   }
-
-  const isValidPath = (path) => (
-    ['about', 'articles', 'talks', 'uses'].includes(path)
-  )
 
   const toggleNavigation = () => {
     toggleMenu(!isMenuActive)
@@ -55,7 +51,7 @@ export default function Header() {
       )}>
         <nav id="navigation" className="flex flex-wrap flex-row justify-between">
           <Link href="/">
-            <a className="pl-5 xl:pl-0 pr-6 lg:pr-8 focus:outline-none z-30">
+            <a className="pl-5 xl:pl-0 pr-6 lg:pr-8 rounded-md z-30 focus-visible:shadow-outline focus-visible:ring-2 ring-offset-current ring-offset-4">
               <div className="inline-flex items-center">
                 <div className="w-1 h-1 lg:w-2 lg:h-2 p-2 mt-3 mr-1 rounded-full bg-gradient-to-tr from-gray-700 to-primary-400 dark:from-gray-50 dark:to-gray-400 motion-safe:hover:animate-ping motion-safe:hover:duration-75">
                 </div>
@@ -77,30 +73,16 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link href="/about">
-                <a className={getNavClassName('about')}>
-                  {t('nav-about')}
+              <Link href="/articles">
+                <a className={getNavClassName('articles')}>
+                  {t('nav-articles')}
                 </a>
               </Link>
             </li>
-            {/* <li>
-            <Link href="/articles">
-              <a className={getNavClassName('articles')}>
-                {t('nav-articles')}
-              </a>
-            </Link>
-          </li> */}
             <li>
               <Link href="/talks">
                 <a className={getNavClassName('talks')}>
                   {t('nav-talks')}
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/uses">
-                <a className={getNavClassName('uses')}>
-                  {t('nav-uses')}
                 </a>
               </Link>
             </li>
@@ -112,6 +94,20 @@ export default function Header() {
               >
                 {t('nav-photos')}
               </ExternalLink>
+            </li>
+            <li>
+              <Link href="/uses">
+                <a className={getNavClassName('uses')}>
+                  {t('nav-uses')}
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about">
+                <a className={getNavClassName('about')}>
+                  {t('nav-about')}
+                </a>
+              </Link>
             </li>
           </ul>
           <button

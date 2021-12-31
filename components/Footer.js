@@ -6,12 +6,11 @@ import { useTranslation } from 'next-i18next'
 import { Listbox, Transition } from '@headlessui/react'
 
 import ExternalLink from '@io/components/ExternalLink'
-import Langs from '@io/lib/supportedLangs'
+import { Langs, defaultLang } from '@io/lib/supportedLangs'
 import Metadata from '@io/data/metadata'
 import { email, sendEmail, domain, name } from '@io/lib/email'
 
 export default function Footer() {
-  const defaultLang = 'en'
   const { push, pathname, asPath, query, locale } = useRouter()
   const [ selected, setSelected ] = useState(locale)
   const { t } = useTranslation('common')

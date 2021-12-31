@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 import Metadata from '@io/data/metadata'
-import JSONLD from '@io/data/json-ld'
+import StructuredData from '@io/components/structuredData'
 
 class ioDocument extends Document {
   render() {
@@ -68,7 +68,7 @@ class ioDocument extends Document {
         <body className="bg-primary-50 dark:bg-gray-900">
           <Main />
           <NextScript />
-          <JSONLD />
+          <StructuredData />
         </body>
       </Html>
     )

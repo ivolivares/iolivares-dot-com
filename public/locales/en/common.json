@@ -20,6 +20,7 @@
   "language-en": "English",
   "language-es": "Spanish",
   "edit-this-page": "Edit this page",
+  "discuss-on-twitter": "Discuss on Twitter",
   "spotify-loading": "Updating Spotify info...",
   "spotify-not-playing": "My favorite hobby is listening to music or podcasts, although right now I'm not listening to anything on Spotify, you can",
   "spotify-not-playing-cta": "suggest me a new song on Twitter.",
@@ -28,5 +29,15 @@
   "spotify-playing-start": "My favorite hobby is listening to music or podcasts, in fact right now I'm listening to",
   "spotify-playing-where": "on Spotify,",
   "spotify-playing-cta": "you can talk me about this song on Twitter.",
-  "spotify-playing-twitter-intent": "You+are+listen+to+<song-name>.+I+think+..."
+  "spotify-playing-twitter-intent": "You+are+listen+to+<song-name>.+I+think+...",
+  "share-on-facebook": "Share on Facebook",
+  "share-on-facebook-a11y": "Share this article via Facebook (opens in new window)",
+  "share-on-twitter": "Share on Twitter",
+  "share-on-twitter-a11y": "Share this article via Twitter (opens in new window)",
+  "share-on-linkedin": "Share via LinkedIn",
+  "share-on-linkedin-a11y": "Share this article via LinkedIn (opens in new window)",
+  "share-on-email": "Share via Mail",
+  "share-on-email-a11y": "Share this article via Mail (opens in new window)",
+  "share-to-clipboard": "Copy link of this article",
+  "share-to-clipboard-a11y": "Copy this link to your clipboard"
 }
