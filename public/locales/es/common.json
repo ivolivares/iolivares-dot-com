@@ -38,5 +38,8 @@
   "share-on-email": "Compartir via E-mail",
   "share-on-email-a11y": "Comparte este artículo via Mail (se abrirá una nueva ventana)",
   "share-to-clipboard": "Copiar enlace al artículo",
-  "share-to-clipboard-a11y": "Copia este enlace a tu portapapeles"
+  "share-to-clipboard-a11y": "Copia este enlace a tu portapapeles",
+  "share-to-clipboard-done": "¡Enlace al artículo copiado!",
+  "like-click-call": "¿Te gustó este contenido?",
+  "like-click-done": "¡Gracias por compartirlo!"
 }

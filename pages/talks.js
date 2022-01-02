@@ -6,8 +6,8 @@ import parseISO from 'date-fns/parseISO'
 import ContentLayout from '@io/layouts/ContentLayout'
 import { getPropsBySlug } from '@io/lib/propsFromJSON'
 import talksData from '@io/data/talks.json'
-import TalksList from '@io/components/talksList'
-import LatestTalk from '@io/components/latestItem'
+import TalksList from '@io/components/TalksList'
+import LatestTalk from '@io/components/LatestItem'
 
 export const getStaticProps = async ({ locale }) => {
   const jsonProps = await getPropsBySlug('talks', locale)

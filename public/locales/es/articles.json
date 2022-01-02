@@ -1,6 +1,6 @@
 {
   "articles-single": "Aquí puedes encontrar pensamientos y opiniones sobre la industria del software, el liderazgo, la música, la programación, la tecnología, y a veces la política y mi vida personal. Hasta ahora, he escrito <strong>{{value, number}} artículos</strong>. Recuerda: este contenido está siempre disponible en Inglés y Español para abrirlo a la mayor audiencia posible. ¡No olvides compartirlo!",
-  "articles-to-read": "de lectura",
+  "articles-to-read": "{{value, number}} min de lectura",
   "articles-all-title": "Todos los artículos",
   "articles-no-more": "Aún estoy escribiendo nuevos artículos",
   "articles-no-more-cta": "Mientras tanto, te invito a ver algunas confs que he dado",

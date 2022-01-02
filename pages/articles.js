@@ -5,8 +5,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getPropsBySlug } from '@io/lib/propsFromJSON'
 import articlesData from '@io/data/articles.json'
 import ContentLayout from '@io/layouts/ContentLayout'
-import LatestArticle from '@io/components/latestItem'
-import ArticlesList from '@io/components/articlesList'
+import LatestArticle from '@io/components/LatestItem'
+import ArticlesList from '@io/components/ArticlesList'
 
 export const getStaticProps = async ({ locale }) => {
   const jsonProps = await getPropsBySlug('articles', locale)

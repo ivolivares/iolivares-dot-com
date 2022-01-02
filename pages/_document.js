@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 import Metadata from '@io/data/metadata'
-import StructuredData from '@io/components/structuredData'
+import StructuredData from '@io/components/StructuredData'
 
 class ioDocument extends Document {
   render() {

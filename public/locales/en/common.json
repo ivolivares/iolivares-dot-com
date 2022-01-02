@@ -39,5 +39,8 @@
   "share-on-email": "Share via Mail",
   "share-on-email-a11y": "Share this article via Mail (opens in new window)",
   "share-to-clipboard": "Copy link of this article",
-  "share-to-clipboard-a11y": "Copy this link to your clipboard"
+  "share-to-clipboard-a11y": "Copy this link to your clipboard",
+  "share-to-clipboard-done": "Link copied to clipboard!",
+  "like-click-call": "Did you like this content?",
+  "like-click-done": "Thanks for share it!"
 }

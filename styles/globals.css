@@ -96,7 +96,9 @@
   }
 
   .prose code {
-    @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-md bg-gray-100 dark:bg-gray-900;
+    @apply text-gray-800 dark:text-gray-200 px-1 py-0.5;
+    @apply border border-gray-100 dark:border-gray-800 rounded-md;
+    @apply bg-gray-100 dark:bg-gray-900;
   }
 
   /* Don't apply styles to next/image */
@@ -159,9 +161,10 @@
 
   .article-content p {
     @apply mt-2 mb-4;
+    @apply font-normal text-lg font-serif	tracking-[-0.003em] leading-8 break-words;
   }
 
-  .article-content p:first-child {
+  .article-content p:first-child:not(.error-page) {
     @apply first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:float-left;
   }
 
@@ -182,7 +185,7 @@
   .timeline h3,
   .timeline h4,
   .timeline p {
-    /* Using !important to override prose styles */
+    /* Using !important to override prose styles =/ */
     scroll-margin-top: 0 !important;
     margin-top: 0 !important;
     scroll-margin-bottom: 0 !important;

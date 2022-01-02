@@ -37,7 +37,7 @@ export const getStaticProps = async ({ params, locale }) => {
       ...await serverSideTranslations(locale, ['common', 'articles']),
       tweets,
     },
-    revalidate: 1,
+    revalidate: 60,
   }
 }
 

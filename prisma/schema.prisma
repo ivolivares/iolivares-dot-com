@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model articleViews {
+  slug  String @id @db.VarChar(128)
+  count BigInt @default(1)
+  created_by String   @db.VarChar(256)
+  created_at DateTime @default(now()) @db.DateTime(6)
+  updated_at DateTime @default(now()) @db.DateTime(6)
+}
+
+model articleLikes {
+  slug  String @id @db.VarChar(128)
+  count BigInt @default(1)
+  created_by String   @db.VarChar(256)
+  created_at DateTime @default(now()) @db.DateTime(6)
+  updated_at DateTime @default(now()) @db.DateTime(6)
+}
