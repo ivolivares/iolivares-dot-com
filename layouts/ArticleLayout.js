@@ -13,6 +13,7 @@ import ShareButtons from '@io/components/ShareButtons'
 import DiscussOnTwitterButton from '@io/components/DiscussOnTwitterButton'
 import EditThisPageButton from '@io/components/EditThisPageButton'
 import LikeButton from '@io/components/LikeButton'
+import ViewsCounter from '@io/components/ViewsCounter'
 import avatar from '@io/images/me.jpg'
 
 const ArticleLayout = ({ children, frontMatter, slug }) => {
@@ -97,8 +98,8 @@ const ArticleLayout = ({ children, frontMatter, slug }) => {
                       }),
                     }
                   } />
-                  {/* {` • `} */}
-                  {/* <ViewCounter slug={frontMatter.slug} /> */}
+                  {` • `}
+                  <ViewsCounter slug={frontMatter.slug} />
                 </div>
                 <div className="mt-2 sm:mt-0">
                   <ShareButtons
@@ -128,7 +129,7 @@ const ArticleLayout = ({ children, frontMatter, slug }) => {
               />
             </div>
             <div className="mt-4 text-center text-sm">
-              <LikeButton slug={slug} />
+              <LikeButton slug={frontMatter.slug} />
             </div>
             <div className="mt-5 text-right text-sm">
               <DiscussOnTwitterButton linkToFollow={canonicalURL} />

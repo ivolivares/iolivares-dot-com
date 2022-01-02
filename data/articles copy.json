@@ -1,5 +1,5 @@
 {
-  "total": 8,
+  "total": 4,
   "latest": [
     {
       "slug": "es-lorem-ipsum-dor-sit-amet",
@@ -56,8 +56,7 @@
           "en": "2-lorem-ipsum-dor-sit-amets",
           "es": "es-2-lorem-ipsum-dor-sit-amets"
         },
-        "publishedAt": "2021-06-12",
-        "image": "https://res.cloudinary.com/iolivares-photos/image/upload/v1640749149/io-dot-com/articles/photo-1557876567-87bf2099ee7b_ek47qp.jpg"
+        "publishedAt": "2021-06-12"
       }
     },
     {
@@ -75,8 +74,7 @@
           "en": "2-lorem-ipsum-dor-sit-amets",
           "es": "es-2-lorem-ipsum-dor-sit-amets"
         },
-        "publishedAt": "2021-06-12",
-        "image": "https://res.cloudinary.com/iolivares-photos/image/upload/v1640749149/io-dot-com/articles/photo-1557876567-87bf2099ee7b_ek47qp.jpg"
+        "publishedAt": "2021-06-12"
       }
     },
     {

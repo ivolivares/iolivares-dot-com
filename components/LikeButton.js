@@ -1,17 +1,32 @@
 import { useState } from 'react'
 import { useTranslation } from 'next-i18next'
 
+import { fetcher } from '@io/lib/fetcher'
+
 export default function LikeButton({ slug }) {
   const [wasLiked, setLike] = useState(false)
   const { t } = useTranslation('common')
-
-  const handleLike = (event) => {
+  
+  const handleLike = async (event) => {
     event.preventDefault()
-    setLike(!wasLiked)
+    const slug = event.currentTarget.getAttribute('data-slug')
+
+    if (slug) {
+      setLike(true)
+      const like = await fetcher(`/api/likes/${slug}`, {
+        method: 'POST',
+      })
+
+      if (!like) {
+        setLike(false)
+        console.error('Cannot be liked! %s', JSON.stringify(like))
+      }
+    }
   }
 
   return <button
     onClick={handleLike}
+    data-slug={slug}
     className="flex flex-row justify-between items-center group"
   >
     {!wasLiked ? (

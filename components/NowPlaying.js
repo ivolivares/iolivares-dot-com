@@ -2,7 +2,7 @@ import useSWR from 'swr'
 import { useTranslation } from 'next-i18next'
 
 import ExternalLink from '@io/components/ExternalLink'
-import fetcher from '@io/lib/fetcher'
+import { fetcher } from '@io/lib/fetcher'
 
 const buildTwitterIntentLink = (intentTranslatedText, songTitle) => {
   const intentTwitterLink = 'https://twitter.com/intent/tweet?screen_name=ivolivares&text='

@@ -42,5 +42,6 @@
   "share-to-clipboard-a11y": "Copy this link to your clipboard",
   "share-to-clipboard-done": "Link copied to clipboard!",
   "like-click-call": "Did you like this content?",
-  "like-click-done": "Thanks for share it!"
+  "like-click-done": "Thanks for sharing it!",
+  "views-counter": "views"
 }

@@ -97,7 +97,7 @@
 
   .prose code {
     @apply text-gray-800 dark:text-gray-200 px-1 py-0.5;
-    @apply border border-gray-100 dark:border-gray-800 rounded-md;
+    @apply border border-gray-100 dark:border-gray-800 rounded-lg;
     @apply bg-gray-100 dark:bg-gray-900;
   }
 
@@ -174,6 +174,16 @@
 
   .article-footer {
     @apply w-full max-w-[700px] mx-auto;
+  }
+
+  /* Used by MDX Layout */
+  .mdx-content a {
+    @apply text-gray-800 dark:text-gray-300 bg-primary-100 dark:bg-gray-800;
+  }
+
+  .mdx-content a:hover {
+    @apply dark:text-gray-900;
+    @apply bg-primary-200 dark:bg-primary-100;
   }
   
   /* Timeline, used by /about page */
