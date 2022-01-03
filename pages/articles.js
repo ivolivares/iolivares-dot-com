@@ -24,7 +24,6 @@ const Articles = (props) => {
   const { t } = useTranslation('articles')
 
   const latestArticle = articlesData?.latest?.filter((article) => article.lang === locale)[0]
-
   const allArticles = articlesData?.all?.filter((article) => article.lang === locale)
 
   return (

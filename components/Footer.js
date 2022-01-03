@@ -10,14 +10,32 @@ import { Langs, defaultLang } from '@io/lib/supportedLangs'
 import Metadata from '@io/data/metadata.json'
 import { email, sendEmail, domain, name } from '@io/lib/email'
 
-export default function Footer() {
+export default function Footer({ slugPathsLang }) {
   const { push, pathname, asPath, query, locale } = useRouter()
   const [ selected, setSelected ] = useState(locale)
   const { t } = useTranslation('common')
 
   const setLanguage = (newLang) => {
     setSelected(newLang)
-    push({ pathname, query }, asPath, { locale: newLang })
+
+    if (!slugPathsLang) {
+      return push({ pathname, query }, asPath, { locale: newLang })
+    } else {
+      const newSlug = slugPathsLang.slugs[newLang]
+
+      return push(
+        {
+          pathname: newSlug,
+          query: {
+            slug: newSlug,
+          },
+        },
+        `/${newSlug}`,
+        {
+          locale: newLang,
+        }
+      )
+    }
   }
 
   return (

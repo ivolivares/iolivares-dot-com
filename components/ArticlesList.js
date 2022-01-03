@@ -17,7 +17,7 @@ export default function ArticlesList({ articles }) {
           👨‍💻 {t('articles-all-title')}
         </h2>
         <div className="flex flex-wrap">
-          {articles.length > 1 ? (
+          {articles.length > 0 ? (
             <ul className="w-full list-none divide-y divide-gray-100 dark:divide-gray-600">
               {articles.map((article, index) => (
                 <li key={index} className="py-2">

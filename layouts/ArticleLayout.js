@@ -4,9 +4,12 @@ import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import parseISO from 'date-fns/parseISO'
 
-import { formatDate } from '@io/lib/dates'
-import Meta from '@io/components/Meta'
 import Metadata from '@io/data/metadata.json'
+
+import { formatDate } from '@io/lib/dates'
+import { Langs } from '@io/lib/supportedLangs'
+
+import Meta from '@io/components/Meta'
 import Header from '@io/components/Header'
 import Footer from '@io/components/Footer'
 import ShareButtons from '@io/components/ShareButtons'
@@ -14,6 +17,7 @@ import DiscussOnTwitterButton from '@io/components/DiscussOnTwitterButton'
 import EditThisPageButton from '@io/components/EditThisPageButton'
 import LikeButton from '@io/components/LikeButton'
 import ViewsCounter from '@io/components/ViewsCounter'
+
 import avatar from '@io/images/me.jpg'
 
 const ArticleLayout = ({ children, frontMatter, slug }) => {
@@ -29,6 +33,14 @@ const ArticleLayout = ({ children, frontMatter, slug }) => {
     image: frontMatter.image ?? '',
     ...({image_alt: frontMatter.image_alt} ?? {}),
     type: 'article',
+  }
+
+  const slugPaths = {
+    currentSlug: frontMatter.slug,
+    slugs: Langs.reduce((prevObj, lang) => {
+      prevObj[lang] = frontMatter[`slug-${lang}`] ?? frontMatter.slug
+      return prevObj
+    }, {}),
   }
 
   // This validation avoid fails when failover is called
@@ -119,24 +131,33 @@ const ArticleLayout = ({ children, frontMatter, slug }) => {
           </article>
         </section>
         {isValidArticle(frontMatter) && (
-          <footer className="article-footer flex flex-col sm:flex-row justify-between items-center sm:items-start mt-5 border-t border-gray-400 dark:border-gray-500">
-            <div className="mt-5 text-left">
-              <ShareButtons
-                shareLink={canonicalURL}
-                summaryLink={frontMatter.summary}
-                titleLink={frontMatter.title}
-                size={18}
-              />
+          <>
+            <div className="article-footer flex flex-wrap items-start mt-5">
+              {frontMatter.tags.map((tag, index) => (
+                <div key={index} className="bg-gray-300 text-gray-800 text-xs font-medium tracking-wide uppercase inline-flex items-center px-2.5 py-0.5 mr-3 mb-2 md:mb-1 rounded-md">
+                  {tag}
+                </div>
+              ))}
             </div>
-            <div className="mt-4 text-center text-sm">
-              <LikeButton slug={frontMatter.slug} />
-            </div>
-            <div className="mt-5 text-right text-sm">
-              <DiscussOnTwitterButton linkToFollow={canonicalURL} />
-              {` · `}
-              <EditThisPageButton fileToEdit={`/data/articles/${slug}.${locale}.mdx`} />
-            </div>
-          </footer>
+            <footer className="article-footer flex flex-col sm:flex-row justify-between items-center sm:items-start mt-3 border-t border-gray-400 dark:border-gray-500">
+              <div className="mt-5 text-left">
+                <ShareButtons
+                  shareLink={canonicalURL}
+                  summaryLink={frontMatter.summary}
+                  titleLink={frontMatter.title}
+                  size={18}
+                />
+              </div>
+              <div className="mt-4 text-center text-sm">
+                <LikeButton slug={frontMatter.slug} />
+              </div>
+              <div className="mt-5 text-right text-sm">
+                <DiscussOnTwitterButton linkToFollow={canonicalURL} />
+                {` · `}
+                <EditThisPageButton fileToEdit={`/data/articles/${slug}.${locale}.mdx`} />
+              </div>
+            </footer>
+          </>
         )}
         <div className="article-footer bg-gray-100 dark:bg-gray-800 my-8 px-6 py-6">
           <Link href="/articles">
@@ -158,7 +179,7 @@ const ArticleLayout = ({ children, frontMatter, slug }) => {
           </Link>
         </div>
       </main>
-      <Footer />
+      <Footer slugPathsLang={slugPaths} />
     </>
   )
 }
