@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
-import Metadata from '@io/data/metadata'
+import Metadata from '@io/data/metadata.json'
 import StructuredData from '@io/components/StructuredData'
 
 export default function Document(_props) {
@@ -28,6 +28,12 @@ export default function Document(_props) {
         <link href="/favicon.ico" rel="shortcut icon" />
         <link href="/site.webmanifest" rel="manifest" />
         <link href="/webmanifest.json" rel="manifest" />
+        <link
+          href="/feed.xml"
+          rel="alternate"
+          type="application/rss+xml"
+          title={`RSS Feed for ${Metadata.DOMAIN}`}
+        />
         <link
           href="/static/favicons/apple-touch-icon.png"
           rel="apple-touch-icon"

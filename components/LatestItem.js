@@ -59,7 +59,16 @@ export default function LatestItem({ item, dict }) {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-gray-800 dark:text-gray-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                {item.content.ttr} {t('articles-to-read')}
+                <span dangerouslySetInnerHTML={
+                  {
+                    __html: t('articles-to-read', {
+                      interpolation: {
+                        escapeValue: false,
+                      },
+                      value: item.content.ttr,
+                    }),
+                  }
+                } />
               </div>
             )}
             {item.content.duration && (

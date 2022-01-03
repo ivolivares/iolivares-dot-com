@@ -43,17 +43,19 @@ export default function ArticlesList({ articles }) {
             </ul>
           ) : (
             <div className="flex flex-col w-full mx-auto text-center pt-5 pb-6 px-5 xl:px-0">
-              <pre className="text-sm text-gray-800 dark:text-gray-100">
-                {t('articles-no-more')}
-                <span className="w-1 h-4 ml-2 inline-block bg-primary-800 dark:bg-gray-400 rounded-sm motion-safe:animate-ping motion-safe:duration-75">
-                  {` `}
-                </span>
+              <div className="text-sm font-mono text-gray-800 dark:text-gray-100 break-words">
+                <p>
+                  {t('articles-no-more')}
+                  <span className="w-1 h-4 ml-2 inline-block bg-primary-800 dark:bg-gray-400 rounded-sm motion-safe:animate-ping motion-safe:duration-75">
+                    {` `}
+                  </span>
+                </p>
                 <p>
                   <Link href="/talks">
                     {t('articles-no-more-cta')}
                   </Link>
                 </p>
-              </pre>
+              </div>
             </div>
           )}
         </div>

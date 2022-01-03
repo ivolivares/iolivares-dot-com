@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 
-import Metadata from '@io/data/metadata'
+import Metadata from '@io/data/metadata.json'
 import { defaultLang } from '@io/lib/supportedLangs'
 
 export default function Meta(props) {
@@ -56,14 +56,14 @@ export default function Meta(props) {
       </Head>
 
       {/* Debug screens */}
-      <div className="border-2 w-full h-10 pt-1 bg-red-400 border-red-400 text-primary-50 text-center">
+      {/* <div className="border-2 w-full h-10 pt-1 bg-red-400 text-primary-50 text-center">
         <span className="hidden xs:inline-block">XS ·</span>
         <span className="hidden sm:inline-block mx-1">SM ·</span>
         <span className="hidden md:inline-block mx-1">MD ·</span>
         <span className="hidden lg:inline-block mx-1">LG ·</span>
         <span className="hidden xl:inline-block mx-1">XL ·</span>
         <span className="hidden 2xl:inline-block">2XL</span>
-      </div>
+      </div> */}
 
       {/* Skip to content A11Y feature */}
       <div className="w-full max-w-5xl relative flex mx-auto">

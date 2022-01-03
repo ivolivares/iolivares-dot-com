@@ -8,10 +8,19 @@ import RSS from 'rss'
 import matter from 'gray-matter'
 
 async function generate() {
+  const Metadata = JSON.parse(readFileSync(
+    join(process.cwd(), 'data', 'metadata.json')
+  ))
+
   const feed = new RSS({
-    title: 'Iván Olivares Rojas',
-    site_url: 'https://iolivares.com',
-    feed_url: 'https://iolivares.com/feed.xml'
+    title: Metadata.NAME,
+    webMaster: Metadata.NAME,
+    description: Metadata.DESCRIPTION,
+    site_url: Metadata.URL,
+    feed_url: `${Metadata.URL}/feed.xml`,
+    image_url: `${Metadata.URL}/static/favicons/android-chrome-48x48.png`,
+    copyright: `${(new Date().getFullYear())} ${Metadata.NAME}`,
+    language: 'en',
   })
 
   const posts = readdirSync(join(process.cwd(), 'data', 'articles'))
@@ -19,11 +28,16 @@ async function generate() {
     const content = readFileSync(join(process.cwd(), 'data', 'articles', name))
     const frontmatter = matter(content)
 
+    const nameURL = name.replace(/\.mdx?/g, '').split('.')
+    const slug = nameURL[0]
+    const lang = nameURL[1]
+
     feed.item({
       title: frontmatter.data.title,
-      url: 'https://iolivares.com/' + name.replace(/\.mdx?/, ''),
+      url: Metadata.URL + '/' + (lang === 'en' ? '' : `${lang}/`) + slug,
       date: frontmatter.data.publishedAt,
-      description: frontmatter.data.summary
+      description: frontmatter.data.summary,
+      author: frontmatter.author ?? Metadata.NAME,
     })
   })
 

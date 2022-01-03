@@ -16,7 +16,6 @@ export const getStaticProps = async ({ locale }) => {
       ...jsonProps, 
       ...await serverSideTranslations(locale, ['common', 'articles']),
     },
-    revalidate: 1800,
   }
 }
 
@@ -35,7 +34,7 @@ const Articles = (props) => {
             interpolation: {
               escapeValue: false,
             },
-            value: articlesData?.total,
+            value: articlesData?.total[locale],
           }),
         }
       } />

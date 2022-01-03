@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 
-import Metadata from '@io/data/metadata'
+import Metadata from '@io/data/metadata.json'
 import CopyToClipBoardButton from '@io/components/CopyToClipBoardButton'
 import ShareOnSocialMediaButton from '@io/components/ShareOnSocialMediaButton'
 

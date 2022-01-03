@@ -1,6 +1,6 @@
 {
   "name": "iolivares-dot-com",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Personal website: iolivares.com version 2021",
   "author": {
     "name": "Iván Olivares Rojas",
@@ -14,10 +14,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:sitemap": "NODE_OPTIONS='--experimental-json-modules' node ./scripts/generate-sitemap.mjs",
-    "build:rss": "NODE_OPTIONS='--experimental-json-modules' node ./scripts/generate-rss.mjs",
+    "build:index": "node ./scripts/generate-index.mjs",
+    "build:rss": "node ./scripts/generate-rss.mjs",
+    "build:sitemap": "node ./scripts/generate-sitemap.mjs",
     "prebuild": "npm run lint",
-    "postbuild": "npm run build:sitemap",
+    "postbuild": "npm run build:sitemap && npm run build:rss && npm run build:index",
     "lint": "next lint",
     "start": "next start"
   },

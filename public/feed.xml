@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Iván Olivares Rojas]]></title>
+        <description><![CDATA[Digital Operations Manager supporting streaming platforms at WarnerMedia, previously Software Architect at Globant.]]></description>
+        <link>https://iolivares.com</link>
+        <image>
+            <url>https://iolivares.com/static/favicons/android-chrome-48x48.png</url>
+            <title>Iván Olivares Rojas</title>
+            <link>https://iolivares.com</link>
+        </image>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Mon, 03 Jan 2022 03:12:43 GMT</lastBuildDate>
+        <atom:link href="https://iolivares.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <copyright><![CDATA[2022 Iván Olivares Rojas]]></copyright>
+        <language><![CDATA[en]]></language>
+        <webMaster><![CDATA[Iván Olivares Rojas]]></webMaster>
+        <item>
+            <title><![CDATA[Hello World]]></title>
+            <description><![CDATA[Welcome (again) to my new blog. Maybe, but this time surelly, I will start to publish new posts every month or week (depends of the mood, times, etc).]]></description>
+            <link>https://iolivares.com/hello-world</link>
+            <guid isPermaLink="true">https://iolivares.com/hello-world</guid>
+            <dc:creator><![CDATA[Iván Olivares Rojas]]></dc:creator>
+            <pubDate>Fri, 31 Dec 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Hola Mundo]]></title>
+            <description><![CDATA[Bienvenid@s (de nuevo) a mi nuevo blog. Quizá, pero esta más en serio, comenzaré a publicar nuevos artículos cada mes o semanalmente (dependerá del ánimo, tiempos, etc).]]></description>
+            <link>https://iolivares.com/es/hola-mundo</link>
+            <guid isPermaLink="true">https://iolivares.com/es/hola-mundo</guid>
+            <dc:creator><![CDATA[Iván Olivares Rojas]]></dc:creator>
+            <pubDate>Fri, 31 Dec 2021 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

@@ -6,7 +6,7 @@ import parseISO from 'date-fns/parseISO'
 
 import { formatDate } from '@io/lib/dates'
 import Meta from '@io/components/Meta'
-import Metadata from '@io/data/metadata'
+import Metadata from '@io/data/metadata.json'
 import Header from '@io/components/Header'
 import Footer from '@io/components/Footer'
 import ShareButtons from '@io/components/ShareButtons'
@@ -140,12 +140,12 @@ const ArticleLayout = ({ children, frontMatter, slug }) => {
         )}
         <div className="article-footer bg-gray-100 dark:bg-gray-800 my-8 px-6 py-6">
           <Link href="/articles">
-            <a className="group hover:opacity-95">
-              <h2 className="text-2xl sm:text-4xl text-gray-800 dark:text-gray-50 font-bold">
+            <a className="group flex flex-wrap items-start focus:outline-none focus-visible:shadow-outline focus-visible:ring-2 ring-offset-current ring-offset-4">
+              <h2 className="text-2xl sm:text-4xl text-gray-800 dark:text-gray-50 font-bold group-hover:opacity-90">
                 <span className="w-6 sm:w-12">👨‍💻 </span>
                 <span>{t('articles-footer-title')}</span>
               </h2>
-              <p className="pl-6 sm:pl-12 my-2 text-base text-gray-700 dark:text-gray-50">
+              <p className="pl-6 sm:pl-12 my-2 text-base text-gray-700 dark:text-gray-50 group-hover:opacity-90">
                 {t('articles-footer-subtitle')}
               </p>
               <p className="pl-6 sm:pl-12 flex flex-row items-center group-hover:underline">

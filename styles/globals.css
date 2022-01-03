@@ -28,13 +28,13 @@
   }
 
   .skip-to-content {
-    @apply absolute px-4 py-3 text-gray-800 dark:text-primary-400;
+    @apply absolute px-2 py-2 text-gray-800 dark:text-primary-400;
     @apply transform -translate-y-12 left-[15%] focus:top-1 focus:translate-y-1 -top-8;
     @apply motion-safe:transition-transform motion-safe:duration-200;
   }
 
   #main-content {
-    scroll-margin-top: 1.125rem;
+    /* scroll-margin-top: .5rem; */
   }
 
   /* Remove Safari input shadow on mobile */
@@ -89,6 +89,24 @@
   /* Prose = MDX content */
   .prose {
     @apply max-w-full;
+  }
+
+  .prose .anchor {
+    @apply absolute invisible ml-[-1em] pr-[0.5em];
+    @apply w-[80%] max-w-[700px];
+    @apply cursor-pointer;
+  }
+
+  .anchor:hover {
+    @apply visible no-underline;
+  }
+
+  .prose .anchor:after {
+    @apply text-gray-300 dark:text-gray-700 content-['#'];
+  }
+
+  .prose *:hover > .anchor {
+    @apply visible no-underline;
   }
 
   .prose pre {
