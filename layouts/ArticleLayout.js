@@ -7,7 +7,7 @@ import parseISO from 'date-fns/parseISO'
 import Metadata from '@io/data/metadata.json'
 
 import { formatDate } from '@io/lib/dates'
-import { Langs } from '@io/lib/supportedLangs'
+import { Langs, defaultLang } from '@io/lib/supportedLangs'
 
 import Meta from '@io/components/Meta'
 import Header from '@io/components/Header'
@@ -24,7 +24,7 @@ const ArticleLayout = ({ children, frontMatter, slug }) => {
   const { locale } = useRouter()
   const { t } = useTranslation('articles')
 
-  const canonicalURL = `${Metadata.URL}/${frontMatter.slug}`
+  const canonicalURL = `${Metadata.URL}/${locale === defaultLang ? '' : locale + '/'}${frontMatter.slug}`
 
   const articleMeta = {
     title: `${frontMatter.title ?? ''} | ${Metadata.NAME}`,
