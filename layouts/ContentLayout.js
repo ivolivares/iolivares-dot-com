@@ -1,19 +1,13 @@
-import { useRouter } from 'next/router'
-import { useTranslation } from 'next-i18next'
-
-import ExternalLink from '@io/components/ExternalLink'
 import Meta from '@io/components/Meta'
 import Header from '@io/components/Header'
 import Footer from '@io/components/Footer'
 
-const TalksLayout = ({ children, frontMatter }) => {
-  const { tagline } = frontMatter
-  const { locale } = useRouter()
-  const { t } = useTranslation('common')
+const ContentLayout = ({ children, ...props }) => {
+  const { tagline } = props
 
   return (
     <>
-      <Meta {...frontMatter} />
+      <Meta {...props} />
       <Header />
       <main
         id="main-content"
@@ -27,17 +21,10 @@ const TalksLayout = ({ children, frontMatter }) => {
           </h1>
           {children}
         </section>
-        <div className="text-right text-sm mt-5">
-          <ExternalLink
-            href={`https://github.com/ivolivares/iolivares-dot-com/edit/main/data/talks.${locale}.mdx`}
-          >
-            {t('edit-this-page')}
-          </ExternalLink>
-        </div>
       </main>
       <Footer />
     </>
   )
 }
 
-export default TalksLayout
+export default ContentLayout

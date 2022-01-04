@@ -12,7 +12,8 @@ If you have any doubt about this repo, [just tweet me @ivolivares](https://twitt
 
 - `pages/api/*` - [API routes](https://nextjs.org/docs/api-routes/introduction) powering features like Spotify now playing or how healthy is my week.
 - `pages/_middleware.ts` - [Middleware](https://nextjs.org/docs/middleware) used to redirects, security headers, cors, among other important features. The only TS code here.
-- `pages/*` - All static pages.
+- `pages/[slug]*` - Static pre-rendered articles and content pages using [MDX](https://github.com/mdx-js/mdx).
+- `pages/*` - All static pages .
 
 ## Developing in your localhost
 
@@ -27,14 +28,15 @@ To use the APIs, we need some keys, please create a `.env` file similar to [`.en
 
 ## Built Using
 
-- [JavaScript ES6](https://tc39.es/ecma262/)
 - [Vercel](https://vercel.com)
 - [Next.js](https://nextjs.org)
 - [Next i18next](https://github.com/isaachinman/next-i18next)
-- [Next MDX Remote](https://github.com/hashicorp/next-mdx-remote)
+- [MDX - Content](https://github.com/mdx-js/mdx)
+- [Gray Matter - Content YAML parser for MDX files](https://github.com/jonschlinkert/gray-matter)
+- [PlanetScale - Database](https://planetscale.com)
+- [Prisma - ORM](https://prisma.io/)
 - [Tailwind CSS](https://tailwindcss.com)
-- [Headless UI](https://headlessui.dev)
-- [Gray Matter](https://github.com/jonschlinkert/gray-matter)
-- [Notion](https://www.notion.so)
-- [Panel Bear Analytics](https://panelbear.com)
-- [Sentry](https://sentry.io)
+- [Headless UI - Tailwind Components](https://headlessui.dev)
+- [Panel Bear Analytics - CookieLess Analytics](https://panelbear.com)
+- [Sentry - Error & Performance Analysis](https://sentry.io)
+- [Notion - Project & Ideas Management](https://www.notion.so)

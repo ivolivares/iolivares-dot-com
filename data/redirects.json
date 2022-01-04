@@ -1,10 +1,4 @@
-/**
- * Redirects Schema:
- * @typedef String source
- * @typedef String destination
- */
-
-const Redirects = [
+[
   {
     "source": "/IvanOlivares.pdf",
     "destination": "/iolivares-resume-2020.pdf"
@@ -34,5 +28,3 @@ const Redirects = [
     "destination": "https://calendly.com/iolivares/15min"
   }
 ]
-
-export default Redirects

@@ -13,12 +13,13 @@ module.exports = withSentryConfig({
   outputFileTracing: false,
   i18n,
   images: {
+    // TODO: Improve this config to support cloudinary as image optimization provider
     formats: ['image/avif', 'image/webp'],
     domains: [
       'i.scdn.co', // Spotify Album Art
       'pbs.twimg.com', // Twitter Profile Picture
       'res.cloudinary.com', // Cloudinary Pictures
-    ]
+    ],
   },
   webpack: (config, { dev, isServer }) => {
     /**
@@ -27,13 +28,13 @@ module.exports = withSentryConfig({
      * @see https://darrenwhite.dev/blog/nextjs-replace-react-with-preact
      */
 
-    if (!dev && !isServer) {
-      Object.assign(config.resolve.alias, {
-        react: 'preact/compat',
-        'react-dom/test-utils': 'preact/test-utils',
-        'react-dom': 'preact/compat',
-      })
-    }
+    // if (!dev && !isServer) {
+    //   Object.assign(config.resolve.alias, {
+    //     react: 'preact/compat',
+    //     'react-dom/test-utils': 'preact/test-utils',
+    //     'react-dom': 'preact/compat',
+    //   })
+    // }
 
     return config
   }

@@ -1,31 +1,54 @@
-import { MDXRemote } from 'next-mdx-remote'
+import { useRouter } from 'next/router'
+import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import parseISO from 'date-fns/parseISO'
 
-import { getFileBySlug } from '@io/lib/mdx'
-import TalksLayout from '@io/layouts/TalksLayout'
-import MDXComponents from '@io/components/MDXComponents'
+import ContentLayout from '@io/layouts/ContentLayout'
+import { getPropsBySlug } from '@io/lib/propsFromJSON'
+import talksData from '@io/data/talks.json'
+import TalksList from '@io/components/TalksList'
+import LatestTalk from '@io/components/LatestItem'
 
 export const getStaticProps = async ({ locale }) => {
-  const talks = await getFileBySlug('talks', locale)
+  const jsonProps = await getPropsBySlug('talks', locale)
 
   return {
     props: {
-      ...talks,
+      ...jsonProps,
       ...await serverSideTranslations(locale, ['common', 'talks']),
     },
+    revalidate: 1800,
   }
 }
 
-const Talks = ({ mdxSource, frontMatter }) => {
+const Talks = (props) => {
+  const { locale } = useRouter()
+  const { t } = useTranslation('talks')
+
+  const talksOrdered = talksData?.filter((talk) => talk.lang === locale) // Filter to get by locale
+          .sort((a, b) => (
+            // Sort talks by date
+            parseISO(b.content.publishedAt) - parseISO(a.content.publishedAt)
+          ))
+          .filter((t) => t.content.active) // Just the active ones
+  
+  const lastTalk = talksOrdered.slice(0, 1)[0]
+  const allTalks = talksOrdered.slice(1, (talksData.length - 1))
+
   return (
-    <TalksLayout frontMatter={frontMatter}>
-      <MDXRemote
-        {...mdxSource}
-        components={{
-          ...MDXComponents,
-        }}
-      />
-    </TalksLayout>
+    <ContentLayout {...props}>
+      <p dangerouslySetInnerHTML={
+        { __html: t('talks-single', {
+            interpolation: {
+              escapeValue: false,
+            },
+          }),
+        }
+      } />
+      <LatestTalk item={lastTalk} dict="talks" />
+      <TalksList talks={allTalks} />
+      <p>{t('talks-endline')}</p>
+    </ContentLayout>
   )
 }
 

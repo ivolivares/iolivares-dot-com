@@ -2,7 +2,7 @@ import useSWR from 'swr'
 import { useTranslation } from 'next-i18next'
 
 import ExternalLink from '@io/components/ExternalLink'
-import fetcher from '@io/lib/fetcher'
+import { fetcher } from '@io/lib/fetcher'
 
 const buildTwitterIntentLink = (intentTranslatedText, songTitle) => {
   const intentTwitterLink = 'https://twitter.com/intent/tweet?screen_name=ivolivares&text='
@@ -28,7 +28,7 @@ export default function NowPlaying() {
             {t('spotify-playing-start')}
           </span>
           <ExternalLink
-            classNames="text-gray-800 dark:text-gray-200 font-medium max-w-max underline"
+            classNames="text-gray-800 dark:text-gray-200 font-medium max-w-max"
             href={data.songUrl}
           >
             {`${data.title} ${t('spotify-playing-by')} ${data?.artist ?? 'Spotify'}`}

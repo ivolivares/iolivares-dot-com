@@ -28,11 +28,13 @@
   }
 
   .skip-to-content {
-    @apply absolute px-4 py-3 motion-safe:transition-transform motion-safe:duration-200 transform -translate-y-12 left-1/4 focus:top-1 focus:translate-y-1 -top-8;
+    @apply absolute px-2 py-2 text-gray-800 dark:text-primary-400;
+    @apply transform -translate-y-12 left-[15%] focus:top-1 focus:translate-y-1 -top-8;
+    @apply motion-safe:transition-transform motion-safe:duration-200;
   }
 
   #main-content {
-    scroll-margin-top: 1.125rem;
+    /* scroll-margin-top: .5rem; */
   }
 
   /* Remove Safari input shadow on mobile */
@@ -69,7 +71,7 @@
   a.nav-active,
   a.nav-active:hover,
   a.nav-active:active {
-    @apply relative overflow-hidden	text-primary-500 font-bold;
+    @apply relative overflow-hidden	text-primary-500 dark:text-primary-300 font-bold;
   }
   
   a.nav-active:hover,
@@ -78,9 +80,9 @@
   }
 
   a.nav-active::after {
-    @apply absolute bg-primary-500 bg-opacity-50;
+    @apply absolute bg-primary-500 dark:bg-primary-300 bg-opacity-50 rounded-sm;
     @apply content-[''] left-[5px] md:left-[15px] bottom-[-6px];
-    @apply w-[calc(100%_-_10px)] md:w-[calc(100%_-_25px)] h-[calc(100%_-_30px)] md:h-[calc(100%_-_22px)];
+    @apply w-[calc(100%_-_10px)] md:w-[calc(100%_-_25px)] h-[calc(100%_-_40px)] md:h-[calc(100%_-_32px)];
     @apply motion-safe:transition-all motion-safe:duration-[0.35s] motion-safe:ease-[cubic-bezier(0.25,0.1,0,2.05)]; 
   }
 
@@ -89,12 +91,32 @@
     @apply max-w-full;
   }
 
+  .prose .anchor {
+    @apply absolute invisible ml-[-1em] pr-[0.5em];
+    @apply w-[80%] max-w-[700px];
+    @apply cursor-pointer;
+  }
+
+  .anchor:hover {
+    @apply visible no-underline;
+  }
+
+  .prose .anchor:after {
+    @apply text-gray-300 dark:text-gray-700 content-['#'];
+  }
+
+  .prose *:hover > .anchor {
+    @apply visible no-underline;
+  }
+
   .prose pre {
     @apply bg-gray-50 border border-gray-200 dark:border-gray-700 dark:bg-gray-900;
   }
 
   .prose code {
-    @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-md bg-gray-100 dark:bg-gray-900;
+    @apply text-gray-800 dark:text-gray-200 px-1 py-0.5;
+    @apply border border-gray-100 dark:border-gray-800 rounded-lg;
+    @apply bg-gray-100 dark:bg-gray-900;
   }
 
   /* Don't apply styles to next/image */
@@ -119,6 +141,68 @@
   .prose .list-item a:hover {
     @apply bg-primary-200 text-gray-800;
   }
+
+  /* Used by articles */
+  .article-heading {
+    @apply w-full max-w-[800px] mx-auto mt-4 px-[20px] md:px-0;
+  }
+
+  .article-heading h2,
+  .article-heading .article-info {
+    @apply max-w-[700px] mx-auto;
+  }
+
+  .article-heading .article-info {
+    @apply md:px-[20px];
+  }
+
+  .article-container {
+    @apply max-w-[1000px];
+  }
+
+  .article-content h2,
+  .article-content h3,
+  .article-content h4,
+  .article-content h5,
+  .article-content h6,
+  .article-content p {
+    @apply w-full max-w-[700px] px-[20px] mx-auto;
+  }
+
+  .article-content h2,
+  .article-content h3,
+  .article-content h4,
+  .article-content h5,
+  .article-content h6 {
+    @apply mb-6;
+  }
+
+  .article-content p {
+    @apply mt-[10px] mb-[20px] text-neutral-800 dark:text-neutral-100;
+    @apply font-normal text-[20px] font-serif	tracking-[-0.1px] leading-relaxed break-words;
+  }
+
+  .article-content p:first-child:not(.error-page) {
+    @apply first-letter:text-8xl first-letter:font-bold first-letter:mr-3 first-letter:float-left;
+  }
+
+  .article-content figure {
+    @apply w-full max-w-[800px] mx-auto relative table mb-4;
+  }
+
+  .article-footer {
+    @apply w-full max-w-[700px] mx-auto;
+  }
+
+  /* Used by MDX Layout */
+  .mdx-content a {
+    @apply text-gray-800 dark:text-gray-300 bg-primary-100 dark:bg-gray-800;
+  }
+
+  .mdx-content a:hover {
+    @apply dark:text-gray-900;
+    @apply bg-primary-200 dark:bg-primary-100;
+  }
   
   /* Timeline, used by /about page */
   .timeline .timeline-item::before {
@@ -129,7 +213,7 @@
   .timeline h3,
   .timeline h4,
   .timeline p {
-    /* Using !important to override prose styles */
+    /* Using !important to override prose styles =/ */
     scroll-margin-top: 0 !important;
     margin-top: 0 !important;
     scroll-margin-bottom: 0 !important;
@@ -154,8 +238,8 @@
     @apply invisible md:visible opacity-0 md:opacity-100;
     @apply flex flex-wrap md:flex-nowrap items-center justify-center content-center;
     @apply fixed md:static top-0 left-0 translate-y-[-200%] md:translate-y-0;
-    @apply w-full md:w-auto h-full md:h-auto overflow-hidden md:overflow-auto z-20;
-    @apply list-none pt-0 md:pt-4 px-2 md:px-0;
+    @apply w-full md:w-auto h-full md:h-auto overflow-hidden md:overflow-visible z-20;
+    @apply list-none pt-0 md:pt-1 px-2 md:px-0;
     @apply text-center md:text-right text-2xl md:text-base lg:text-lg leading-8 xs:leading-6;
     @apply backdrop-blur-sm md:backdrop-blur-none;
     @apply bg-primary-50/95 md:bg-transparent dark:bg-gray-800/95 dark:md:bg-transparent;
@@ -168,7 +252,7 @@
   }
 
   .nav-list li {
-    @apply w-full md:w-auto my-8 md:my-0;
+    @apply w-full md:w-auto my-4 xs:my-8 md:my-0;
   }
 
   .nav-list.is-active {
@@ -270,8 +354,32 @@
       transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
   }
+  
+  /* Headlines, used by /about page */
+  .headlines a:not(.cta) {
+    @apply relative inline-block text-primary-500 dark:text-primary-300;
+    transition: all .2s ease-in-out;
+  }
 
-  /* Doodle my self */
+  .headlines a:not(.cta):before {
+    @apply content-[''] block absolute top-[88%] h-[5px] w-[99%] z-0 rounded-sm;
+    @apply bg-primary-500 dark:bg-primary-300;
+    transition: all .15s ease-in-out;
+  }
+
+  .headlines a:not(.cta):hover:before {
+    @apply opacity-0 top-[80%];
+  }
+
+  .headlines a:not(.cta):hover {
+    @apply text-primary-800 dark:text-primary-400;
+  }
+  
+  .headlines a:not(.cta) span {
+    @apply relative;
+  }
+
+  /* Doodle my self, used by /index page */
   #mydoodleanimated svg path {
     stroke-width: 4;
     animation: draw 4s linear 0s 1 normal forwards;

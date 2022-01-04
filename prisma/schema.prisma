@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["dataProxy"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model articleViews {
+  slug  String @id @db.VarChar(128)
+  count BigInt @default(1)
+}
+
+model articleLikes {
+  slug  String @id @db.VarChar(128)
+  count BigInt @default(1)
+}

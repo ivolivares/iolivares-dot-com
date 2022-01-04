@@ -1,12 +1,13 @@
-import { MDXRemote } from 'next-mdx-remote'
+import { useMemo } from 'react'
+import { getMDXComponent } from 'mdx-bundler/client'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { getFileBySlug } from '@io/lib/mdx'
-import AboutLayout from '@io/layouts/AboutLayout'
+import MDXLayout from '@io/layouts/MDXLayout'
 import MDXComponents from '@io/components/MDXComponents'
 
 export const getStaticProps = async ({ locale }) => {
-  const about = await getFileBySlug('about', locale)
+  const about = await getFileBySlug('pages', 'about', locale)
 
   return {
     props: {
@@ -18,15 +19,12 @@ export const getStaticProps = async ({ locale }) => {
 }
 
 const About = ({ mdxSource, frontMatter }) => {
+  const Component = useMemo(() => getMDXComponent(mdxSource), [mdxSource])
+
   return (
-    <AboutLayout frontMatter={frontMatter}>
-      <MDXRemote
-        {...mdxSource}
-        components={{
-          ...MDXComponents,
-        }}
-      />
-    </AboutLayout>
+    <MDXLayout frontMatter={frontMatter} slug="about">
+      <Component components={MDXComponents} />
+    </MDXLayout>
   )
 }
 

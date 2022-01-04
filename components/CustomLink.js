@@ -17,7 +17,13 @@ const CustomLink = (props) => {
     )
   }
 
-  return <ExternalLink {...props} />
+  const externalProps = {...props}
+
+  if (props.className) {
+    externalProps.classNames = props.className
+  }
+
+  return <ExternalLink {...externalProps} />
 }
 
 export default CustomLink

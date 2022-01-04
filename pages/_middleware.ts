@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 import { PERMANENT_REDIRECT } from 'http-status'
 
 import securityHeaders from '@io/lib/securityHeaders'
-import redirects from '@io/data/redirects'
+import redirects from '@io/data/redirects.json'
 
 export function middleware(req: NextRequest, _event: NextFetchEvent) {
   const { pathname } = req.nextUrl
