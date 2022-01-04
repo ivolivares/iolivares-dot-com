@@ -178,12 +178,12 @@
   }
 
   .article-content p {
-    @apply mt-2 mb-4;
-    @apply font-normal text-lg font-serif	tracking-[-0.003em] leading-8 break-words;
+    @apply mt-[10px] mb-[20px] text-neutral-800 dark:text-neutral-100;
+    @apply font-normal text-[20px] font-serif	tracking-[-0.1px] leading-relaxed break-words;
   }
 
   .article-content p:first-child:not(.error-page) {
-    @apply first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:float-left;
+    @apply first-letter:text-8xl first-letter:font-bold first-letter:mr-3 first-letter:float-left;
   }
 
   .article-content figure {

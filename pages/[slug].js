@@ -12,15 +12,17 @@ import Tweet from '@io/components/Tweet'
 export const getStaticPaths = async () => {
   const articles = await getFiles('articles')
 
-  const paths = articles.map((article) => ({
-    params: {
-      slug: (() => {
-        const s = article.split('.')
-        return (s[1] === defaultLang ? s[0] : `/${s[1]}/${s[0]}`)
-      })(),
-    },
-  }))
+  const paths = articles.map((article) => {
+    const [slug, locale] = article.split('.')
 
+    return {
+      params: {
+        slug,
+      },
+      locale,
+    }
+  })
+  
   return {
     paths,
     fallback: 'blocking',
@@ -47,8 +49,6 @@ export default function Article({ mdxSource, tweets, frontMatter }) {
     const tweet = tweets.find((tweet) => tweet.id === id)
     return <Tweet {...tweet} />
   }
-  
-  // Set into the state the langs URLs
 
   return (
     <ArticleLayout frontMatter={frontMatter}>
