@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 
 import Metadata from '@io/data/metadata.json'
-import { defaultLang } from '@io/lib/supportedLangs'
+import { defaultLang, LangsToISO } from '@io/lib/supportedLangs'
 
 export default function Meta(props) {
   const router = useRouter()
@@ -31,10 +31,14 @@ export default function Meta(props) {
         <meta name="robots" content="follow, index" />
         <meta name="googlebot" content="follow, index" />
         <meta name="author" content={meta.name} />
+        {type === "article" && (
+          <meta name="article:author" content={meta.name} />
+        )}
         <meta property="og:url" content={meta.canonical} />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content={meta.name} />
         <meta property="og:description" content={meta.description} />
+        <meta property="og:locale" content={LangsToISO(router.locale)} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
         <meta property="og:image:alt" content={meta.image_alt} />
