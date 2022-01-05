@@ -3,17 +3,16 @@ import { getMDXComponent } from 'mdx-bundler/client'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { getFiles, getFileBySlug } from '@io/lib/mdx'
-import { defaultLang } from '@io/lib/supportedLangs'
 import { getTweets } from '@io/lib/twitter'
 import components from '@io/components/MDXComponents'
-import ArticleLayout from '@io/layouts/ArticleLayout'
+import PostLayout from '@io/layouts/PostLayout'
 import Tweet from '@io/components/Tweet'
 
 export const getStaticPaths = async () => {
-  const articles = await getFiles('articles')
+  const posts = await getFiles('posts')
 
-  const paths = articles.map((article) => {
-    const [slug, locale] = article.split('.')
+  const paths = posts.map((post) => {
+    const [slug, locale] = post.split('.')
 
     return {
       params: {
@@ -30,20 +29,20 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({ params, locale }) => {
-  const article = await getFileBySlug('articles', params.slug, locale)
-  const tweets = await getTweets(article.tweetIDs)
+  const post = await getFileBySlug('posts', params.slug, locale)
+  const tweets = await getTweets(post.tweetIDs)
 
   return {
     props: {
-      ...article,
-      ...await serverSideTranslations(locale, ['common', 'articles']),
+      ...post,
+      ...await serverSideTranslations(locale, ['common', 'posts']),
       tweets,
     },
     revalidate: 60,
   }
 }
 
-export default function Article({ mdxSource, tweets, frontMatter }) {
+export default function Post({ mdxSource, tweets, frontMatter }) {
   const Component = useMemo(() => getMDXComponent(mdxSource), [mdxSource])
   const StaticTweet = ({ id }) => {
     const tweet = tweets.find((tweet) => tweet.id === id)
@@ -51,13 +50,13 @@ export default function Article({ mdxSource, tweets, frontMatter }) {
   }
 
   return (
-    <ArticleLayout frontMatter={frontMatter}>
+    <PostLayout frontMatter={frontMatter}>
       <Component
         components={{
           ...components,
           StaticTweet
         }}
       />
-    </ArticleLayout>
+    </PostLayout>
   )
 }

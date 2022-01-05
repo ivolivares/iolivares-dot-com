@@ -1,0 +1,10 @@
+{
+  "posts-single": "Here you can find thoughts and opinions on the software industry, leadership, music, programming, tech, and sometimes politics and my personal life. Until now, I wrote <strong>{{value, number}} posts</strong>. Remember: this content is always available in English and Spanish to open it to the more audience possible. Don't forget share it!",
+  "posts-to-read": "{{value, number}} min read",
+  "posts-all-title": "All posts",
+  "posts-no-more": "I'm still writing new posts",
+  "posts-no-more-cta": "In the meantime, I invite you to see some of the talks I have given",
+  "posts-footer-title": "Keep reading",
+  "posts-footer-subtitle": "The latest posts about software industry, leadership, music and programming.",
+  "posts-footer-cta": "Read more"
+}

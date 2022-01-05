@@ -23,9 +23,9 @@ async function generate() {
     language: 'en',
   })
 
-  const posts = readdirSync(join(process.cwd(), 'data', 'articles'))
+  const posts = readdirSync(join(process.cwd(), 'data', 'posts'))
   posts.map((name) => {
-    const content = readFileSync(join(process.cwd(), 'data', 'articles', name))
+    const content = readFileSync(join(process.cwd(), 'data', 'posts', name))
     const frontmatter = matter(content)
 
     const nameURL = name.replace(/\.mdx?/g, '').split('.')

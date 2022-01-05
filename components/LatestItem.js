@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import parseISO from 'date-fns/parseISO'
@@ -9,7 +8,7 @@ import CustomLink from '@io/components/CustomLink'
 
 export default function LatestItem({ item, dict }) {
   const { locale } = useRouter()
-  const { t } = useTranslation(dict || 'common')
+  const { t } = useTranslation(dict ?? 'common')
 
   return (
     <article className="my-8">
@@ -61,7 +60,7 @@ export default function LatestItem({ item, dict }) {
                 </svg>
                 <span dangerouslySetInnerHTML={
                   {
-                    __html: t('articles-to-read', {
+                    __html: t('posts-to-read', {
                       interpolation: {
                         escapeValue: false,
                       },

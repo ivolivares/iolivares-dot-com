@@ -20,13 +20,13 @@ import ViewsCounter from '@io/components/ViewsCounter'
 
 import avatar from '@io/images/me.jpg'
 
-const ArticleLayout = ({ children, frontMatter, slug }) => {
+const PostLayout = ({ children, frontMatter, slug }) => {
   const { locale } = useRouter()
-  const { t } = useTranslation('articles')
+  const { t } = useTranslation('posts')
 
   const canonicalURL = `${Metadata.URL}/${locale}/${frontMatter.slug}`
 
-  const articleMeta = {
+  const postMeta = {
     title: `${frontMatter.title ?? ''} | ${Metadata.NAME}`,
     summary: frontMatter.summary ?? '',
     author: frontMatter.author ?? Metadata.Name,
@@ -45,19 +45,19 @@ const ArticleLayout = ({ children, frontMatter, slug }) => {
   }
 
   // This validation avoid fails when failover is called
-  const isValidArticle = (artProps) => (
-    artProps.title && artProps.summary && artProps.publishedAt
+  const isValidPost = (postProps) => (
+    postProps.title && postProps.summary && postProps.publishedAt
   )
 
   return (
     <>
-      <Meta {...articleMeta} />
+      <Meta {...postMeta} />
       <Header />
       <main
         id="main-content"
         className="flex flex-col justify-center"
       >
-        {isValidArticle(frontMatter) && (
+        {isValidPost(frontMatter) && (
           <header>
             {frontMatter.image && (
               <picture className="relative flex h-[80vh] w-full object-cover object-center">
@@ -72,14 +72,14 @@ const ArticleLayout = ({ children, frontMatter, slug }) => {
                 />
               </picture>
             )}
-            <div className="article-heading">
+            <div className="post-heading">
               <h1 className="pt-5 text-center text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl font-bold tracking-tighter text-gray-800 dark:text-gray-100">
                 {frontMatter.title}
               </h1>
               <h2 className="pt-4 mb-10 text-center text-base font-light text-gray-800 dark:text-gray-100">
                 {frontMatter.summary}
               </h2>
-              <div className="article-info flex flex-col sm:flex-row justify-between items-center w-full mt-2">
+              <div className="post-info flex flex-col sm:flex-row justify-between items-center w-full mt-2">
                 <div className="flex items-center">
                   <Image
                     alt={frontMatter.author ?? Metadata.NAME}
@@ -103,7 +103,7 @@ const ArticleLayout = ({ children, frontMatter, slug }) => {
                 <div className="text-sm font-medium text-gray-500 dark:text-gray-200 min-w-32 mt-2 sm:mt-0">
                   <span dangerouslySetInnerHTML={
                     {
-                      __html: t('articles-to-read', {
+                      __html: t('posts-to-read', {
                         interpolation: {
                           escapeValue: false,
                         },
@@ -126,21 +126,21 @@ const ArticleLayout = ({ children, frontMatter, slug }) => {
             </div>
           </header>
         )}
-        <section className="article-container w-full px-5 mt-10 mx-auto">
-          <article className="flex flex-col article-content prose dark:prose-dark">
+        <section className="post-container w-full px-5 mt-10 mx-auto">
+          <article className="flex flex-col post-content prose dark:prose-dark">
             {children}
           </article>
         </section>
-        {isValidArticle(frontMatter) && (
+        {isValidPost(frontMatter) && (
           <>
-            <div className="article-footer flex flex-wrap items-start mt-5">
+            <div className="post-footer flex flex-wrap items-start mt-5 px-5 md:px-0">
               {frontMatter.tags.map((tag, index) => (
                 <div key={index} className="bg-gray-300 text-gray-800 text-xs font-medium tracking-wide uppercase inline-flex items-center px-2.5 py-0.5 mr-3 mb-2 md:mb-1 rounded-md">
                   {tag}
                 </div>
               ))}
             </div>
-            <footer className="article-footer flex flex-col sm:flex-row justify-between items-center sm:items-start mt-3 border-t border-gray-400 dark:border-gray-500">
+            <footer className="post-footer flex flex-col sm:flex-row justify-between items-center sm:items-start mt-3 border-t border-gray-400 dark:border-gray-500">
               <div className="mt-5 text-left">
                 <ShareButtons
                   shareLink={canonicalURL}
@@ -155,23 +155,23 @@ const ArticleLayout = ({ children, frontMatter, slug }) => {
               <div className="mt-5 text-right text-sm">
                 <DiscussOnTwitterButton linkToFollow={canonicalURL} />
                 {` · `}
-                <EditThisPageButton fileToEdit={`/data/articles/${slug}.${locale}.mdx`} />
+                <EditThisPageButton fileToEdit={`/data/posts/${slug}.${locale}.mdx`} />
               </div>
             </footer>
           </>
         )}
-        <div className="article-footer bg-gray-100 dark:bg-gray-800 my-8 px-6 py-6">
-          <Link href="/articles">
+        <div className="post-footer bg-gray-100 dark:bg-gray-800 my-8 px-6 py-6">
+          <Link href="/blog">
             <a className="group flex flex-wrap items-start focus:outline-none focus-visible:shadow-outline focus-visible:ring-2 ring-offset-current ring-offset-4">
               <h2 className="text-2xl sm:text-4xl text-gray-800 dark:text-gray-50 font-bold group-hover:opacity-90">
                 <span className="w-6 sm:w-12">👨‍💻 </span>
-                <span>{t('articles-footer-title')}</span>
+                <span>{t('posts-footer-title')}</span>
               </h2>
               <p className="pl-6 sm:pl-12 my-2 text-base text-gray-700 dark:text-gray-50 group-hover:opacity-90">
-                {t('articles-footer-subtitle')}
+                {t('posts-footer-subtitle')}
               </p>
               <p className="pl-6 sm:pl-12 flex flex-row items-center group-hover:underline">
-                <span>{t('articles-footer-cta')}</span>
+                <span>{t('posts-footer-cta')}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                 </svg>
@@ -185,4 +185,4 @@ const ArticleLayout = ({ children, frontMatter, slug }) => {
   )
 }
 
-export default ArticleLayout
+export default PostLayout

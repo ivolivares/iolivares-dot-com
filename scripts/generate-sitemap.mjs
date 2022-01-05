@@ -48,10 +48,10 @@ async function generateSitemap() {
             let path = ''
             let pathRoute = ''
 
-            if (currentPath.includes('data/articles')) {
+            if (currentPath.includes('data/posts')) {
               const currentPathLang = currentPath.split('.')[1]
               if (currentPathLang === lang) {
-                path = currentPath.replace(/(data\/articles\/)|(\.js)|(\.mdx)/g, '')
+                path = currentPath.replace(/(data\/posts\/)|(\.js)|(\.mdx)/g, '')
                 pathRoute = path.replace(/(\.en)|(\.es)/g, '')
               }
             } else {
