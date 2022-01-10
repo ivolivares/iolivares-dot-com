@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title><![CDATA[Iván Olivares Rojas]]></title>
-        <description><![CDATA[Digital Operations Manager supporting streaming platforms at WarnerMedia, previously Software Architect at Globant.]]></description>
+        <description><![CDATA[Tech Manager at Globant. Helping organizations to reinvent themselves. Sometimes I write about software industry and technology I love like Javascript.]]></description>
         <link>https://iolivares.com</link>
         <image>
             <url>https://iolivares.com/static/favicons/android-chrome-48x48.png</url>
@@ -9,11 +9,27 @@
             <link>https://iolivares.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 05 Jan 2022 02:51:45 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 10 Jan 2022 05:22:19 GMT</lastBuildDate>
         <atom:link href="https://iolivares.com/feed.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2022 Iván Olivares Rojas]]></copyright>
         <language><![CDATA[en]]></language>
         <webMaster><![CDATA[Iván Olivares Rojas]]></webMaster>
+        <item>
+            <title><![CDATA[2021 reflections journal: A year of learnings and decisions]]></title>
+            <description><![CDATA[2020 version 1 or 2021 was the year where the world looked to return to normal from lockdowns and the global pandemic, but the reality was anything but. For me a year of decisions and learnings getting out of comfort zone.]]></description>
+            <link>https://iolivares.com/2021</link>
+            <guid isPermaLink="true">https://iolivares.com/2021</guid>
+            <dc:creator><![CDATA[Iván Olivares Rojas]]></dc:creator>
+            <pubDate>Mon, 10 Jan 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[2021 diario de reflexiones: Un año de aprendizajes y decisiones]]></title>
+            <description><![CDATA[2020 versión 1 o 2021 fue el año en el que el mundo parecía volver a la normalidad tras los cierres y la pandemia mundial, pero la realidad fue todo lo contrario. Para mí un año de decisiones y aprendizajes saliendo de la zona de confort.]]></description>
+            <link>https://iolivares.com/es/2021</link>
+            <guid isPermaLink="true">https://iolivares.com/es/2021</guid>
+            <dc:creator><![CDATA[Iván Olivares Rojas]]></dc:creator>
+            <pubDate>Mon, 10 Jan 2022 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Hello World]]></title>
             <description><![CDATA[Welcome (again) to my new blog. Maybe, but this time surelly, I will start to publish new posts every month or week (depends of the mood, times, etc).]]></description>
