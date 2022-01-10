@@ -11,7 +11,7 @@ async function generateSitemap() {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
   const pagesPaths = await globby([
     'pages/*.js',
-    'data/articles/*.mdx',
+    'data/posts/*.mdx',
     '!data/pages/*.mdx',
     '!data/failover',
     '!data/props',

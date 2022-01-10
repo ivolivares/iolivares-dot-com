@@ -195,11 +195,11 @@
   }
 
   /* Used by MDX Layout */
-  .mdx-content a {
+  .mdx-content a:not(.anchor) {
     @apply text-gray-800 dark:text-gray-300 bg-primary-100 dark:bg-gray-800;
   }
 
-  .mdx-content a:hover {
+  .mdx-content a:not(.anchor):hover {
     @apply dark:text-gray-900;
     @apply bg-primary-200 dark:bg-primary-100;
   }

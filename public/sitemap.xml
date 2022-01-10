@@ -16,6 +16,12 @@
     <loc>https://iolivares.com/uses</loc>
   </url>
   <url>
+    <loc>https://iolivares.com/2021</loc>
+  </url>
+  <url>
+    <loc>https://iolivares.com/hello-world</loc>
+  </url>
+  <url>
     <loc>https://iolivares.com/es</loc>
   </url>
   <url>
@@ -29,5 +35,11 @@
   </url>
   <url>
     <loc>https://iolivares.com/es/uses</loc>
+  </url>
+  <url>
+    <loc>https://iolivares.com/es/2021</loc>
+  </url>
+  <url>
+    <loc>https://iolivares.com/es/hola-mundo</loc>
   </url>
 </urlset>
