@@ -7,7 +7,7 @@
     <loc>https://iolivares.com/about</loc>
   </url>
   <url>
-    <loc>https://iolivares.com/articles</loc>
+    <loc>https://iolivares.com/blog</loc>
   </url>
   <url>
     <loc>https://iolivares.com/talks</loc>
@@ -16,24 +16,18 @@
     <loc>https://iolivares.com/uses</loc>
   </url>
   <url>
-    <loc>https://iolivares.com/hello-world</loc>
-  </url>
-  <url>
     <loc>https://iolivares.com/es</loc>
   </url>
   <url>
     <loc>https://iolivares.com/es/about</loc>
   </url>
   <url>
-    <loc>https://iolivares.com/es/articles</loc>
+    <loc>https://iolivares.com/es/blog</loc>
   </url>
   <url>
     <loc>https://iolivares.com/es/talks</loc>
   </url>
   <url>
     <loc>https://iolivares.com/es/uses</loc>
-  </url>
-  <url>
-    <loc>https://iolivares.com/es/hola-mundo</loc>
   </url>
 </urlset>

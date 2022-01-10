@@ -1,0 +1,10 @@
+{
+  "posts-single": "Aquí puedes encontrar pensamientos y opiniones sobre la industria del software, el liderazgo, la música, la programación, la tecnología, y a veces la política y mi vida personal. Hasta ahora, he escrito <strong>{{value, number}} artículos</strong>. Recuerda: este contenido está siempre disponible en Inglés y Español para abrirlo a la mayor audiencia posible. ¡No olvides compartirlo!",
+  "posts-to-read": "{{value, number}} min de lectura",
+  "posts-all-title": "Todos los posts",
+  "posts-no-more": "Aún estoy escribiendo nuevos posts",
+  "posts-no-more-cta": "Mientras tanto, te invito a ver algunas confs que he dado",
+  "posts-footer-title": "Sigue leyendo",
+  "posts-footer-subtitle": "Los últimos posts sobre la industria del software, liderazgo, música y programación.",
+  "posts-footer-cta": "Leer más"
+}

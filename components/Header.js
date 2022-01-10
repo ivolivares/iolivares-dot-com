@@ -73,9 +73,9 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link href="/articles">
-                <a className={getNavClassName('articles')}>
-                  {t('nav-articles')}
+              <Link href="/blog">
+                <a className={getNavClassName('blog')}>
+                  {t('nav-blog')}
                 </a>
               </Link>
             </li>

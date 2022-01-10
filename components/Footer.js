@@ -21,7 +21,7 @@ export default function Footer({ slugPathsLang }) {
     if (!slugPathsLang) {
       return push({ pathname, query }, asPath, { locale: newLang })
     } else {
-      const newSlug = slugPathsLang.slugs[newLang]
+      const newSlug = slugPathsLang.slugs[newLang]?.toString()
 
       return push(
         {

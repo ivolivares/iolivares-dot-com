@@ -5,11 +5,11 @@ import readingTime from 'reading-time'
 import { parseISO } from 'date-fns'
 
 async function generateIndex() {
-  const files = readdirSync(join(process.cwd(), 'data', 'articles'))
+  const files = readdirSync(join(process.cwd(), 'data', 'posts'))
 
   const filesInfo = files.reduce((allFiles, fileSlug) => {
     const source = readFileSync(
-      join(process.cwd(), 'data', 'articles', fileSlug), 'utf8'
+      join(process.cwd(), 'data', 'posts', fileSlug), 'utf8'
     )
     const { data, content } = matter(source)
     const [_, lang] = fileSlug.split('.')
@@ -44,27 +44,27 @@ async function generateIndex() {
     }
   })
 
-  const countArticles = filesFormatted.reduce((acc, d) => {
+  const countPosts = filesFormatted.reduce((acc, d) => {
     if (Object.keys(acc).includes(d.lang)) return acc
 
     acc[d.lang] = filesFormatted.filter(g => g.lang === d.lang)
     return acc
   }, {})
 
-  const latestArticles = []
-  latestArticles.push(countArticles['es'][0])
-  latestArticles.push(countArticles['en'][0])
+  const latestPosts = []
+  latestPosts.push(countPosts['es'][0])
+  latestPosts.push(countPosts['en'][0])
 
-  const articlesIndex = {
+  const postsIndex = {
     total: {
-      es: countArticles['es'].length,
-      en: countArticles['en'].length,
+      es: countPosts['es'].length,
+      en: countPosts['en'].length,
     },
-    latest: latestArticles,
+    latest: latestPosts,
     all: filesFormatted.slice(2, filesFormatted.length)
   }
 
-  writeFileSync('./data/articles.json', JSON.stringify(articlesIndex))
+  writeFileSync('./data/posts.json', JSON.stringify(postsIndex))
 }
 
 generateIndex()
