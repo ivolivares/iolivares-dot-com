@@ -17,7 +17,7 @@
     }
   },
   {
-    "link": "https: //youtu.be/JhokA9fWVo0",
+    "link": "https://youtu.be/JhokA9fWVo0",
     "lang": "es",
     "content": {
       "title": "Construyendo la próxima generación de sitios web de aerolíneas",
@@ -134,5 +134,39 @@
       "new": false,
       "active": true
     }
-  }
+  },
+  {
+    "link": "https://youtu.be/T0aBlzdv27g",
+    "lang": "en",
+    "content": {
+      "title": "Observability 101: Monitoring your app is not about devops",
+      "where": "Reliable Web Summit 2021",
+      "publishedAt": "2022-05-17",
+      "duration": "21:05",
+      "tags": [
+        "Observability"
+      ],
+      "image": "https://res.cloudinary.com/iolivares-photos/image/upload/c_fill,w_800,g_face/v1638394849/io-dot-com/conferences/reliablewebsummit2021_thumb_lej4tbgtw32tzrciket1.jpg",
+      "article": "",
+      "new": false,
+      "active": true
+    }
+  },
+  {
+    "link": "https://youtu.be/T0aBlzdv27g",
+    "lang": "es",
+    "content": {
+      "title": "Observability 101: Monitorear tu app no es solo cosa de devops",
+      "where": "Reliable Web Summit 2021",
+      "publishedAt": "2022-05-17",
+      "duration": "21:05",
+      "tags": [
+        "Observability"
+      ],
+      "image": "https://res.cloudinary.com/iolivares-photos/image/upload/c_fill,w_800,g_face/v1638394849/io-dot-com/conferences/reliablewebsummit2021_thumb_lej4tbgtw32tzrciket1.jpg",
+      "article": "",
+      "new": false,
+      "active": true
+    }
+  },
 ]
